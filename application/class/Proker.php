@@ -1,5 +1,5 @@
 <?php class Proker {	
-	public function index(){
+	public function __construct(){
 		echo "Proker";
 	}
 }

@@ -26,20 +26,16 @@
                         <!-- <input type="text" class="formNama" placeholder="Nama Depan" name="namadepan" required> -->
                         <select id="cb-jenis-organisasi" class="formNama">
                             <option value="" disabled selected>Jenis Organisasi</option>
-                            <option value="+">(+) Penjumlahan</option>
-                            <option value="-">(-) Pengurangan</option>
-                            <option value="*">(*) Perkalian</option>
-                            <option value="/">(/) Pembagian</option>
-                            <option value="%">(%) Modulus</option>
+                            <?php foreach ($organisasi as $org) {
+                                echo "<option value=\"\">".$org->namaOrganisasi."</option>";
+                            }
+                            ?>
                         </select>
                         <!-- <input type="text" class="formNama" placeholder="Nama Belakang" name="namabelakang" required> -->
                         <select id="cb-jabatan" class="formNama">
                             <option value="" disabled selected>Jabatan</option>
-                            <option value="+">(+) Penjumlahan</option>
-                            <option value="-">(-) Pengurangan</option>
-                            <option value="*">(*) Perkalian</option>
-                            <option value="/">(/) Pembagian</option>
-                            <option value="%">(%) Modulus</option>
+                            <option value="">Ketua Organisasi</option>
+                            <option value="">Sekretaris Organisasi</option>                            
                         </select>
                         <br>
                         <input type="text" class="form" placeholder="Nama Lengkap" name="username" required>
