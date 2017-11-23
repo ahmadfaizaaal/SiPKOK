@@ -1,0 +1,98 @@
+.jumbotron {
+	/*background-image: url("..assets/img/head_img.jpeg");*/
+	height: 350px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+/*#marginLogo {
+	margin-left: 30px;
+}
+#marginTitle {
+	margin-left: -170px;
+}*/
+#logoBrand {
+	padding: -50px;
+}
+.jumbotron h1 {
+	font-family: 'Britannic Bold', fantasy;
+	font-size: 80px;
+	color: white;
+	margin-top: -3px;
+	text-shadow: 4px 4px #616161;
+}
+.jumbotron p {
+	font-family: 'Arial', fantasy;
+	font-weight: bold;
+	/*text-shadow: 1px 1px #ffffff;*/
+	font-size: 20px;
+	color: white;
+	margin-top: -15px;
+}
+/*.jumbotron img { 
+	width: 100%;
+	height: auto;
+}*/
+.carousel-inner {
+	height: 500px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+#navbar-position {
+	margin-top: -30px;
+}
+#transparan {
+	background-color: rgba(255,255,255,0.3);
+	height: 410px; width: 1440px;
+	margin-top: -50px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    /*padding: 16px;*/
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
