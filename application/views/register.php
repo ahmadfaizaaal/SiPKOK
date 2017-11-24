@@ -22,20 +22,20 @@
                 <div class="text-center" style="margin-top: 15px;">
                     <img src="<?php echo base_url() ?>assets/img/detail-logo.png" alt="Logo SiPKOK" width="350px" height="100px">
                     <hr style="border-color: #616161;">
-                    <form action="#" method="post">
+                    <form action="<?php echo base_url('Auth/doRegister') ?>" method="post">
                         <!-- <input type="text" class="formNama" placeholder="Nama Depan" name="namadepan" required> -->
-                        <select id="cb-jenis-organisasi" class="formNama">
+                        <select id="cb-jenis-organisasi" class="formNama" name="organisasi">
                             <option value="" disabled selected>Jenis Organisasi</option>
                             <?php foreach ($organisasi as $org) {
-                                echo "<option value=\"\">".$org->namaOrganisasi."</option>";
+                                echo "<option value=\"".$org->namaOrganisasi."\">".$org->namaOrganisasi."</option>";
                             }
                             ?>
                         </select>
                         <!-- <input type="text" class="formNama" placeholder="Nama Belakang" name="namabelakang" required> -->
-                        <select id="cb-jabatan" class="formNama">
+                        <select id="cb-jabatan" class="formNama" name="jabatan">
                             <option value="" disabled selected>Jabatan</option>
-                            <option value="">Ketua Organisasi</option>
-                            <option value="">Sekretaris Organisasi</option>                            
+                            <option value="Ketua Organisasi">Ketua Organisasi</option>
+                            <option value="Sekretaris Organisasi">Sekretaris Organisasi</option>                            
                         </select>
                         <br>
                         <input type="text" class="form" placeholder="Nama Lengkap" name="username" required>

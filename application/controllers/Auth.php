@@ -3,6 +3,7 @@
 		parent::__construct();
 		$this->load->model('M_Organisasi');
 		$this->load->model('M_Akun');
+		// $this->load->controller("C_Organisasi");
 	}
 
 	public function index() {
@@ -32,13 +33,31 @@
 		$akun = $this->M_Akun->selectAkun($email);
 		if ($count > 0){
 			if ($akun[0]->password == $password){				
-				echo "Password Benar";
+				echo "Password Benar";				
 			} else {
 				echo "Password Salah";
 			}
 		} else {
 			echo "sasaasasas";
 		}
+	}
+
+	public function doRegister(){
+		// echo $this->input->post("organisasi");
+		// $this->load->model('M_Akun');
+		// $this->load->library('../controllers/whathever');
+		// $this->load->controller("C_Organisasi");		
+		// echo $organisasi[0]->idOrganisasi;
+		// echo $organisasi;
+		$data["idAkun"] = "";
+		$data["nama"] = $this->input->post("username");
+		$data["organisasi"] = $this->M_Organisasi->selectIdOrganisasiByNama($this->input->post("organisasi"));
+		// $data["organisasi"] = $this->input->post("organisasi");
+		$data["email"] = $this->input->post("email");
+		$data["password"] = $this->input->post("password");
+		$data["jabatan"] = $this->input->post("jabatan");
+		$data["status"] = "";
+		$this->M_Akun->insertAkun("akun", $data);
 	}
 }
 ?>

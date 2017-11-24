@@ -7,5 +7,11 @@
 		$query = $this->db->get('organisasi');
 		return $query->result();
 	}
+	public function selectIdOrganisasiByNama($namaOrganisasi){
+		$query = $this->db->where("namaOrganisasi",$namaOrganisasi);
+		$query = $this->db->get('organisasi');
+		$hasil = $query->result();		
+		return $hasil[0]->idOrganisasi;
+	}
 }
 ?>

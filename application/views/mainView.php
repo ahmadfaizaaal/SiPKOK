@@ -20,7 +20,7 @@
 
 
 		<div id="modal-login" class="modal">
-	        <form class="modal-content animate" action="<?php echo site_url('Auth/login') ?>" method="post">
+	        <form class="modal-content animate" action="<?php echo base_url('Auth/login') ?>" method="post">
 		        <div class="imgcontainer">
 		            <span onclick="document.getElementById('modal-login').style.display='none'" class="close" title="Close Modal">&times;</span>
 		            <img src="<?php echo base_url() ?>assets/img/detail-logo.png" alt="Logo SiPKOK" width="350px" height="110px">

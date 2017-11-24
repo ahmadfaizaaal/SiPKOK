@@ -13,5 +13,8 @@
 		$query = $this->db->count_all_results();
 		return $query;
 	}
+	public function insertAkun($namaTabel, $data){
+		$this->db->insert($namaTabel, $data);
+	}
 }
 ?>
