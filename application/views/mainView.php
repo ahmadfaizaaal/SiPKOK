@@ -37,7 +37,7 @@
 		            <input type="password" style="width: 64%; padding: 12px 8px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box;" placeholder="Enter Password" name="password_login" required>
 		            <br>
 		              
-		            <button type="submit" style="background-color: #4CAF50; color: white; padding: 12px 8px; margin: 8px 0; border: none; cursor: pointer; width: 68%;"><span class="glyphicon glyphicon-lock"></span> Login</button><br>
+		            <button type="submit" style="background-color: #4CAF50; color: white; padding: 12px 8px; margin: 8px 0; border: none; cursor: pointer; width: 68%;"><span class="glyphicon glyphicon-lock"></span>Login</button><br>
 	          	</div>
 
 	          	<div class="container" style="background-color:#f1f1f1; width: 100%;">

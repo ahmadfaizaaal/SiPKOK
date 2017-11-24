@@ -4,8 +4,8 @@
 	// 	$result = selectOrganisasiAll();
 	// }
 	public function selectOrganisasiAll(){
-		$query = $this->db->get('organisasi');		
-		return $query->result();		
+		$query = $this->db->get('organisasi');
+		return $query->result();
 	}
 }
 ?>
