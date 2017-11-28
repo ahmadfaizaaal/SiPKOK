@@ -6,26 +6,28 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="<?php echo base_url() ?>assets/img/SIPKOK.png" rel="shortcut icon">
     <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </style>
 </head>
 <body class="w3-light-blue w3-content" style="max-width:1600px">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-orange w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container">
+<nav class="w3-sidebar w3-collapse w3-amber w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-center">
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-blue" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <img src="<?php echo base_url() ?>assets/img/detail-logo.png" style="width:45%;" class="w3-round"><br><br>
-    <h4><b>PORTFOLIO</b></h4>
-    <p class="w3-text-white">Template by W3.CSS</p>
+    <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:80%;" class="w3-round"><br><br>
+    <h4><b>HMIF</b></h4>
+    <p class="w3-text-white"><b><i>Himpunan Mahasiswa Informatika</i></b></p>
   </div>
   <div class="w3-bar-block">
     <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
     <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
   </div>
   <div class="w3-panel w3-large">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -45,16 +47,21 @@
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="<?php echo base_url() ?>assets/img/detail-logo.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <a href="#"><img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-blue" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>My Portfolio</b></h1>
-    <div class="w3-section w3-bottombar w3-border-white w3-padding-16">
-      <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-black">ALL</button>
-      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+    <!-- <h1><b>My Portfolio</b></h1> -->
+    <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing4.png" style="width:100%;" class="w3-round"></h1>
+    <!-- <div class="w3-section w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
+      <button class="w3-btn w3-amber w3-border w3-round-large"><i class="fa fa-user w3-margin-right"></i>Profil</button>
+      <button class="w3-btn w3-amber w3-border w3-round-large"><i class=" fa fa-tasks w3-margin-right"></i>Proker</button>
+      <button class="w3-btn w3-amber w3-border w3-round-large"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
+      <button class="w3-btn w3-amber w3-border w3-round-large"><i class="fa fa-sign-out w3-margin-right"></i>Logout</button>
+    </div> -->
+    <div class="w3-bar w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
+      <button class="w3-bar-item w3-button w3-amber w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil</button>
+      <button class="w3-bar-item w3-button w3-amber w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Proker</button>
+      <button class="w3-bar-item w3-button w3-amber w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
     </div>
     </div>
   </header>
