@@ -1,0 +1,546 @@
+$mcol : #54ACD2
+body
+  margin: 0
+  padding: 0
+  font-family: Yantramanav
+  overflow: hidden
+  background: #FAFAFA
+a
+  color: $mcol
+  transition: all 0.3s ease-in-out
+a:hover
+  text-decoration: none
+button
+  font-size: 16px
+  color: #FFF
+  font-family: Yantramanav
+  width: 150px
+  height: 40px
+  border: none
+  margin-bottom: 10px
+  margin-top: 10px
+  background: $mcol
+  cursor: pointer
+  text-transform: uppercase
+  font-weight: 500
+  padding: 9px
+  transition: all 0.3s ease-in-out
+  border: 1px solid $mcol
+  &:hover
+    background: #3E454C
+    border: 1px solid #FFF
+
+button.small
+  width: 55px
+  height: 26px
+  margin: 0
+  font-size: 12px
+  padding: 5px
+  margin-top: 5px
+  margin-left: 5px
+  border: none
+  background: #61BD6D
+  &.cancel
+    background: #EB6B56
+.sidebar
+  color: #FFF
+  background: #3e454c
+  padding: 0
+  text-align: center
+  margin: 0
+  //position: fixed
+  height: 100%
+  .logo-container
+    background: #6a6f75
+    width: 100%
+    padding: 10px
+    padding-top: 15px
+    height: 60px
+    img
+      width: 200px
+  .profile-container
+    margin-top: 40px
+    .profile-pict
+      img
+        border-radius: 50%
+        width: 175px
+        height: 175px
+        object-fit: cover
+    .info
+      margin-top: 10px
+      a
+        color: $mcol
+        font-weight: 500
+        font-size: 18px
+        transition: all 0.3s ease-in-out
+        &:hover
+          color: #FFF
+      h2
+        font-weight: 300
+        font-size: 32px
+        margin: 5px
+        margin-bottom: 0
+      p
+        margin: 0
+        font-style: italic
+        font-weight: 300
+        font-size: 16pxd
+        color: #DDD
+        padding: 20px
+        &::before
+          content: open-quote
+        &::after
+          content: close-quote
+
+
+.main-content
+  padding: 0
+  .title-container
+    color: #3e454c
+    font-size: 28px
+    font-weight: 300
+    background: #ececec
+    height: 60px
+    padding-left: 0px
+    .title
+      margin: 0
+      padding: 10px
+    .log
+      text-align: right
+      padding: 6px 20px
+      a
+        font-size: 16px
+        font-weight: bold
+        margin-left: 10px
+        color: #3e454c
+        &:hover
+          color: #999
+  .main
+    //margin-top: 10px
+    height: 100%
+    padding-bottom: 50px
+    //border: 1px solid #000
+    overflow: scroll
+    .profile-page
+      display: block
+      padding: 20px 10px 0px 10px
+      margin: 10px 10px 0px 10px
+      background: #FFF
+      .pp
+        text-align: center
+        img
+          width: 175px
+          height: 175px
+          border-radius: 50%
+          object-fit: cover
+      .meta
+        margin-top: 10px
+        h2
+          font-size: 28px
+          font-weight: 300
+          color: #3E454C
+          margin: 0
+        p
+          font-size: 16px
+          letter-spacing: 1px
+          color: #999
+          font-weight: 300
+      .count
+        padding-top: 35px
+        div
+          width: 125px
+          height: 125px
+          text-align: center
+          padding: 5px
+          border-radius: 50%
+          margin-left: 5px
+          background: #3E454C
+          display: inline-block
+          color: #FFF
+          span
+            display: block
+            font-size: 48px
+            font-weight: bold
+            margin-top: 10px
+          small
+            display: block
+            font-size: 18px
+            font-weight: 300
+            margin-top: -15px
+    .item
+      height: 275px
+      //background: #555
+      padding: 10px
+      padding-bottom: 0px
+      &:nth-child(3n+1)
+        //background: #000FFF
+        padding-right: 5px
+      &:nth-child(3n+0)
+        padding-left: 5px
+      //background: #FF0000
+      &:nth-child(3n+2)
+        //background: #000
+        padding-left: 5px
+        padding-right: 5px
+      figure
+        width: 100%
+        height: 100%
+        position: relative
+        overflow: hidden
+        cursor: pointer
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          transition: all 0.5s ease-in-out
+        .overlay
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: 0
+          background: #000
+          opacity: 0.3
+          transition: all 0.5s ease-in-out
+        .short
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          padding: 10px
+          color: #FFF
+        .meta
+          position: absolute
+          top: 7px
+          right: 7px
+          color: #FFF
+          font-size: 14px
+        .profile
+          position: absolute
+          top: 5px
+          left: 5px
+          img
+            width: 25px
+            height: 25px
+            border-radius: 50%
+          a
+            color: #FFF
+            font-weight: 500
+            transition: all 0.3s ease-in-out
+            &:hover
+              color: $mcol
+        &:hover
+          .overlay
+            opacity: 0.1
+            transition: all 0.5s ease-in-out
+.overlay
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  background: #000
+  opacity: 0.8
+.close
+  cursor: pointer
+  color: #FFF
+  position: absolute
+  top: 15px
+  right: 15px
+  font-size: 26px
+.detail
+  display: none
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  padding-top: 60px
+  .panel
+    background: #FFF
+    height: 550px
+    padding: 0
+    position: relative
+    .edit
+      position: absolute
+      top: 10px
+      right: 10px
+      color: #999
+      cursor: pointer
+      font-size: 16px
+      display: block
+      z-index: 999
+    .delete
+      position: absolute
+      top: 10px
+      right: 35px
+      color: #999
+      cursor: pointer
+      font-size: 16px
+      display: block
+      z-index: 999
+    div
+      padding: 0
+    img.photo
+      width: 100%
+      height: 100%
+      display: block
+      object-fit: cover
+    .right
+      padding: 20px 0px 20px 20px
+      .profile
+        padding-bottom: 12px
+        border-bottom: 1px solid #DDD
+        margin-right: 20px
+        img
+          width: 30px
+          height: 30px
+          border-radius: 50%
+          margin-right: 10px
+        a
+          font-weight: 600
+          color: $mcol
+          font-weight: 14px
+      .meta
+        padding: 8px 0px
+        color: #999
+        font-size: 14px
+        margin-left: -5px
+        span.fa
+          font-size: 13px
+          margin-right: 3px
+          margin-left: 10px
+      p
+        margin: 0
+        padding-right: 20px
+        font-size: 14px
+        color: #666
+        font-weight: 300
+      .comment
+        margin: 10px 0px
+        padding: 0
+        width: 100%
+        overflow-y: scroll
+        height: 385px
+        li
+          margin-bottom: 5px
+          list-style: none
+          color: #666
+          font-weight: 300
+          a
+            margin-right: 10px
+            font-weight: 600
+            color: $mcol
+            font-weight: 14px
+      .form
+        width: 100%
+        margin-left: 0px
+        div
+          padding: 0
+          border-top: 1px solid #CCC
+          padding-top: 10px
+        .like
+          font-size: 24px
+          color: #999
+          padding-left: 5px
+          cursor: pointer
+          &:hover
+            color: $mcol
+        .like.unlike
+            color: $mcol
+            &:hover
+              color: #999
+        .commend
+          padding-left: 10px
+          input
+            border: none
+            outline: none
+            width: 100%
+
+.spinner
+  width: 50px
+  height: 50px
+  background: none
+  border-radius: 50%
+  display: inline
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+.spinner:after, .spinner:before
+  content: ""
+  display: block
+  width: 50px
+  height: 50px
+  border-radius: 50%
+
+.spinner-1:after
+  position: absolute
+  top: -4px
+  left: -4px
+  border: 4px solid transparent
+  border-top-color: $mcol
+  border-bottom-color: $mcol
+  animation: spinny 1s linear infinite
+
+.loading
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0px
+  left: 0px
+  z-index: 9999
+
+  .spinner
+    width: 50px
+    height: 50px
+    background: none
+    border-radius: 50%
+    position: absolute
+    display: inline-block
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+  .spinner:after, .spinner:before
+    content: ""
+    display: block
+    width: 50px
+    height: 50px
+    border-radius: 50%
+
+  .spinner-1:after
+    position: absolute
+    top: -4px
+    left: -4px
+    border: 4px solid transparent
+    border-top-color: $mcol
+    border-bottom-color: $mcol
+    animation: spinny 1s linear infinite
+.popupupload
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+.panel-upload
+  position: relative
+  margin-top: 70px
+  background: #ededed
+  border-radius: 0
+  height: 400px
+  padding: 0px
+  .title
+    text-align: center
+    font-weight: bold
+    font-size: 20px
+    padding: 10px
+    background: #FFF
+    color: $mcol
+    span
+      color: #484848
+      font-size: 24px
+  .image
+    padding: 20px
+    padding-right: 10px
+    text-align: center
+    img
+      width: 100%
+      height: 77%
+      object-fit: cover
+    input
+      display: none
+    label
+      background: $mcol
+      padding: 10px
+      color: #FFF
+      width: 200px
+      font-weight: 400
+      transition: all 0.3s ease-in-out
+      font-size: 16px
+      margin-top: 110px
+      cursor: pointer
+      &:hover
+        background: #484848
+  .caption
+    text-align: center
+    padding: 20px
+    padding-left: 10px
+    textarea
+      width: 100%
+      height: 200px
+      border: none
+      font-size: 16px
+      font-weight: 300
+      padding: 5px 10px
+      outline: none
+      resize: none
+
+    button
+      margin-top: 20px
+      width: 200px
+      padding: 10px
+      font-size: 16px
+      background: $mcol
+      border: none
+      color: #FFF
+      transition: all 0.3s ease-in-out
+      &:hover
+        background: #484848
+    input
+      width: 100%
+      background: #FFF
+      border: none
+      padding: 10px
+      outline: none
+      &[type="text"]
+        margin-top: 10px
+    label
+      width: 100%
+      text-align: left
+  .lod,.notice
+    width: 100%
+    text-align: center
+  .notice
+    .content
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+    a
+      cursor: pointer
+      font-weight: bold
+      font-size: 16px
+.popedit
+  padding-top: 50px
+  .panel-upload
+    height: 465px!important
+.popeditfoto
+  padding-top: 125px
+  .panel-upload
+    height: 330px!important
+.message
+  position: fixed
+  width: 40%
+  padding: 10px
+  top: 10%
+  left: 50%
+  font-size: 16px
+  transform: translateX(-50%)
+  color: #FFF
+  text-align: center
+  border-radius: 5px
+  opacity: 0.95
+  &.success
+    background: #00A885
+
+@keyframes spinny
+  0%
+    transform: rotate(0deg) scale(1)
+
+  50%
+    transform: rotate(45deg) scale(1.2)
+
+  100%
+    transform: rotate(360deg) scale(1)

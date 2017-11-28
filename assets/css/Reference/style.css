@@ -1,0 +1,741 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Yantramanav;
+  overflow: hidden;
+  background: #FAFAFA;
+}
+
+a {
+  color: #54ACD2;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  font-size: 16px;
+  color: #FFF;
+  font-family: Yantramanav;
+  width: 150px;
+  height: 40px;
+  border: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #54ACD2;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 9px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #54ACD2;
+}
+
+button:hover {
+  background: #3E454C;
+  border: 1px solid #FFF;
+}
+
+button.small {
+  width: 55px;
+  height: 26px;
+  margin: 0;
+  font-size: 12px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  border: none;
+  background: #61BD6D;
+}
+
+button.small.cancel {
+  background: #EB6B56;
+}
+
+.sidebar {
+  color: #FFF;
+  background: #3e454c;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  height: 100%;
+}
+
+.sidebar .logo-container {
+  background: #6a6f75;
+  width: 100%;
+  padding: 10px;
+  padding-top: 15px;
+  height: 60px;
+}
+
+.sidebar .logo-container img {
+  width: 200px;
+}
+
+.sidebar .profile-container {
+  margin-top: 40px;
+}
+
+.sidebar .profile-container .profile-pict img {
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+}
+
+.sidebar .profile-container .info {
+  margin-top: 10px;
+}
+
+.sidebar .profile-container .info a {
+  color: #54ACD2;
+  font-weight: 500;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar .profile-container .info a:hover {
+  color: #FFF;
+}
+
+.sidebar .profile-container .info h2 {
+  font-weight: 300;
+  font-size: 32px;
+  margin: 5px;
+  margin-bottom: 0;
+}
+
+.sidebar .profile-container .info p {
+  margin: 0;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16pxd;
+  color: #DDD;
+  padding: 20px;
+}
+
+.sidebar .profile-container .info p::before {
+  content: open-quote;
+}
+
+.sidebar .profile-container .info p::after {
+  content: close-quote;
+}
+
+.main-content {
+  padding: 0;
+}
+
+.main-content .title-container {
+  color: #3e454c;
+  font-size: 28px;
+  font-weight: 300;
+  background: #ececec;
+  height: 60px;
+  padding-left: 0px;
+}
+
+.main-content .title-container .title {
+  margin: 0;
+  padding: 10px;
+}
+
+.main-content .title-container .log {
+  text-align: right;
+  padding: 6px 20px;
+}
+
+.main-content .title-container .log a {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #3e454c;
+}
+
+.main-content .title-container .log a:hover {
+  color: #999;
+}
+
+.main-content .main {
+  height: 100%;
+  padding-bottom: 50px;
+  overflow: scroll;
+}
+
+.main-content .main .profile-page {
+  display: block;
+  padding: 20px 10px 0px 10px;
+  margin: 10px 10px 0px 10px;
+  background: #FFF;
+}
+
+.main-content .main .profile-page .pp {
+  text-align: center;
+}
+
+.main-content .main .profile-page .pp img {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.main-content .main .profile-page .meta {
+  margin-top: 10px;
+}
+
+.main-content .main .profile-page .meta h2 {
+  font-size: 28px;
+  font-weight: 300;
+  color: #3E454C;
+  margin: 0;
+}
+
+.main-content .main .profile-page .meta p {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #999;
+  font-weight: 300;
+}
+
+.main-content .main .profile-page .count {
+  padding-top: 35px;
+}
+
+.main-content .main .profile-page .count div {
+  width: 125px;
+  height: 125px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 5px;
+  background: #3E454C;
+  display: inline-block;
+  color: #FFF;
+}
+
+.main-content .main .profile-page .count div span {
+  display: block;
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.main-content .main .profile-page .count div small {
+  display: block;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: -15px;
+}
+
+.main-content .main .item {
+  height: 275px;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.main-content .main .item:nth-child(3n+1) {
+  padding-right: 5px;
+}
+
+.main-content .main .item:nth-child(3n+0) {
+  padding-left: 5px;
+}
+
+.main-content .main .item:nth-child(3n+2) {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.main-content .main .item figure {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.main-content .main .item figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-content .main .item figure .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.3;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-content .main .item figure .short {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: #FFF;
+}
+
+.main-content .main .item figure .meta {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  color: #FFF;
+  font-size: 14px;
+}
+
+.main-content .main .item figure .profile {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.main-content .main .item figure .profile img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.main-content .main .item figure .profile a {
+  color: #FFF;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-content .main .item figure .profile a:hover {
+  color: #54ACD2;
+}
+
+.main-content .main .item figure:hover .overlay {
+  opacity: 0.1;
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.8;
+}
+
+.close {
+  cursor: pointer;
+  color: #FFF;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 26px;
+}
+
+.detail {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 60px;
+}
+
+.detail .panel {
+  background: #FFF;
+  height: 550px;
+  padding: 0;
+  position: relative;
+}
+
+.detail .panel .edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  z-index: 999;
+}
+
+.detail .panel .delete {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  z-index: 999;
+}
+
+.detail .panel div {
+  padding: 0;
+}
+
+.detail .panel img.photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.detail .panel .right {
+  padding: 20px 0px 20px 20px;
+}
+
+.detail .panel .right .profile {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #DDD;
+  margin-right: 20px;
+}
+
+.detail .panel .right .profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.detail .panel .right .profile a {
+  font-weight: 600;
+  color: #54ACD2;
+  font-weight: 14px;
+}
+
+.detail .panel .right .meta {
+  padding: 8px 0px;
+  color: #999;
+  font-size: 14px;
+  margin-left: -5px;
+}
+
+.detail .panel .right .meta span.fa {
+  font-size: 13px;
+  margin-right: 3px;
+  margin-left: 10px;
+}
+
+.detail .panel .right p {
+  margin: 0;
+  padding-right: 20px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 300;
+}
+
+.detail .panel .right .comment {
+  margin: 10px 0px;
+  padding: 0;
+  width: 100%;
+  overflow-y: scroll;
+  height: 385px;
+}
+
+.detail .panel .right .comment li {
+  margin-bottom: 5px;
+  list-style: none;
+  color: #666;
+  font-weight: 300;
+}
+
+.detail .panel .right .comment li a {
+  margin-right: 10px;
+  font-weight: 600;
+  color: #54ACD2;
+  font-weight: 14px;
+}
+
+.detail .panel .right .form {
+  width: 100%;
+  margin-left: 0px;
+}
+
+.detail .panel .right .form div {
+  padding: 0;
+  border-top: 1px solid #CCC;
+  padding-top: 10px;
+}
+
+.detail .panel .right .form .like {
+  font-size: 24px;
+  color: #999;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.detail .panel .right .form .like:hover {
+  color: #54ACD2;
+}
+
+.detail .panel .right .form .like.unlike {
+  color: #54ACD2;
+}
+
+.detail .panel .right .form .like.unlike:hover {
+  color: #999;
+}
+
+.detail .panel .right .form .commend {
+  padding-left: 10px;
+}
+
+.detail .panel .right .form .commend input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 50%;
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner:after, .spinner:before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.spinner-1:after {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  border: 4px solid transparent;
+  border-top-color: #54ACD2;
+  border-bottom-color: #54ACD2;
+  animation: spinny 1s linear infinite;
+}
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+}
+
+.loading .spinner {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading .spinner:after, .loading .spinner:before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.loading .spinner-1:after {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  border: 4px solid transparent;
+  border-top-color: #54ACD2;
+  border-bottom-color: #54ACD2;
+  animation: spinny 1s linear infinite;
+}
+
+.popupupload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.panel-upload {
+  position: relative;
+  margin-top: 70px;
+  background: #ededed;
+  border-radius: 0;
+  height: 400px;
+  padding: 0px;
+}
+
+.panel-upload .title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  background: #FFF;
+  color: #54ACD2;
+}
+
+.panel-upload .title span {
+  color: #484848;
+  font-size: 24px;
+}
+
+.panel-upload .image {
+  padding: 20px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.panel-upload .image img {
+  width: 100%;
+  height: 77%;
+  object-fit: cover;
+}
+
+.panel-upload .image input {
+  display: none;
+}
+
+.panel-upload .image label {
+  background: #54ACD2;
+  padding: 10px;
+  color: #FFF;
+  width: 200px;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  margin-top: 110px;
+  cursor: pointer;
+}
+
+.panel-upload .image label:hover {
+  background: #484848;
+}
+
+.panel-upload .caption {
+  text-align: center;
+  padding: 20px;
+  padding-left: 10px;
+}
+
+.panel-upload .caption textarea {
+  width: 100%;
+  height: 200px;
+  border: none;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 5px 10px;
+  outline: none;
+  resize: none;
+}
+
+.panel-upload .caption button {
+  margin-top: 20px;
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  background: #54ACD2;
+  border: none;
+  color: #FFF;
+  transition: all 0.3s ease-in-out;
+}
+
+.panel-upload .caption button:hover {
+  background: #484848;
+}
+
+.panel-upload .caption input {
+  width: 100%;
+  background: #FFF;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.panel-upload .caption input[type="text"] {
+  margin-top: 10px;
+}
+
+.panel-upload .caption label {
+  width: 100%;
+  text-align: left;
+}
+
+.panel-upload .lod, .panel-upload .notice {
+  width: 100%;
+  text-align: center;
+}
+
+.panel-upload .notice .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.panel-upload .notice a {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.popedit {
+  padding-top: 50px;
+}
+
+.popedit .panel-upload {
+  height: 465px !important;
+}
+
+.popeditfoto {
+  padding-top: 125px;
+}
+
+.popeditfoto .panel-upload {
+  height: 330px !important;
+}
+
+.message {
+  position: fixed;
+  width: 40%;
+  padding: 10px;
+  top: 10%;
+  left: 50%;
+  font-size: 16px;
+  transform: translateX(-50%);
+  color: #FFF;
+  text-align: center;
+  border-radius: 5px;
+  opacity: 0.95;
+}
+
+.message.success {
+  background: #00A885;
+}
+
+@keyframes spinny {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}

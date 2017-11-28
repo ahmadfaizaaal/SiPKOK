@@ -1,0 +1,170 @@
+body {
+  overflow: hidden;
+  font-family: Yantramanav;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+}
+
+.label {
+  color: #FFF;
+  font-size: 18px;
+  text-align: left;
+  width: 275px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #000;
+  opacity: 0.5;
+}
+
+.form {
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 320px;
+  text-align: center;
+}
+
+form {
+  width: 275px;
+  margin: auto;
+}
+
+h3 {
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+input[type="text"], input[type="password"] {
+  padding-left: 15px;
+  font-size: 16px;
+  color: #aaaaaa;
+  font-family: Yantramanav;
+  font-weight: 300;
+  width: 100%;
+  height: 40px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  font-size: 16px;
+  color: #FFF;
+  font-family: Yantramanav;
+  width: 150px;
+  height: 40px;
+  border: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #54acd2;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background: #111;
+}
+
+p {
+  color: #FFF;
+  margin-top: 0px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+a {
+  color: #54acd2;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+a:hover {
+  color: #FFF;
+  font-weight: 400;
+}
+
+.notif {
+  width: 100%;
+  text-align: center;
+  margin-top: -5px 0px 0px 0px;
+}
+
+.notif .wait {
+  background-color: #FFF;
+  font-size: 12px;
+  padding: 5px 15px;
+  width: 275px !important;
+}
+
+.panel {
+  background: #FFF;
+  padding: 100px 25px;
+  width: 300px;
+  margin: 0px auto;
+  font-size: 14px;
+  color: #484848;
+}
+
+.error {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: 275px;
+  background: #E14938;
+  text-align: center;
+  color: #FFF;
+  padding: 5px;
+  z-index: 9999;
+  transform: translateX(-50%);
+}
+
+.error p {
+  margin: 0;
+}
+
+.notifcontainer {
+  background: #FFF;
+  opacity: 0.9;
+  padding: 70px 20px 100px 20px;
+}
+
+.notifcontainer h2 {
+  font-weight: 400;
+}
+
+.notifcontainer p {
+  color: #666;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.notifcontainer a:hover {
+  color: #666;
+}

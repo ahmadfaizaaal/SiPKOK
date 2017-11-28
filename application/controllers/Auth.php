@@ -23,7 +23,7 @@
 	public function berandaPO() {
 		$judul = "SiPKOK-Beranda Pimpinan Organisasi";
 		$data['judul'] = $judul;
-		$this->load->view('view_berandaPimOr', $data);	
+		$this->load->view('view_beranda_Pimpinan_Organisasi', $data);	
 	}
 
 	public function login(){
