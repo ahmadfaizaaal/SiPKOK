@@ -24,19 +24,19 @@
     <p class="w3-text-white"><b><i>Himpunan Mahasiswa Informatika</i></b></p>
   </div>
   <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
+    <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>AHMAD FAIZAL</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i>KETUA HIMPUNAN</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
   </div>
-  <div class="w3-panel w3-large">
+  <!-- <div class="w3-panel w3-large">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-snapchat w3-hover-opacity"></i>
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
+  </div> -->
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -50,71 +50,247 @@
     <a href="#"><img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-blue" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <!-- <h1><b>My Portfolio</b></h1> -->
-    <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing4.png" style="width:100%;" class="w3-round"></h1>
-    <!-- <div class="w3-section w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
-      <button class="w3-btn w3-amber w3-border w3-round-large"><i class="fa fa-user w3-margin-right"></i>Profil</button>
-      <button class="w3-btn w3-amber w3-border w3-round-large"><i class=" fa fa-tasks w3-margin-right"></i>Proker</button>
-      <button class="w3-btn w3-amber w3-border w3-round-large"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
-      <button class="w3-btn w3-amber w3-border w3-round-large"><i class="fa fa-sign-out w3-margin-right"></i>Logout</button>
-    </div> -->
-    <div class="w3-bar w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
-      <button class="w3-bar-item w3-button w3-amber w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil</button>
-      <button class="w3-bar-item w3-button w3-amber w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Proker</button>
-      <button class="w3-bar-item w3-button w3-amber w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
-    </div>
+        <!-- <h1><b>My Portfolio</b></h1> -->
+        <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing4.png" style="width:100%;" class="w3-round"></h1>
+        <div class="w3-bar w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
+            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil</button>
+            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Proker</button>
+            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
+        </div>
+        <h2 class="w3-left-align">Program Kerja</h2>
     </div>
   </header>
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="<?php echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%"class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-third w3-container w3-margin-bottom">
+          <div class="w3-blue" style="height: 7%;">
+              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
+              <div class="w3-col m6 w3-right-align w3-padding">
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+              </div>
+          </div>
+          <div class="w3-container w3-blue">
+              <div class="w3-col m3 w3-margin-top">
+                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+              </div>
+              <div class="w3-col m9">
+                  <div class="w3-container w3-margin-top">
+                      <table class="w3-table w3-tiny w3-bordered w3-text-white">
+                          <tr>
+                              <td><p>Ketua</p></td><td><p>: Riza Anisul Fu'ad</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                          </tr>
+                      </table>
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-white">
+              <div class="w3-container w3-green w3-padding w3-center" style="width:25%;">25%</div>
+          </div>
       </div>
-    </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="<?php echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-third w3-container w3-margin-bottom">
+          <div class="w3-blue" style="height: 7%;">
+              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
+              <div class="w3-col m6 w3-right-align w3-padding">
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+              </div>
+          </div>
+          <div class="w3-container w3-blue">
+              <div class="w3-col m3 w3-margin-top">
+                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+              </div>
+              <div class="w3-col m9">
+                  <div class="w3-container w3-margin-top">
+                      <table class="w3-table w3-tiny w3-bordered w3-text-white">
+                          <tr>
+                              <td><p>Ketua</p></td><td><p>: Riza Anisul Fu'ad</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                          </tr>
+                      </table>
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-white">
+              <div class="w3-container w3-green w3-padding w3-center" style="width:75%;">75%</div>
+          </div>
       </div>
-    </div>
-    <div class="w3-third w3-container">
-      <img src="<?php echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <div class="w3-third w3-container w3-margin-bottom">
+          <div class="w3-blue" style="height: 7%;">
+              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
+              <div class="w3-col m6 w3-right-align w3-padding">
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+              </div>
+          </div>
+          <div class="w3-container w3-blue">
+              <div class="w3-col m3 w3-margin-top">
+                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+              </div>
+              <div class="w3-col m9">
+                  <div class="w3-container w3-margin-top">
+                      <table class="w3-table w3-tiny w3-bordered w3-text-white">
+                          <tr>
+                              <td><p>Ketua</p></td><td><p>: Riza Anisul Fu'ad</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                          </tr>
+                      </table>
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-white">
+              <div class="w3-container w3-green w3-padding w3-center" style="width:100%;">100%</div>
+          </div>
       </div>
-    </div>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-margin-bottom">
+          <div class="w3-blue" style="height: 7%;">
+              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
+              <div class="w3-col m6 w3-right-align w3-padding">
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+              </div>
+          </div>
+          <div class="w3-container w3-blue">
+              <div class="w3-col m3 w3-margin-top">
+                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+              </div>
+              <div class="w3-col m9">
+                  <div class="w3-container w3-margin-top">
+                      <table class="w3-table w3-tiny w3-bordered w3-text-white">
+                          <tr>
+                              <td><p>Ketua</p></td><td><p>: Riza Anisul Fu'ad</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                          </tr>
+                      </table>
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-white">
+              <div class="w3-container w3-green w3-padding w3-center" style="width:75%;">75%</div>
+          </div>
+      </div>
+      <div class="w3-third w3-container w3-margin-bottom">
+          <div class="w3-blue" style="height: 7%;">
+              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
+              <div class="w3-col m6 w3-right-align w3-padding">
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+              </div>
+          </div>
+          <div class="w3-container w3-blue">
+              <div class="w3-col m3 w3-margin-top">
+                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+              </div>
+              <div class="w3-col m9">
+                  <div class="w3-container w3-margin-top">
+                      <table class="w3-table w3-tiny w3-bordered w3-text-white">
+                          <tr>
+                              <td><p>Ketua</p></td><td><p>: Riza Anisul Fu'ad</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                          </tr>
+                      </table>
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-white">
+              <div class="w3-container w3-green w3-padding w3-center" style="width:50%;">50%</div>
+          </div>
+      </div>
+      <div class="w3-third w3-container w3-margin-bottom">
+          <div class="w3-blue" style="height: 7%;">
+              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
+              <div class="w3-col m6 w3-right-align w3-padding">
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+              </div>
+          </div>
+          <div class="w3-container w3-blue">
+              <div class="w3-col m3 w3-margin-top">
+                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+              </div>
+              <div class="w3-col m9">
+                  <div class="w3-container w3-margin-top">
+                      <table class="w3-table w3-tiny w3-bordered w3-text-white">
+                          <tr>
+                              <td><p>Ketua</p></td><td><p>: Riza Anisul Fu'ad</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
+                          </tr>
+                          <tr>
+                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                          </tr>
+                      </table>
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+          <div class="w3-white">
+              <div class="w3-container w3-green w3-padding w3-center" style="width:25%;">25%</div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Second Photo Grid-->
+  <!-- <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="<?php echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <img src="<?php //echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b>Lorem Ipsum</b></p>
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="<?php echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <img src="<?php //echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b>Lorem Ipsum</b></p>
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
     <div class="w3-third w3-container">
-      <img src="<?php echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <img src="<?php //echo base_url() ?>assets/img/gambar1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
         <p><b>Lorem Ipsum</b></p>
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Pagination -->
   <div class="w3-center w3-padding-32">
@@ -128,13 +304,20 @@
     </div>
   </div>
 
+  <!-- Line bridge -->
+  <div class="w3-container">
+      <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
+          <h2 class="w3-left-align">Profil Organisasi</h2>
+      </div>
+  </div>
+
   <!-- Images of Me -->
   <div class="w3-row-padding w3-padding-16" id="about">
-    <div class="w3-col m6">
-      <img src="<?php echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
-    </div>
-    <div class="w3-col m6">
-      <img src="<?php echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
+    <!-- <div class="w3-col m6">
+      <img src="<?php //echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
+    </div> -->
+    <div class="w3-center">
+      <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Me" style="width:20%">
     </div>
   </div>
 
