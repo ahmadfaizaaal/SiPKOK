@@ -87,7 +87,7 @@
               <div class=\"w3-col m6\"><h4 class=\"w3-left-align w3-margin-left\">".$programKerja->namaProker."</h4></div>
               <div class=\"w3-col m6 w3-right-align w3-padding\">
                   <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><i class=\"fa fa-pencil\"></i></button>
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><i class=\" fa fa-trash\"></i></button> 
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
               </div>
           </div>
           <div class=\"w3-container w3-blue\">
