@@ -63,5 +63,11 @@
 		$data["status"] = "";
 		$this->M_Akun->insertAkun("akun", $data);
 	}
+
+	public function logout(){
+		$judul = "SiPKOK";
+		$data['judul'] = $judul;		
+		$this->load->view('mainView', $data);
+	}
 }
 ?>
