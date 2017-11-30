@@ -67,7 +67,7 @@
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
         <div class="w3-col m4  w3-margin-top w3-right-align">
-            <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi"><i class="fa fa-pencil w3-margin-right"></i>Tambah program kerja</button>
+            <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
         </div>
     </div>
   </header>
@@ -85,10 +85,10 @@
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
-      <?php foreach ($proker as $programKerja) {
+      <?php foreach ($this->session->userdata('proker') as $programKerja) {
           $namaProker_cut = $programKerja->namaProker;
-          if (strlen($programKerja->namaProker) > 10) {
-              $namaProker_cut = substr($programKerja->namaProker, 0, 10)." ...";
+          if (strlen($programKerja->namaProker) > 15) {
+              $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
           }
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
