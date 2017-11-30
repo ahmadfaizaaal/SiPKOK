@@ -6,5 +6,10 @@
 		$query = $this->db->get('proker');
 		return $query->result();
 	}
+	public function selectProkerByOrganisasi($idOrganisasi){
+		$query = $this->db->where("idOrganisasi",$idOrganisasi);
+		$query = $this->db->get('proker');
+		return $query->result();
+	}
 }
 ?>
