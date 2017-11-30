@@ -6,6 +6,7 @@
 	public function index(){
 		echo "C_Organisasi";
 	}
+	
 	// public function getOrganisasi($namaOrganisasi){
 	// 	$organisasi = $this->M_Organisasi->selectOrganisasiByNama($namaOrganisasi);
 	// 	return $organisasi[0];
