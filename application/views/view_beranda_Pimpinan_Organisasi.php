@@ -80,14 +80,17 @@
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
       <?php foreach ($proker as $programKerja) {
-        # code...
+          $namaProker_cut = $programKerja->namaProker;
+          if (strlen($programKerja->namaProker) > 10) {
+              $namaProker_cut = substr($programKerja->namaProker, 0, 10)." ...";
+          }
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
           <div class=\"w3-blue\" style=\"height: 7%;\">
-              <div class=\"w3-col m6\"><h4 class=\"w3-left-align w3-margin-left\">".$programKerja->namaProker."</h4></div>
-              <div class=\"w3-col m6 w3-right-align w3-padding\">
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><i class=\"fa fa-pencil\"></i></button>
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
+              <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
+              <div class=\"w3-col m5 w3-right-align w3-padding\">
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Ubah program kerja\"><i class=\"fa fa-pencil\"></i></button>
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
               </div>
           </div>
           <div class=\"w3-container w3-blue\">
