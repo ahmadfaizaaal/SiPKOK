@@ -16,7 +16,7 @@
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-amber w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-center">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-blue" title="close menu">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-tiny w3-padding w3-hover-orange" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
     <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:80%;" class="w3-round"><br><br>
@@ -48,13 +48,13 @@
   <!-- Header -->
   <header id="portfolio">
     <a href="#"><img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-blue" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-blue" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
         <!-- <h1><b>My Portfolio</b></h1> -->
         <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing4.png" style="width:100%;" class="w3-round"></h1>
         <div class="w3-bar w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
-            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil</button>
-            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Proker</button>
+            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil Organisasi</button>
+            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Program Kerja</button>
             <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
         </div>
         <h2 class="w3-left-align">Program Kerja</h2>
@@ -67,13 +67,13 @@
           <div class="w3-blue" style="height: 7%;">
               <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
               <div class="w3-col m6 w3-right-align w3-padding">
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Ubah program kerja"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Hapus program kerja"><i class=" fa fa-trash"></i></button> 
               </div>
           </div>
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
-                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+                  <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
               </div>
               <div class="w3-col m9">
                   <div class="w3-container w3-margin-top">
@@ -100,13 +100,13 @@
           <div class="w3-blue" style="height: 7%;">
               <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
               <div class="w3-col m6 w3-right-align w3-padding">
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Ubah program kerja"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Hapus program kerja"><i class=" fa fa-trash"></i></button> 
               </div>
           </div>
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
-                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+                  <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
               </div>
               <div class="w3-col m9">
                   <div class="w3-container w3-margin-top">
@@ -133,13 +133,13 @@
           <div class="w3-blue" style="height: 7%;">
               <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
               <div class="w3-col m6 w3-right-align w3-padding">
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Ubah program kerja"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Hapus program kerja"><i class=" fa fa-trash"></i></button> 
               </div>
           </div>
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
-                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+                  <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
               </div>
               <div class="w3-col m9">
                   <div class="w3-container w3-margin-top">
@@ -168,15 +168,15 @@
   <div class="w3-row-padding">
       <div class="w3-third w3-container w3-margin-bottom">
           <div class="w3-blue" style="height: 7%;">
-              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
+              <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">ELSE IF</h4></div>
               <div class="w3-col m6 w3-right-align w3-padding">
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Ubah program kerja"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Hapus program kerja"><i class=" fa fa-trash"></i></button> 
               </div>
           </div>
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
-                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+                  <img src="<?php echo base_url() ?>assets/img/NP.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
               </div>
               <div class="w3-col m9">
                   <div class="w3-container w3-margin-top">
@@ -188,7 +188,7 @@
                               <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
                           </tr>
                           <tr>
-                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                              <td><p>Jenis</p></td><td><p>: Non Proposal</p></td>
                           </tr>
                       </table>
                       <p></p>
@@ -203,13 +203,13 @@
           <div class="w3-blue" style="height: 7%;">
               <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
               <div class="w3-col m6 w3-right-align w3-padding">
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Ubah program kerja"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Hapus program kerja"><i class=" fa fa-trash"></i></button> 
               </div>
           </div>
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
-                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+                  <img src="<?php echo base_url() ?>assets/img/NP.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
               </div>
               <div class="w3-col m9">
                   <div class="w3-container w3-margin-top">
@@ -221,7 +221,7 @@
                               <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
                           </tr>
                           <tr>
-                              <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                              <td><p>Jenis</p></td><td><p>: Non Proposal</p></td>
                           </tr>
                       </table>
                       <p></p>
@@ -236,13 +236,13 @@
           <div class="w3-blue" style="height: 7%;">
               <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
               <div class="w3-col m6 w3-right-align w3-padding">
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class="fa fa-pencil"></i></button>
-                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4"><i class=" fa fa-trash"></i></button> 
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Ubah program kerja"><i class="fa fa-pencil"></i></button>
+                  <button class="w3-btn w3-tiny w3-red w3-hover-white w3-card-4" title="Hapus program kerja"><i class=" fa fa-trash"></i></button> 
               </div>
           </div>
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
-                  <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+                  <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
               </div>
               <div class="w3-col m9">
                   <div class="w3-container w3-margin-top">
@@ -305,14 +305,14 @@
   </div>
 
   <!-- Line bridge -->
-  <div class="w3-container">
+  <div class="w3-container" id="about">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
           <h2 class="w3-left-align">Profil Organisasi</h2>
       </div>
   </div>
 
   <!-- Images of Me -->
-  <div class="w3-row-padding w3-padding-16" id="about">
+  <div class="w3-row-padding w3-padding-16">
     <!-- <div class="w3-col m6">
       <img src="<?php //echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
     </div> -->
@@ -322,13 +322,36 @@
   </div>
 
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <h4><b>About Me</b></h4>
-    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-    <hr>
+    <!-- <h4><b>Nama Organisasi</b></h4> -->
+    <table class="w3-table w3-bordered">
+        <tr>
+            <td style="width: 20%;"><h5>Nama Organisasi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 78%;"><h5>HMIF</h5></td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"><h5>Kepanjangan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 78%;"><h5>Himpunan Mahasiswa Informatika</h5></td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"><h5>Nama Ketua</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 78%;"><h5>Ahmad Faizal</h5></td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"><h5>Visi Misi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 78%;"><h5>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</h5></td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"><h5>Struktur Organisasi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 78%;"><h5><div class="w3-card-4"><img src="<?php echo base_url() ?>assets/img/struktur.png" alt="Struktur" style="width:100%"></div></h5></td>
+        </tr>
+        <tr>
+            <td style="width: 20%;"><h5>Progress Organisasi</h5></td><td style="width: 2%;"><h5>:</h5></td>
+            <td style="width: 78%;">
+                <div class="w3-white w3-margin-top">
+                    <div class="w3-container w3-green w3-padding w3-center" style="width:75%">75%</div>
+                </div>
+            </td>
+        </tr>
+    </table>
     
-    <h4>Technical Skills</h4>
+    <!-- <h4>Technical Skills</h4> -->
     <!-- Progress bars / Skills -->
-    <p>Photography</p>
+    <!-- <p>Photography</p>
     <div class="w3-white">
       <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
     </div>
@@ -345,11 +368,11 @@
         <i class="fa fa-download w3-margin-right"></i>Download Resume
       </button>
     </p>
-    <hr>
+    <hr> -->
     
-    <h4>How much I charge</h4>
+    <!-- <h4>How much I charge</h4> -->
     <!-- Pricing Tables -->
-    <div class="w3-row-padding" style="margin:0 -16px">
+    <!-- <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third w3-margin-bottom">
         <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
           <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
@@ -401,10 +424,10 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
   
   <!-- Contact Section -->
-  <div class="w3-container w3-padding-large w3-blue">
+  <!-- <div class="w3-container w3-padding-large w3-blue">
     <h4 id="contact"><b>Contact Me</b></h4>
     <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
       <div class="w3-third w3-dark-blue">
@@ -435,11 +458,18 @@
         <input class="w3-input w3-border" type="text" name="Message" required>
       </div>
       <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
-    </form>
+    </form> -->
+  </div>
+
+  <!-- Line bridge -->
+  <div class="w3-container" id="about">
+      <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
+          <h2 class="w3-left-align">Dokumen</h2>
+      </div>
   </div>
 
   <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-dark-blue">
+  <!-- <footer class="w3-container w3-padding-32 w3-blue">
   <div class="w3-row-padding">
     <div class="w3-third">
       <h3>FOOTER</h3>
@@ -475,9 +505,9 @@
     </div>
 
   </div>
-  </footer>
+  </footer> -->
   
-  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+  <div class="w3-black w3-center w3-padding-24">Dibuat oleh kelompok 1 RPL-I</div>
 
 <!-- End page content -->
 </div>
