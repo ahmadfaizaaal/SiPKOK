@@ -13,5 +13,11 @@
 		$hasil = $query->result();		
 		return $hasil[0]->idOrganisasi;
 	}
+	public function selectOrganisasi($idOrganisasi){
+		$query = $this->db->where("idOrganisasi",$idOrganisasi);
+		$query = $this->db->get('organisasi');
+		$hasil = $query->result();
+		return $hasil[0];
+	}
 }
 ?>
