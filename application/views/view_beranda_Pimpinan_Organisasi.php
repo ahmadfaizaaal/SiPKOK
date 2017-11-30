@@ -59,9 +59,9 @@
         <!-- <h1><b>My Portfolio</b></h1> -->
         <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing4.png" style="width:100%;" class="w3-round"></h1>
         <div class="w3-bar w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
-            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil Organisasi</button>
-            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Program Kerja</button>
-            <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
+        <a href="#contact"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Program Kerja</button></a>
+            <a href="#contact"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil Organisasi</button></a>
+            <a href="#contact"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button></a>
         </div>
         <div class="w3-col m8">
             <h2 class="w3-left-align">Program Kerja</h2>
@@ -120,7 +120,7 @@
                   </div>
               </div>
           </div>
-          <div class=\"w3-white\">
+          <div class=\"w3-light-gray\">
               <div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:25%;\">25%</div>
           </div>
       </div>";
