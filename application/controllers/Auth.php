@@ -1,17 +1,17 @@
 // <?php class Auth extends CI_Controller {
-// 	public function __construct(){
-// 		parent::__construct();
-// 		$this->load->model('M_Organisasi');
-// 		$this->load->model('M_Akun');
-// 		// $this->load->controller("C_Organisasi");
-// 	}
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('M_Organisasi');
+		$this->load->model('M_Akun');
+		// $this->load->controller("C_Organisasi");
+	}
 
-// 	public function index() {
-// 		$judul = "SiPKOK";
-// 		$data['judul'] = $judul;		
-// 		$this->load->view('mainView', $data);		
-// 		// $this->load->model('M_Organisasi');
-// 	}
+	public function index() {
+		$judul = "SiPKOK";
+		$data['judul'] = $judul;		
+		$this->load->view('mainView', $data);		
+		// $this->load->model('M_Organisasi');
+	}
 
 // 	public function register() {
 // 		$judul = "SiPKOK-Register";
@@ -59,5 +59,5 @@
 // 		$data["status"] = "";
 // 		$this->M_Akun->insertAkun("akun", $data);
 // 	}
-// }
+}
 // ?>

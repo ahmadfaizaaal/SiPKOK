@@ -9,8 +9,8 @@
 
 	public function index() {
 		$judul = "SiPKOK";
-		$data['judul'] = $judul;		
-		$this->load->view('mainView', $data);		
+		$data['judul'] = $judul;
+		$this->load->view('view_beranda_Pimpinan_Organisasi', $data);		
 		// $this->load->model('M_Organisasi');
 	}
 
@@ -33,12 +33,14 @@
 		$password = $this->input->post("password_login");
 		$count = $this->M_Akun->countAkun($email);
 		$akun = $this->M_Akun->selectAkun($email);		
-		$data['akunAktif'] = $akun[0];
+		// $data['akunAktif'] = $akun[0];
 		$data['judul'] = "Beranda";
-		$data['proker'] = $this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi);
+		// $data['proker'] = $this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi);
+		$this->session->set_userdata(array('akunAktif'=>$akun[0], 'proker'=>$this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi)),true);
 		if ($count > 0){
 			if ($akun[0]->password == $password){				
-				$this->load->view('view_beranda_Pimpinan_Organisasi',$data);
+				// $this->load->view('view_beranda_Pimpinan_Organisasi',$data);
+				redirect(base_url());
 			} else {
 				echo "Password Salah";
 			}
@@ -66,8 +68,10 @@
 
 	public function logout(){
 		$judul = "SiPKOK";
-		$data['judul'] = $judul;		
-		$this->load->view('mainView', $data);
+		$data['judul'] = $judul;
+		$this->session->sess_destroy();
+		// $this->load->view('mainView', $data);
+		redirect(base_url());
 	}
 }
 ?>

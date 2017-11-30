@@ -1,3 +1,9 @@
+<?php
+    $isLogin = $this->session->userdata( 'akunAktif' );
+    if($isLogin==""){
+      redirect( base_url().'Auth');
+    }
+?>
 <html>
 <head>
     <title><?php echo $judul; ?></title>
@@ -25,9 +31,9 @@
   </div>
   <div class="w3-bar-block">
     <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><?php echo $akunAktif->nama?></a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i><?php echo $akunAktif->jabatan?></a>
-    <a href="<?php echo base_url('C_Akun/index') ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><?php echo $this->session->userdata('akunAktif')->nama?></a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i><?php echo $this->session->userdata('akunAktif')->jabatan?></a>
+    <a href="<?php echo base_url('Auth/index') ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
   </div>
   <!-- <div class="w3-panel w3-large">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -74,7 +80,7 @@
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
-      <?php foreach ($proker as $programKerja) {
+      <?php foreach ($this->session->userdata('proker') as $programKerja) {
         # code...
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">

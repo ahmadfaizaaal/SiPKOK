@@ -11,7 +11,8 @@
 	public function hapusProker($idProker){
 		$this->db->where('idProker', $idProker);
 		$this->db->delete('proker');
-		redirect(base_url('C_Akun/index'));
+		$this->session->set_userdata(array('proker'=>$this->M_Proker->selectProkerByOrganisasi($this->session->userdata('akunAktif')->organisasi)),true);
+		redirect(base_url());
 		// $this->load->view('view_beranda_Pimpinan_Organisasi', $data);
 		// $this->
 	}
