@@ -25,8 +25,8 @@
   </div>
   <div class="w3-bar-block">
     <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>AHMAD FAIZAL</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i>KETUA HIMPUNAN</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><?php echo $akunAktif->nama?></a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i><?php echo $akunAktif->jabatan?></a>
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
   </div>
   <!-- <div class="w3-panel w3-large">

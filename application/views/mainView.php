@@ -20,7 +20,7 @@
 
 
 		<div id="modal-login" class="modal">
-	        <form class="modal-content animate" action="<?php echo base_url('Auth/login') ?>" method="post">
+	        <form class="modal-content animate" action="<?php echo base_url('C_Akun/login') ?>" method="post">
 		        <div class="imgcontainer">
 		            <span onclick="document.getElementById('modal-login').style.display='none'" class="close" title="Close Modal">&times;</span>
 		            <img src="<?php echo base_url() ?>assets/img/detail-logo.png" alt="Logo SiPKOK" width="350px" height="110px">
@@ -42,7 +42,7 @@
 
 	          	<div class="container" style="background-color:#f1f1f1; width: 100%;">
 	            	<button type="button" style="color: white; width: auto; padding: 10px 8px; background-color: #f44336;" onclick="document.getElementById('modal-login').style.display='none'" class="cancelbtn">Cancel</button>
-	            	<span class="psw">Haven't an account? <a href="<?php echo base_url('Auth/register') ?>">Register!</a></span>
+	            	<span class="psw">Haven't an account? <a href="<?php echo base_url('C_Akun/register') ?>">Register!</a></span>
 	          	</div>
 	        </form>
 	    </div>
