@@ -57,7 +57,12 @@
             <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Program Kerja</button>
             <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
         </div>
-        <h2 class="w3-left-align">Program Kerja</h2>
+        <div class="w3-col m8">
+            <h2 class="w3-left-align">Program Kerja</h2>
+        </div>
+        <div class="w3-col m4  w3-margin-top w3-right-align">
+            <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi"><i class="fa fa-pencil w3-margin-right"></i>Tambah program kerja</button>
+        </div>
     </div>
   </header>
   
@@ -322,7 +327,12 @@
   <!-- Line bridge -->
   <div class="w3-container" id="about">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
-          <h2 class="w3-left-align">Profil Organisasi</h2>
+          <div class="w3-col m8">
+              <h2 class="w3-left-align">Profil Organisasi</h2>
+          </div>
+          <div class="w3-col m4  w3-margin-top w3-right-align">
+              <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button>
+          </div>
       </div>
   </div>
 
