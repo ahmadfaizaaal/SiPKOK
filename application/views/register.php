@@ -38,13 +38,13 @@
                             <option value="Sekretaris Organisasi">Sekretaris Organisasi</option>                            
                         </select>
                         <br>
-                        <input type="text" class="form" placeholder="Nama Lengkap" name="username" required>
+                        <input type="text" class="form" placeholder="Nama Lengkap" name="username" autocomplete="off" required>
                         <br>
-                        <input type="text" class="form" placeholder="Alamat Email" name="email" required>
+                        <input type="text" class="form" placeholder="Alamat Email" name="email" autocomplete="off" required>
                         <br>
-                        <input type="password" class="form" placeholder="Type Password" name="password" required>
+                        <input type="password" class="form" placeholder="Type Password" name="password" autocomplete="off" required>
                         <br>
-                        <input type="password" class="form" placeholder="Re-type Password" name="repassword" required>
+                        <input type="password" class="form" placeholder="Re-type Password" name="repassword" autocomplete="off" required>
                         <br>
                         <input type="submit" value="Batal" style="background-color: #F44336; color: white; padding: 14px 10px; margin: 8px 0;border: none;cursor: pointer;width: 48%;" class="batal">
                         <input type="submit" value="Kirim" style="background-color: #4CAF50; color: white; padding: 14px 10px; margin: 8px 0;border: none;cursor: pointer;width: 48%;" class="kirim" name="kirim">
@@ -53,7 +53,7 @@
                 <div class="notifcontainer" style="display:none">
                     <h2>Pendaftaran Berhasil</h2>
                     <p>Periksa email anda untuk pemberitahuan lebih lanjut!</p>
-                    <a href="<?php echo base_url()?>login">Click disini untuk login</a>
+                    <a href="<?php echo base_url()?>login">Klik disini untuk login!</a>
                 </div>
             </div>
             <div class="col-md-2"></div>
