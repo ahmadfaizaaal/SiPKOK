@@ -101,7 +101,14 @@
           </div>
           <div class=\"w3-container w3-blue\">
               <div class=\"w3-col m3 w3-margin-top\">
-                  <img src=\"".base_url()."assets/img/BP.png\" alt=\"Norway\" style=\"width:100%\"class=\"w3-hover-opacity\">
+                  <img src=\"";
+                  if ($programKerja->jenis == 0) {
+                    echo base_url()."assets/img/BP.png";                    
+                  } else {
+                    echo base_url()."assets/img/NP.png";
+                  }
+                  echo 
+                  "\" alt=\"Norway\" style=\"width:100%\"class=\"w3-hover-opacity\">
               </div>
               <div class=\"w3-col m9\">
                   <div class=\"w3-container w3-margin-top\">
@@ -113,7 +120,14 @@
                               <td><p>Waktu</p></td><td><p>: ".$programKerja->waktu."</p></td>
                           </tr>
                           <tr>
-                              <td><p>Jenis</p></td><td><p>: ".$programKerja->jenis."</p></td>
+                              <td><p>Jenis</p></td><td><p>: ";
+                              if ($programKerja->jenis == 0) {
+                                echo "Berproposal";
+                              } else {
+                                echo "Tanpa Proposal";
+                              }
+                              echo
+                              "</p></td>
                           </tr>
                       </table>
                       <p></p>
