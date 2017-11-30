@@ -64,6 +64,12 @@
             <button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button>
         </div>
         <h2 class="w3-left-align">Program Kerja</h2>
+        <div class="w3-col m8">
+            <h2 class="w3-left-align">Program Kerja</h2>
+        </div>
+        <div class="w3-col m4  w3-margin-top w3-right-align">
+            <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi"><i class="fa fa-pencil w3-margin-right"></i>Tambah program kerja</button>
+        </div>
     </div>
   </header>
   
@@ -82,6 +88,11 @@
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
       <?php foreach ($this->session->userdata('proker') as $programKerja) {
         # code...
+      <?php foreach ($proker as $programKerja) {
+          $namaProker_cut = $programKerja->namaProker;
+          if (strlen($programKerja->namaProker) > 10) {
+              $namaProker_cut = substr($programKerja->namaProker, 0, 10)." ...";
+          }
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
           <div class=\"w3-blue\" style=\"height: 7%;\">
@@ -89,6 +100,10 @@
               <div class=\"w3-col m6 w3-right-align w3-padding\">
                   <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><i class=\"fa fa-pencil\"></i></button>
                   <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
+              <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
+              <div class=\"w3-col m5 w3-right-align w3-padding\">
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Ubah program kerja\"><i class=\"fa fa-pencil\"></i></button>
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
               </div>
           </div>
           <div class=\"w3-container w3-blue\">
@@ -329,6 +344,12 @@
   <div class="w3-container" id="about">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
           <h2 class="w3-left-align">Profil Organisasi</h2>
+          <div class="w3-col m8">
+              <h2 class="w3-left-align">Profil Organisasi</h2>
+          </div>
+          <div class="w3-col m4  w3-margin-top w3-right-align">
+              <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button>
+          </div>
       </div>
   </div>
 
