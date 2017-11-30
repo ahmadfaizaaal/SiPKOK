@@ -122,6 +122,8 @@
           </div>
           <div class=\"w3-light-gray\">
               <div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:25%;\">25%</div>
+          <div class=\"w3-light-gray w3-small\">
+              <div class=\"w3-container w3-padding-small w3-green w3-center\" style=\"width:25%;\">25%</div>
           </div>
       </div>";
       } ?>
@@ -500,6 +502,13 @@
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
           <h2 class="w3-left-align">Dokumen</h2>
       </div>
+      <div class="w3-container">
+            <form class="w3-container">
+              <p>
+              <input class="w3-input" type="text">
+              <label>First Name</label></p>
+            </form>
+      </div>
   </div>
 
   <!-- Footer -->
@@ -542,6 +551,7 @@
   </footer> -->
   
   <div class="w3-black w3-center w3-padding-24">Dibuat oleh kelompok 1 RPL-I</div>
+  <div class="w3-red w3-center w3-padding-16">Dibuat oleh kelompok 1 RPL-I</div>
 
 <!-- End page content -->
 </div>
