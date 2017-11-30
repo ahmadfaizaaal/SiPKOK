@@ -28,6 +28,9 @@
     <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>AHMAD FAIZAL</a> 
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i>KETUA HIMPUNAN</a>
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><?php echo $akunAktif->nama?></a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i><?php echo $akunAktif->jabatan?></a>
+    <a href="<?php echo base_url('C_Akun/index') ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
   </div>
   <!-- <div class="w3-panel w3-large">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -74,18 +77,40 @@
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity">
+=======
+      <?php foreach ($proker as $programKerja) {
+        # code...
+      echo 
+      "<div class=\"w3-third w3-container w3-margin-bottom\">
+          <div class=\"w3-blue\" style=\"height: 7%;\">
+              <div class=\"w3-col m6\"><h4 class=\"w3-left-align w3-margin-left\">".$programKerja->namaProker."</h4></div>
+              <div class=\"w3-col m6 w3-right-align w3-padding\">
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><i class=\"fa fa-pencil\"></i></button>
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\"><i class=\" fa fa-trash\"></i></button> 
               </div>
               <div class="w3-col m9">
                   <div class="w3-container w3-margin-top">
                       <table class="w3-table w3-tiny w3-bordered w3-text-white">
+          </div>
+          <div class=\"w3-container w3-blue\">
+              <div class=\"w3-col m3 w3-margin-top\">
+                  <img src=\"".base_url()."assets/img/logo-hmif2.png\" alt=\"Norway\" style=\"width:100%\"class=\"w3-hover-opacity\">
+>>>>>>> e04eb7f682d89866d2a9c06ebb071c05d068422c
+              </div>
+              <div class=\"w3-col m9\">
+                  <div class=\"w3-container w3-margin-top\">
+                      <table class=\"w3-table w3-tiny w3-bordered w3-text-white\">
                           <tr>
                               <td><p>Ketua</p></td><td><p>: Riza Anisul Fu'ad</p></td>
+                              <td><p>Ketua</p></td><td><p>: ".$programKerja->pelaksana."</p></td>
                           </tr>
                           <tr>
                               <td><p>Waktu</p></td><td><p>: Oktober 2017</p></td>
+                              <td><p>Waktu</p></td><td><p>: ".$programKerja->waktu."</p></td>
                           </tr>
                           <tr>
                               <td><p>Jenis</p></td><td><p>: Berproposal</p></td>
+                              <td><p>Jenis</p></td><td><p>: ".$programKerja->jenis."</p></td>
                           </tr>
                       </table>
                       <p></p>
@@ -94,9 +119,14 @@
           </div>
           <div class="w3-white">
               <div class="w3-container w3-green w3-padding w3-center" style="width:25%;">25%</div>
+          <div class=\"w3-white\">
+              <div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:25%;\">25%</div>
           </div>
       </div>
       <div class="w3-third w3-container w3-margin-bottom">
+      </div>";
+      } ?>
+      <!--- <div class="w3-third w3-container w3-margin-bottom">
           <div class="w3-blue" style="height: 7%;">
               <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">IF ELSE</h4></div>
               <div class="w3-col m6 w3-right-align w3-padding">
@@ -166,6 +196,7 @@
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding">
+  <!--- <div class="w3-row-padding">
       <div class="w3-third w3-container w3-margin-bottom">
           <div class="w3-blue" style="height: 7%;">
               <div class="w3-col m6"><h4 class="w3-left-align w3-margin-left">ELSE IF</h4></div>
@@ -265,6 +296,7 @@
               <div class="w3-container w3-green w3-padding w3-center" style="width:25%;">25%</div>
           </div>
       </div>
+      </div> -->
   </div>
 
   <!-- Second Photo Grid-->

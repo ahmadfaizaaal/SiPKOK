@@ -23,6 +23,7 @@
                     <img src="<?php echo base_url() ?>assets/img/detail-logo.png" alt="Logo SiPKOK" width="350px" height="100px">
                     <hr style="border-color: #616161;">
                     <form action="<?php echo base_url('Auth/doRegister') ?>" method="post">
+                    <form action="<?php echo base_url('C_Akun/doRegister') ?>" method="post">
                         <!-- <input type="text" class="formNama" placeholder="Nama Depan" name="namadepan" required> -->
                         <select id="cb-jenis-organisasi" class="formNama" name="organisasi">
                             <option value="" disabled selected>Jenis Organisasi</option>
