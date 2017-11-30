@@ -36,7 +36,11 @@
 		// $data['akunAktif'] = $akun[0];
 		$data['judul'] = "Beranda";
 		// $data['proker'] = $this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi);
-		$this->session->set_userdata(array('akunAktif'=>$akun[0], 'proker'=>$this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi)),true);
+		$this->session->set_userdata(array(
+			'akunAktif'=>$akun[0], 
+			'proker'=>$this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi),
+			'organisasi'=>$this->M_Organisasi->selectOrganisasi($akun[0]->organisasi)),
+		true);
 		if ($count > 0){
 			if ($akun[0]->password == $password){				
 				// $this->load->view('view_beranda_Pimpinan_Organisasi',$data);

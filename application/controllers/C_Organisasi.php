@@ -7,8 +7,8 @@
 		echo "C_Organisasi";
 	}
 	
-	// public function getOrganisasi($namaOrganisasi){
-	// 	$organisasi = $this->M_Organisasi->selectOrganisasiByNama($namaOrganisasi);
+	// public function getOrganisasi($idOrganisasi){
+	// 	$organisasi = $this->M_Organisasi->selectOrganisasi($idOrganisasi);
 	// 	return $organisasi[0];
 	// }
 }

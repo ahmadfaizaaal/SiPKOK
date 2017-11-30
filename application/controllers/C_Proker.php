@@ -16,6 +16,5 @@
 		// $this->load->view('view_beranda_Pimpinan_Organisasi', $data);
 		// $this->
 	}
-
 }
 ?>
