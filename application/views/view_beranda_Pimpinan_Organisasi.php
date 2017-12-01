@@ -58,19 +58,63 @@
     <div class="w3-container">
         <!-- <h1><b>My Portfolio</b></h1> -->
         <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing4.png" style="width:100%;" class="w3-round"></h1>
-        <div class="w3-bar w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom">
-        <a href="#contact"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Program Kerja</button></a>
-            <a href="#contact"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil Organisasi</button></a>
-            <a href="#contact"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button></a>
+        <div class="w3-bar w3-bottombar w3-border-white w3-padding-16 w3-margin-bottom" id="proker">
+        <a href="#proker"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-tasks w3-margin-right"></i>Program Kerja</button></a>
+        <a href="#profil"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil Organisasi</button></a>
+        <a href="#dokumen"><button class="w3-bar-item w3-button w3-amber w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button></a>
         </div>
         <div class="w3-col m8">
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
         <div class="w3-col m4  w3-margin-top w3-right-align">
-            <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
+            <button onclick="document.getElementById('tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
         </div>
     </div>
   </header>
+
+  <!-- Modal tambah program kerja -->
+  <div id="tambahproker" class="w3-modal">
+      <div class="w3-modal-content w3-animate-top w3-card-4">
+          <div class="w3-card-4">
+            <div class="w3-container w3-green">
+                <h3><b>Tambah program kerja</b></h3>
+                <span onclick="document.getElementById('tambahproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
+            </div>
+            <form class="w3-container" action="upload.php" method="post" enctype="multipart/form-data" name="form1">
+                <table class="w3-table w3-bordered-white">
+                    <tr><td></td></tr>
+                    <tr>
+                        <td style="width: 33%;"><h5>Nama program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text"></h5></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;"><h5>Nama ketua pelaksana</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text"></h5></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;"><h5>Perkiraan waktu pelaksanaan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text"></h5></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;"><h5>Jenis program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5>
+                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;">
+                              <option value="Berproposal">Berproposal</option>
+                              <option value="Tanpa proposal">Tanpa proposal</option>
+                            </select>
+                        </h5></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;"><h5>Unggah proposal</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="resume" id="resume"></h5></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;"><h5>Unggah LPJ</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="resume" id="resume"></h5></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card">Tambahkan</button></td>
+                    </tr>
+                    <tr><td></td></tr>
+                </table>
+            </form>
+          </div>  
+      </div>
+  </div>
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
@@ -154,7 +198,7 @@
   </div>
 
   <!-- Line bridge -->
-  <div class="w3-container" id="about">
+  <div class="w3-container" id="profil">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
           <div class="w3-col m8">
               <h2 class="w3-left-align">Profil Organisasi</h2>
@@ -210,18 +254,107 @@
     </table>    
   </div>
 
+<!-- DOKUMEN -->
   <!-- Line bridge -->
-  <div class="w3-container" id="about">
+  <div class="w3-container" id="dokumen">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
+          <div class="w3-col m8">
+              <h2 class="w3-left-align">Dokumen</h2>
+          </div>
+          <div class="w3-col m4 w3-right-align">
+              <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
+                  <div class="w3-col m10">
+                      <form class="w3-white">
+                          <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
+                      </form>
+                  </div>
+                  <div class="w3-col m2 w3-margin-top">
+                      <button class="w3-btn w3-round w3-small w3-amber w3-hover-orange w3-card-4" title="Cari dokumen"><a href="#"><i class=" fa fa-search"></i></a></button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Content dokumen -->
+      <!-- Proposal -->
+      <h4>Proposal Kegiatan Organisasi</h4>
+      <div align="right">
+          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
+              <div class="w3-col m10 w3-margin-top">
+                  <div class="w3-col m1 w3-center w3-margin-bottom">
+                      <img src="<?php echo base_url() ?>assets/img/pdf.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
+                  </div>
+                  <div class="w3-col m11 w3-left-align"><h6>Proposal program binaan mahasiswa baru Informatika 2017</h6></div>
+              </div>
+              <div class="w3-col m2 w3-margin-top w3-right-align">
+                  <button class="w3-btn w3-tiny w3-green w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-check w3-margin-right"></i>Disetujui</button>
+              </div>
+          </div>
+          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
+              <div class="w3-col m10 w3-margin-top">
+                  <div class="w3-col m1 w3-center w3-margin-bottom">
+                      <img src="<?php echo base_url() ?>assets/img/pdf.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
+                  </div>
+                  <div class="w3-col m11 w3-left-align"><h6>Proposal kegiatan studi ekskursif Informatika 2017</h6></div>
+              </div>
+              <div class="w3-col m2 w3-margin-top w3-right-align">
+                  <button class="w3-btn w3-tiny w3-red w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-close w3-margin-right"></i>Ditolak</button>
+              </div>
+          </div>
+          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
+              <div class="w3-col m10 w3-margin-top">
+                  <div class="w3-col m1 w3-center w3-margin-bottom">
+                      <img src="<?php echo base_url() ?>assets/img/pdf.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
+                  </div>
+                  <div class="w3-col m11 w3-left-align"><h6>Proposal kegiatan PEMILWA Informatika 2017</h6></div>
+              </div>
+              <div class="w3-col m2 w3-margin-top w3-right-align">
+                  <button class="w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-hourglass-half w3-margin-right"></i>Dalam proses</button>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Laporan pertanggung jawaban -->
+      <h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
+      <div align="right">
+          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
+              <div class="w3-col m10 w3-margin-top">
+                  <div class="w3-col m1 w3-center w3-margin-bottom">
+                      <img src="<?php echo base_url() ?>assets/img/word.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
+                  </div>
+                  <div class="w3-col m11 w3-left-align"><h6>LPJ program binaan mahasiswa baru Informatika 2017</h6></div>
+              </div>
+              <div class="w3-col m2 w3-margin-top w3-right-align">
+                  <button class="w3-btn w3-tiny w3-green w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-check w3-margin-right"></i>Disetujui</button>
+              </div>
+          </div>
+          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
+              <div class="w3-col m10 w3-margin-top">
+                  <div class="w3-col m1 w3-center w3-margin-bottom">
+                      <img src="<?php echo base_url() ?>assets/img/word.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
+                  </div>
+                  <div class="w3-col m11 w3-left-align"><h6>LPJ kegiatan PEMILWA Informatika 2017</h6></div>
+              </div>
+              <div class="w3-col m2 w3-margin-top w3-right-align">
+                  <button class="w3-btn w3-tiny w3-green w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-check w3-margin-right"></i>Disetujui</button>
+              </div>
+          </div>
+      </div>
+      <br>
+
+      <!-- <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
           <h2 class="w3-left-align">Dokumen</h2>
       </div>
-      <div class="w3-container">
-            <form class="w3-container">
-              <p>
-              <input class="w3-input" type="text">
-              <label>First Name</label></p>
-            </form>
+      <div class="w3-col m4 w3-amber"> </div>
+      <div class="w3-col m4 ">
+          <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
+              <form class="w3-white">
+                  <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
+              </form>
+              <button class="w3-btn w3-round-large w3-small w3-amber w3-hover-orange w3-card-4" title="Hapus program kerja"><a href="#"><i class=" fa fa-search"></i></a></button>
+          </div>
       </div>
+      <div class="w3-col m4 w3-blue"></div> -->
   </div>
 
   <!-- Footer -->
