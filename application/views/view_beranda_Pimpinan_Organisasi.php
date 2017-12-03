@@ -148,7 +148,7 @@
           <div class=\"w3-container w3-blue\">
               <div class=\"w3-col m3 w3-margin-top\">
                   <img src=\"";
-                  if ($programKerja->jenis == 0) {
+                  if ($programKerja->jenisProker == 0) {
                     echo base_url()."assets/img/BP.png";                    
                   } else {
                     echo base_url()."assets/img/NP.png";
@@ -167,7 +167,7 @@
                           </tr>
                           <tr>
                               <td><p>Jenis</p></td><td><p>: ";
-                              if ($programKerja->jenis == 0) {
+                              if ($programKerja->jenisProker == 0) {
                                 echo "Berproposal";
                               } else {
                                 echo "Tanpa Proposal";
@@ -180,9 +180,40 @@
                   </div>
               </div>
           </div>
-          <div class=\"w3-light-gray w3-small\">
-              <div class=\"w3-container w3-padding-small w3-green w3-center\" style=\"width:25%;\">25%</div>
-          </div>
+          <div class=\"w3-light-gray w3-small w3-center \">";
+            if ($programKerja->statProposal == 0){
+              echo "0%";
+            } else {
+              echo "<div class=\"w3-container w3-padding-small w3-green w3-center\" style=\"width:";
+              if ($programKerja->statProposal == 2){
+                if ($programKerja->statLpj == 2){
+                  echo "100%";
+                } else if ($programKerja->statLpj == 1){
+                  echo "75%";
+                } else {
+                  echo "50%";
+                }
+              } else if ($programKerja->statProposal == 1){
+                echo "25%";
+              } else {
+                echo "0%";
+              }
+              echo ";\">";
+              if ($programKerja->statProposal == 2){
+                if ($programKerja->statLpj == 2){
+                  echo "100% ";
+                } else if ($programKerja->statLpj == 1){
+                  echo "75%";
+                } else {
+                  echo "50%";
+                }
+              } else if ($programKerja->statProposal == 1){
+                echo "25%";
+              } 
+              echo "</div>";
+            }
+          echo "</div>
+
       </div>";
       } ?>      
   </div>
