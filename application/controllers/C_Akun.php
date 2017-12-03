@@ -4,6 +4,7 @@
 		$this->load->model('M_Organisasi');
 		$this->load->model('M_Akun');
 		$this->load->model('M_Proker');
+		$this->load->model('M_Dokumen');
 		// $this->load->controller("C_Organisasi");
 	}
 
@@ -32,14 +33,19 @@
 		$email = $this->input->post("email_login");
 		$password = $this->input->post("password_login");
 		$count = $this->M_Akun->countAkun($email);
-		$akun = $this->M_Akun->selectAkun($email);		
+		$akun = $this->M_Akun->selectAkun($email);
 		// $data['akunAktif'] = $akun[0];
 		$data['judul'] = "Beranda";
 		// $data['proker'] = $this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi);
+		$organisasi = $this->M_Organisasi->selectOrganisasi($akun[0]->organisasi);
 		$this->session->set_userdata(array(
 			'akunAktif'=>$akun[0], 
-			'proker'=>$this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi),
-			'organisasi'=>$this->M_Organisasi->selectOrganisasi($akun[0]->organisasi)),
+			// 'proker'=>$this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi),
+			'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
+			'organisasi'=>$organisasi),
+			// 'statProposal'=>$this->M_Dokumen->getStatus($organisasi->proposal),
+			// 'statLpj'=>$this->M_Dokumen->getStatus($organisasi->lpj)),
+
 		true);
 		if ($count > 0){
 			if ($akun[0]->password == $password){				
