@@ -79,22 +79,22 @@
             <div class="w3-container w3-green">
                 <h3><b>Tambah program kerja</b></h3>
                 <span onclick="document.getElementById('tambahproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
-            </div>
-            <form class="w3-container" action="upload.php" method="post" enctype="multipart/form-data" name="form1">
+            </div>            
+            <form class="w3-container" action="<?php echo base_url('C_Proker/tambahProker') ?>" method="post" enctype="multipart/form-data" name="form1">
                 <table class="w3-table w3-bordered-white">
                     <tr><td></td></tr>
                     <tr>
-                        <td style="width: 33%;"><h5>Nama program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text"></h5></td>
+                        <td style="width: 33%;"><h5>Nama program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="namaProker"></h5></td>
                     </tr>
                     <tr>
-                        <td style="width: 33%;"><h5>Nama ketua pelaksana</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text"></h5></td>
+                        <td style="width: 33%;"><h5>Nama ketua pelaksana</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="pelaksana"></h5></td>
                     </tr>
                     <tr>
-                        <td style="width: 33%;"><h5>Perkiraan waktu pelaksanaan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text"></h5></td>
+                        <td style="width: 33%;"><h5>Perkiraan waktu pelaksanaan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="waktu"></h5></td>
                     </tr>
                     <tr>
                         <td style="width: 33%;"><h5>Jenis program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5>
-                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;">
+                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;" name="jenis">
                               <option value="Berproposal">Berproposal</option>
                               <option value="Tanpa proposal">Tanpa proposal</option>
                             </select>

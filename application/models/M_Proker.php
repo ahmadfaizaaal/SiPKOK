@@ -21,5 +21,7 @@
         $query = $this->db->get();
         return $query->result();
 	}
-}
+	public function insertProker($data){
+		$this->db->insert("proker", $data);
+	}}
 ?>
