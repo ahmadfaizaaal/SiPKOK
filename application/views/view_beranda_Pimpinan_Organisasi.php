@@ -51,6 +51,7 @@
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
 
+<?php include 'ModalView_programKerja.php';?>
   <!-- Header -->
   <header id="portfolio">
     <a href="#"><img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
@@ -67,13 +68,14 @@
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
         <div class="w3-col m4  w3-margin-top w3-right-align">
-            <button onclick="document.getElementById('tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
+            <button onclick="document.getElementById('Tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
         </div>
     </div>
   </header>
 
   <!-- Modal tambah program kerja -->
-  <div id="tambahproker" class="w3-modal">
+  
+  <!-- <div id="tambahproker" class="w3-modal">
       <div class="w3-modal-content w3-animate-zoom w3-card-4">
           <div class="w3-card-4">
             <div class="w3-container w3-green">
@@ -114,7 +116,7 @@
             </form>
           </div>  
       </div>
-  </div>
+  </div> -->
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
@@ -412,6 +414,7 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
 }
+
 </script>
 
 </body>
