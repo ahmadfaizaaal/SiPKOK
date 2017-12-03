@@ -55,7 +55,7 @@
 				echo "Password Salah";
 			}
 		} else {
-			echo "sasaasasas";
+			echo "Email tidak terdaftar";
 		}
 	}
 
@@ -74,6 +74,7 @@
 		$data["jabatan"] = $this->input->post("jabatan");
 		$data["status"] = "";
 		$this->M_Akun->insertAkun("akun", $data);
+		redirect(base_url());
 	}
 
 	public function logout(){
