@@ -49,7 +49,7 @@
                 <h3><b>Edit program kerja</b></h3>
                 <span onclick="document.getElementById('Editproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
             </div>
-            <form class="w3-container" action="<?php $idOrganisasi = $this->session->userdata('organisasi')->idOrganisasi; echo base_url("C_Proker/tambahProker/$idOrganisasi") ?>" method="post" enctype="multipart/form-data" name="form1">
+            <form class="w3-container" action="<?php $idProker = $this->session->userdata('proker')[0]->idProker; echo base_url("C_Proker/ubahProker/$idProker") ?>" method="post" enctype="multipart/form-data" name="form1">
                 <table class="w3-table w3-bordered-white">
                     <tr><td></td></tr>
                     <tr>

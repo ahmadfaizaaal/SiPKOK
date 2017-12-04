@@ -38,5 +38,26 @@
 		// alert("Tambah Program Kerja Sukses");
 		redirect(base_url());
 	}
+	public function ubahProker($idProker){
+		$data["idProker"] = $idProker;
+		// $data["idOrganisasi"] = $idOrganisasi;
+		// $data["idOrganisasi"] = $idOrganisasi;
+		$data["namaProker"] = $this->input->post("namaProker");
+		$data["pelaksana"] = $this->input->post("pelaksana");
+		$data["waktu"] = $this->input->post("waktu");
+		if ($this->input->post("jenis") == "Berproposal"){
+			$data["jenis"] = 0;
+		} else {
+			$data["jenis"] = 1;
+		}
+		// $data["jenis"] = "";
+		// $data["proposal"] = "";
+		// $data["lpj"] = "";
+		$this->M_Proker->updateProker($data,$idProker);
+		$this->session->set_userdata(array('proker'=>$this->M_Proker->selectProkerJoinDokumen($this->session->userdata('akunAktif')->organisasi)),true);
+		// echo "<script type='text/javascript'>alert('Tambah Program Kerja Sukses');</script>";
+		// alert("Tambah Program Kerja Sukses");
+		redirect(base_url());
+	}
 }
 ?>

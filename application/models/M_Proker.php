@@ -23,5 +23,10 @@
 	}
 	public function insertProker($data){
 		$this->db->insert("proker", $data);
-	}}
+	}
+	public function updateProker($data, $idProker){
+		$query = $this->db->where('idProker',$idProker);
+        $query = $this->db->update('proker',$data);
+	}
+}
 ?>

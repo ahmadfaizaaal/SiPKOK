@@ -4,10 +4,6 @@
       redirect( base_url().'Auth');
     }    
 ?>
-<script type="text/javascript">
-//   var $prokerAktif = $this->session->userdata('proker')[0];
-  
-</script>
 <html>
 <head>
     <title><?php echo $judul; ?></title>
@@ -23,7 +19,7 @@
 </head>
 <body class="w3-light-blue w3-content" style="max-width:1600px">
 
-<?php class ModalView {
+<!--<?php class ModalView {
   public $selection;
   public $idProkerTerpilih;
   public function __construct($selection){
@@ -90,7 +86,7 @@ $modalViewTambah = new ModalView("tambahproker");
 $modalViewUbah = new ModalView("ubahproker");
 
 
- ?>
+ ?> -->
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-amber w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
@@ -135,7 +131,7 @@ $modalViewUbah = new ModalView("ubahproker");
         <div class="w3-col m4  w3-margin-top w3-right-align">
             <button onclick="document.getElementById('Tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
         </div>
-        <?php $modalViewTambah->loadModal(); ?>
+        <!-- <?php $modalViewTambah->loadModal(); ?> -->
     </div>
   </header>
 
@@ -160,7 +156,7 @@ $modalViewUbah = new ModalView("ubahproker");
           if (strlen($programKerja->namaProker) > 15) {
               $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
           }
-          $modalViewUbah->loadModal();
+          // $modalViewUbah->loadModal();
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
           <div class=\"w3-blue\" style=\"height: 7%;\">
