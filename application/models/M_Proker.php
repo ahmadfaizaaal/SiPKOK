@@ -16,7 +16,7 @@
 		$query = $this->db->join('dokumen as proposal', 'proker.proposal = proposal.idDokumen',left);
         $query = $this->db->join('dokumen as lpj', 'proker.lpj = lpj.idDokumen',left);
         $query = $this->db->from('proker');
-        $query = $this->db->select('*, proker.jenis as jenisProker, proposal.status as statProposal, lpj.status as statLpj');
+        $query = $this->db->select('*, proker.jenis as jenisProker, proposal.namaDokumen as namaProposal, proposal.status as statProposal, lpj.namaDokumen as namaLpj, lpj.status as statLpj');
         // $query = $this->db->select('*');
         $query = $this->db->get();
         return $query->result();
