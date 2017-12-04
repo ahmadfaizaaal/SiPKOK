@@ -349,13 +349,14 @@ $modalViewUbah = new ModalView("ubahproker");
           echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
               <div class=\"w3-col m10 w3-margin-top\">
                   <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                    <a href = \"".base_url()."assets/doc/".$programKerja->namaProposal."\" target=_new>
                       <img src=\""; 
                       if (substr($programKerja->namaProposal,-3) == "pdf"){
                         echo base_url()."assets/img/pdf.png";
                       } else {
                         echo base_url()."assets/img/word.png";
                       }
-                      echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\">
+                      echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\"></a>
                   </div>
                   <div class=\"w3-col m11 w3-left-align\"><h6>".$programKerja->namaProposal."</h6></div>
               </div>
@@ -385,6 +386,7 @@ $modalViewUbah = new ModalView("ubahproker");
           echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
               <div class=\"w3-col m10 w3-margin-top\">
                   <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                    <a href = \"".base_url()."assets/doc/".$programKerja->namaLpj."\" target=_new>
                       <img src=\""; 
                       if (substr($programKerja->namaLpj,-3) == "pdf"){
                         echo base_url()."assets/img/pdf.png";
