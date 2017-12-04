@@ -53,19 +53,19 @@
                 <table class="w3-table w3-bordered-white">
                     <tr><td></td></tr>
                     <tr>
-                        <td style="width: 33%;"><h5>Nama program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="namaProker" id="programKerja"></h5></td>
+                        <td style="width: 33%;"><h5>Nama program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="namaProker" id="namaProker"></h5></td>
                     </tr>
                     <tr>
-                        <td style="width: 33%;"><h5>Nama ketua pelaksana</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="pelaksana"></h5></td>
+                        <td style="width: 33%;"><h5>Nama ketua pelaksana</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="pelaksana" id="pelaksana"></h5></td>
                     </tr>
                     <tr>
-                        <td style="width: 33%;"><h5>Perkiraan waktu pelaksanaan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="waktu"></h5></td>
+                        <td style="width: 33%;"><h5>Perkiraan waktu pelaksanaan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="waktu" id="waktu"></h5></td>
                     </tr>
                     <tr>
                         <td style="width: 33%;"><h5>Jenis program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5>
-                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;" name="jenis">
-                              <option value="Berproposal">Berproposal</option>
-                              <option value="Tanpa proposal">Tanpa proposal</option>
+                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;" name="jenis" id="jenis">
+                              <option value="Berproposal" id="optProposal">Berproposal</option>
+                              <option value="Tanpa proposal" id="optTanpaProposal">Tanpa proposal</option>
                             </select>
                         </h5></td>
                     </tr>

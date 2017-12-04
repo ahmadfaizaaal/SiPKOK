@@ -218,7 +218,7 @@
             }
           echo "</div>
           <script>
-            document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\"".$programKerja->namaProker.",".$programKerja->pelaksana.",".$programKerja->waktu."\")};
+            document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\"".$programKerja->namaProker."\",\"".$programKerja->pelaksana."\",\"".$programKerja->waktu."\",".$programKerja->jenisProker.")};
           </script>
       </div>";
       $i++;
@@ -474,9 +474,18 @@
 // for (var i = document.getElementsByClassName('btnEditProker').length - 1; i >= 0; i--) {  
 //   document.getElementsByClassName('btnEditProker')[i].onclick = function() {editProker("O001")};
 // };
-function editProker($proker){
+function editProker($namaProker, $pelaksana, $waktu, $jenisProker){
       document.getElementById("Editproker").style.display = 'block'; 
-      document.getElementById('programKerja').value = $proker;
+      document.getElementById('namaProker').value = $namaProker;
+      document.getElementById('pelaksana').value = $pelaksana;
+      document.getElementById('waktu').value = $waktu;
+      if ($jenisProker == 0) {
+        // document.getElementById('jenis').value = "Berproposal";
+        document.getElementById('optProposal').selected = true;
+      } else {
+        document.getElementById('optTanpaProposal').selected = true;
+        // document.getElementById('jenis').value = "Tanpa Proposal";
+      };
     }
 // Script to open and close sidebar
 function w3_open() {
