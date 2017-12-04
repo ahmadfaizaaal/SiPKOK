@@ -80,46 +80,6 @@
             </div>
         </div>";
   }
-
-  public function loadModalUbahProfil() {
-      echo "<div id=\"ubahprofil\" class=\"w3-modal\">
-      <div class=\"w3-modal-content w3-animate-zoom w3-card-4\">
-          <div class=\"w3-card-4\">
-            <div class=\"w3-container w3-green\">
-                <h3><b>Ubah profil organisasi</b></h3>
-                <span onclick=\"document.getElementById('ubahprofil').style.display='none'\" class=\"w3-button w3-xlarge w3-display-topright w3-hover-green\">&times;</span>
-            </div>
-            <form class=\"w3-container\" action=\"\" method=\"post\" enctype=\"multipart/form-data\" name=\"form1\">
-                <table class=\"w3-table w3-bordered-white\">
-                    <tr><td></td></tr>
-                    <tr>
-                        <td style=\"width: 33%;\"><h5>Nama Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"namaOrganisasi\" id=\"namaOrganisasi\"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style=\"width: 33%;\"><h5>Kepanjangan</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"kepanjangan\" id=\"kepanjangan\"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style=\"width: 33%;\"><h5>Nama Ketua</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"namaKetua\" id=\"namaKetua\"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style=\"width: 33%;\"><h5>Visi Misi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"visiMisi\" id=\"visiMisi\"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style=\"width: 33%;\"><h5>Ubah Logo</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"logoUbah\" id=\"logoUbah\"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style=\"width: 33%;\"><h5>Ubah Struktur</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"strukturUbah\" id=\"strukturUbah\"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style=\"width: 33%;\"><h5></h5></td><td style=\"width: 2%;\"><h5></h5></td><td style=\"width: 65%;\" class=\"w3-right-align w3-small\"><button class=\"w3-btn w3-green w3-card\">Simpan Perubahan</button></td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
-            </form>
-          </div>  
-      </div>
-  </div>";
-  }
 }
 
 $modalViewTambah = new ModalView("tambahproker");
@@ -302,48 +262,10 @@ $modalViewUbah = new ModalView("ubahproker");
               <h2 class="w3-left-align">Profil Organisasi</h2>
           </div>
           <div class="w3-col m4  w3-margin-top w3-right-align">
-              <button onclick="document.getElementById('ubahprofil').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button>
+              <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi" id="btnUbahProfil"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button>
           </div>
       </div>
-  </div>
-
-  <!-- <div id="ubahprofil" class="w3-modal">
-      <div class="w3-modal-content w3-animate-zoom w3-card-4">
-          <div class="w3-card-4">
-            <div class="w3-container w3-green">
-                <h3><b>Ubah profil organisasi</b></h3>
-                <span onclick="document.getElementById('ubahprofil').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
-            </div>
-            <form class="w3-container" action="<?php $idOrganisasi = $this->session->userdata('organisasi')->idOrganisasi; echo base_url("C_Proker/tambahProker/$idOrganisasi") ?>" method="post" enctype="multipart/form-data" name="form1">
-                <table class="w3-table w3-bordered-white">
-                    <tr><td></td></tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Nama Organisasi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="namaProker" id="namaProker"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Kepanjangan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="pelaksana" id="pelaksana"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Nama Ketua</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="waktu" id="waktu"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Visi Misi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="waktu" id="waktu"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Ubah Logo</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileProposal" id="fileProposal"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Ubah Struktur</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileLpj" id="fileLpj"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card">Simpan Perubahan</button></td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
-            </form>
-          </div>  
-      </div>
-  </div> -->
+  </div>  
 
   <!-- Images of Me -->
   <div class="w3-row-padding w3-padding-16">
@@ -439,29 +361,7 @@ $modalViewUbah = new ModalView("ubahproker");
           </div>";
         }
         }
-        ?>
-          <!-- <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
-              <div class="w3-col m10 w3-margin-top">
-                  <div class="w3-col m1 w3-center w3-margin-bottom">
-                      <img src="<?php echo base_url() ?>assets/img/pdf.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
-                  </div>
-                  <div class="w3-col m11 w3-left-align"><h6>Proposal kegiatan studi ekskursif Informatika 2017</h6></div>
-              </div>
-              <div class="w3-col m2 w3-margin-top w3-right-align">
-                  <button class="w3-btn w3-tiny w3-red w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-close w3-margin-right"></i>Ditolak</button>
-              </div>
-          </div>
-          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
-              <div class="w3-col m10 w3-margin-top">
-                  <div class="w3-col m1 w3-center w3-margin-bottom">
-                      <img src="<?php echo base_url() ?>assets/img/pdf.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
-                  </div>
-                  <div class="w3-col m11 w3-left-align"><h6>Proposal kegiatan PEMILWA Informatika 2017</h6></div>
-              </div>
-              <div class="w3-col m2 w3-margin-top w3-right-align">
-                  <button class="w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-hourglass-half w3-margin-right"></i>Dalam proses</button>
-              </div>
-          </div> -->
+        ?>         
       </div>
       
       <!-- Laporan pertanggung jawaban -->
@@ -491,34 +391,9 @@ $modalViewUbah = new ModalView("ubahproker");
           </div>";
         }
       }
-        ?>
-          <!-- <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
-              <div class="w3-col m10 w3-margin-top">
-                  <div class="w3-col m1 w3-center w3-margin-bottom">
-                      <img src="<?php echo base_url() ?>assets/img/word.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
-                  </div>
-                  <div class="w3-col m11 w3-left-align"><h6>LPJ kegiatan PEMILWA Informatika 2017</h6></div>
-              </div>
-              <div class="w3-col m2 w3-margin-top w3-right-align">
-                  <button class="w3-btn w3-tiny w3-green w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-check w3-margin-right"></i>Disetujui</button>
-              </div>
-          </div> -->
+        ?>         
       </div>
       <br>
-
-      <!-- <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
-          <h2 class="w3-left-align">Dokumen</h2>
-      </div>
-      <div class="w3-col m4 w3-amber"> </div>
-      <div class="w3-col m4 ">
-          <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
-              <form class="w3-white">
-                  <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
-              </form>
-              <button class="w3-btn w3-round-large w3-small w3-amber w3-hover-orange w3-card-4" title="Hapus program kerja"><a href="#"><i class=" fa fa-search"></i></a></button>
-          </div>
-      </div>
-      <div class="w3-col m4 w3-blue"></div> -->
   </div>
 
   <!-- Footer -->
@@ -570,6 +445,13 @@ $modalViewUbah = new ModalView("ubahproker");
 // for (var i = document.getElementsByClassName('btnEditProker').length - 1; i >= 0; i--) {  
 //   document.getElementsByClassName('btnEditProker')[i].onclick = function() {editProker("O001")};
 // };
+document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php 
+  $namaOrganisasi = $this->session->userdata('organisasi')->namaOrganisasi;
+  $kepanjangan = $this->session->userdata('organisasi')->kepanjangan;
+  $namaKetua = $this->session->userdata('organisasi')->namaKetua;
+  $visiMisi = $this->session->userdata('organisasi')->visiMisi;
+   echo "\"$namaOrganisasi\",\"$kepanjangan\",\"$namaKetua\",\"$visiMisi\"";
+  ?>)};
 function editProker($namaProker, $pelaksana, $waktu, $jenisProker){
       document.getElementById("Editproker").style.display = 'block'; 
       document.getElementById('namaProker').value = $namaProker;
@@ -582,7 +464,15 @@ function editProker($namaProker, $pelaksana, $waktu, $jenisProker){
         document.getElementById('optTanpaProposal').selected = true;
         // document.getElementById('jenis').value = "Tanpa Proposal";
       };
-    }
+}
+
+function editProfil($namaOrganisasi, $kepanjangan, $namaKetua, $visiMisi){
+  document.getElementById("ubahProfil").style.display = 'block'; 
+  document.getElementById('namaOrganisasi').value = $namaOrganisasi;
+  document.getElementById('kepanjangan').value = $kepanjangan;
+  document.getElementById('namaKetua').value = $namaKetua;
+  document.getElementById('visiMisi').value = $visiMisi;
+}
 // Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
