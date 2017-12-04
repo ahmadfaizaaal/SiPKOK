@@ -19,6 +19,75 @@
 </head>
 <body class="w3-light-blue w3-content" style="max-width:1600px">
 
+<?php class ModalView {
+  public $selection;
+  public $idProkerTerpilih;
+  public function __construct($selection){
+      $this->selection = $selection;
+  }
+  public function setIdProker($idProkerTerpilih) {
+      $this->idProkerTerpilih = $idProkerTerpilih;
+  }
+  public function getIdProker() {
+      return $this->idProkerTerpilih;
+  }
+  public function loadModal() {
+      if ($this->selection == 'tambahproker') {
+          $judul = "Tambah program kerja";
+      } else {
+          $judul = "Ubah program kerja";
+      }
+      echo "<div id=\"".$this->selection."\" class=\"w3-modal\">
+            <div class=\"w3-modal-content w3-animate-zoom w3-card-4\">
+                <div class=\"w3-card-4\">
+                  <div class=\"w3-container w3-green\">
+                      <h3>".$judul."</b></h3>
+                      <span onclick=\"document.getElementById('$this->selection').style.display='none'\" class=\"w3-button w3-xlarge w3-display-topright w3-hover-green\">&times;</span>
+                  </div>
+                  <form class=\"w3-container\" action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\" name=\"form1\">
+                      <table class=\"w3-table w3-bordered-white\">
+                          <tr><td></td></tr>
+                          <tr>
+                              <td style=\"width: 33%;\"><h5>Nama program kerja</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" value=\"\"></h5></td>
+                          </tr>
+                          <tr>
+                              <td style=\"width: 33%;\"><h5>Nama ketua pelaksana</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\"></h5></td>
+                          </tr>
+                          <tr>
+                              <td style=\"width: 33%;\"><h5>Perkiraan waktu pelaksanaan</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\"></h5></td>
+                          </tr>
+                          <tr>
+                              <td style=\"width: 33%;\"><h5>Jenis program kerja</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5>
+                                  <select class=\"w3-small w3-card\" id=\"dropdown-option\" style=\"height: 20%;\">
+                                    <option value=\"Berproposal\">Berproposal</option>
+                                    <option value=\"Tanpa proposal\">Tanpa proposal</option>
+                                  </select>
+                              </h5></td>
+                          </tr>
+                          <tr>
+                              <td style=\"width: 33%;\"><h5>Unggah proposal</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"resume\" id=\"resume\"></h5></td>
+                          </tr>
+                          <tr>
+                              <td style=\"width: 33%;\"><h5>Unggah LPJ</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"resume\" id=\"resume\"></h5></td>
+                          </tr>
+                          <tr>
+                              <td style=\"width: 33%;\"><h5></h5></td><td style=\"width: 2%;\"><h5></h5></td><td style=\"width: 65%;\" class=\"w3-right-align w3-small\"><button class=\"w3-btn w3-green w3-card\">Tambahkan</button></td>
+                          </tr>
+                          <tr><td></td></tr>
+                      </table>
+                  </form>
+                </div>  
+            </div>
+        </div>";
+  }
+}
+
+$modalViewTambah = new ModalView("tambahproker");
+$modalViewUbah = new ModalView("ubahproker");
+
+
+ ?>
+
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-amber w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-center">
@@ -26,8 +95,8 @@
       <i class="fa fa-remove"></i>
     </a>
     <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:80%;" class="w3-round"><br><br>
-    <h4><b>HMIF</b></h4>
-    <p class="w3-text-white"><b><i>Himpunan Mahasiswa Informatika</i></b></p>
+    <h4><b><?php echo $this->session->userdata('organisasi')->namaOrganisasi ?></b></h4>
+    <p class="w3-text-white"><b><i><?php echo $this->session->userdata('organisasi')->kepanjangan ?></i></b></p>
   </div>
   <div class="w3-bar-block">
     <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
@@ -35,14 +104,6 @@
     <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i><?php echo $this->session->userdata('akunAktif')->jabatan?></a>
     <a href="<?php echo base_url('Auth/index') ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange w3-padding w3-hover-blue"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
   </div>
-  <!-- <div class="w3-panel w3-large">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div> -->
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -51,7 +112,7 @@
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
 
-<?php include 'ModalView_programKerja.php';?>
+
   <!-- Header -->
   <header id="portfolio">
     <a href="#"><img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
@@ -68,55 +129,11 @@
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
         <div class="w3-col m4  w3-margin-top w3-right-align">
-            <button onclick="document.getElementById('Tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
+            <button onclick="document.getElementById('tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
         </div>
+        <?php $modalViewTambah->loadModal(); ?>
     </div>
   </header>
-
-  <!-- Modal tambah program kerja -->
-  
-  <!-- <div id="tambahproker" class="w3-modal">
-      <div class="w3-modal-content w3-animate-zoom w3-card-4">
-          <div class="w3-card-4">
-            <div class="w3-container w3-green">
-                <h3><b>Tambah program kerja</b></h3>
-                <span onclick="document.getElementById('tambahproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
-            </div>            
-            <form class="w3-container" action="<?php echo base_url('C_Proker/tambahProker') ?>" method="post" enctype="multipart/form-data" name="form1">
-                <table class="w3-table w3-bordered-white">
-                    <tr><td></td></tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Nama program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="namaProker"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Nama ketua pelaksana</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="pelaksana"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Perkiraan waktu pelaksanaan</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="waktu"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Jenis program kerja</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5>
-                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;" name="jenis">
-                              <option value="Berproposal">Berproposal</option>
-                              <option value="Tanpa proposal">Tanpa proposal</option>
-                            </select>
-                        </h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Unggah proposal</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="resume" id="resume"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5>Unggah LPJ</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="resume" id="resume"></h5></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card">Tambahkan</button></td>
-                    </tr>
-                    <tr><td></td></tr>
-                </table>
-            </form>
-          </div>  
-      </div>
-  </div> -->
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
@@ -131,17 +148,19 @@
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
-      <?php foreach ($this->session->userdata('proker') as $programKerja) {
+      <?php 
+          foreach ($this->session->userdata('proker') as $programKerja) {
           $namaProker_cut = $programKerja->namaProker;
           if (strlen($programKerja->namaProker) > 15) {
               $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
           }
+          $modalViewUbah->loadModal();
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
           <div class=\"w3-blue\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Ubah program kerja\"><i class=\"fa fa-pencil\"></i></button>
+                  <button onclick=\"document.getElementById('ubahproker').style.display='block'\" class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Ubah program kerja\"><i class=\"fa fa-pencil\"></i></button>
                   <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
               </div>
           </div>
@@ -182,7 +201,7 @@
           </div>
           <div class=\"w3-light-gray w3-small w3-center \">";
             if ($programKerja->statProposal == 0){
-              echo "0%";
+              echo "<div class=\"w3-container w3-padding-small w3-light-gray w3-center\" style=\"width:0%;\">0%</div>";
             } else {
               echo "<div class=\"w3-container w3-padding-small w3-green w3-center\" style=\"width:";
               if ($programKerja->statProposal == 2){
@@ -217,6 +236,21 @@
       </div>";
       } ?>      
   </div>
+
+  <?php 
+      function tambahProker() {
+          $modalView = new ModalView("tambahproker");
+          $modalView->showModal();
+          // $dom = "document.getElementById('tambahproker').style.display='block'";
+          // return $dom;
+      }
+      function ubahProker() {
+          $modalView = new ModalView("ubahproker");
+          $dom = "document.getElementById('ubahproker').style.display='block'";
+          $modalView->showModal();
+          return $dom;
+      }
+  ?>
 
   <!-- Pagination -->
   <div class="w3-center w3-padding-32">
