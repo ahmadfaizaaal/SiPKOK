@@ -20,7 +20,7 @@
 	public function tambahProker($idOrganisasi){
 		$data["idProker"] = "";
 		// $data["idOrganisasi"] = $idOrganisasi;
-		$data["idOrganisasi"] = "O001";
+		$data["idOrganisasi"] = $idOrganisasi;
 		$data["namaProker"] = $this->input->post("namaProker");
 		$data["pelaksana"] = $this->input->post("pelaksana");
 		$data["waktu"] = $this->input->post("waktu");

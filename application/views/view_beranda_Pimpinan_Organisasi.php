@@ -2,8 +2,12 @@
     $isLogin = $this->session->userdata( 'akunAktif' );
     if($isLogin==""){
       redirect( base_url().'Auth');
-    }
+    }    
 ?>
+<script type="text/javascript">
+//   var $prokerAktif = $this->session->userdata('proker')[0];
+  
+</script>
 <html>
 <head>
     <title><?php echo $judul; ?></title>
@@ -26,8 +30,8 @@
       <i class="fa fa-remove"></i>
     </a>
     <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:80%;" class="w3-round"><br><br>
-    <h4><b>HMIF</b></h4>
-    <p class="w3-text-white"><b><i>Himpunan Mahasiswa Informatika</i></b></p>
+    <h4><b><?php echo $this->session->userdata('organisasi')->namaOrganisasi?></b></h4>
+    <p class="w3-text-white"><b><i><?php echo $this->session->userdata('organisasi')->kepanjangan?></i></b></p>
   </div>
   <div class="w3-bar-block">
     <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
@@ -131,7 +135,7 @@
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
-      <?php foreach ($this->session->userdata('proker') as $programKerja) {
+      <?php $i = 0; foreach ($this->session->userdata('proker') as $programKerja) {
           $namaProker_cut = $programKerja->namaProker;
           if (strlen($programKerja->namaProker) > 15) {
               $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
@@ -141,8 +145,8 @@
           <div class=\"w3-blue\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Ubah program kerja\"><i class=\"fa fa-pencil\"></i></button>
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4 btnEditProker\" title=\"Ubah program kerja\" id=\"btnEditProker\"><i class=\"fa fa-pencil\"></i></button>
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>
               </div>
           </div>
           <div class=\"w3-container w3-blue\">
@@ -213,9 +217,12 @@
               echo "</div>";
             }
           echo "</div>
-
+          <script>
+            document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\"".$programKerja->namaProker.",".$programKerja->pelaksana.",".$programKerja->waktu."\")};
+          </script>
       </div>";
-      } ?>      
+      $i++;
+      } ?>
   </div>
 
   <!-- Pagination -->
@@ -463,6 +470,14 @@
 </div>
 
 <script>
+// document.getElementById('btnEdit').onclick = function() {editProker()};
+// for (var i = document.getElementsByClassName('btnEditProker').length - 1; i >= 0; i--) {  
+//   document.getElementsByClassName('btnEditProker')[i].onclick = function() {editProker("O001")};
+// };
+function editProker($proker){
+      document.getElementById("Editproker").style.display = 'block'; 
+      document.getElementById('programKerja').value = $proker;
+    }
 // Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
