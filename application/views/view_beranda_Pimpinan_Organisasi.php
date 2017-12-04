@@ -133,11 +133,13 @@ $modalViewUbah = new ModalView("ubahproker");
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
         <div class="w3-col m4  w3-margin-top w3-right-align">
-            <button onclick="document.getElementById('tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
+            <button onclick="document.getElementById('Tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
         </div>
         <?php $modalViewTambah->loadModal(); ?>
     </div>
   </header>
+
+  <?php include('ModalView_programKerja.php'); ?>
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
