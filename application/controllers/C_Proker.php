@@ -125,9 +125,8 @@
 			$data["jenis"] = 0;
 		} else {
 			$data["jenis"] = 1;
-		}
-		// $data["jenis"] = "";
-		// $data["proposal"] = "";
+		}		
+		// $data["proposal"] = ;
 		// $data["lpj"] = "";
 		$this->M_Proker->updateProker($data,$idProker);
 		$this->session->set_userdata(array('proker'=>$this->M_Proker->selectProkerJoinDokumen($this->session->userdata('akunAktif')->organisasi)),true);

@@ -235,7 +235,13 @@ $modalViewUbah = new ModalView("ubahproker");
             }
           echo "</div>
           <script>
-            document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\"".$programKerja->namaProker."\",\"".$programKerja->pelaksana."\",\"".$programKerja->waktu."\",".$programKerja->jenisProker.")};
+            document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\""
+              .$programKerja->namaProker."\",\""
+              .$programKerja->pelaksana."\",\""
+              .$programKerja->waktu."\",\""
+              .$programKerja->jenisProker."\",\""
+              .$programKerja->namaProposal."\",\""
+              .$programKerja->namaLpj."\")};
           </script>
       </div>";
       $i++;
@@ -464,7 +470,7 @@ document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php
   $visiMisi = $this->session->userdata('organisasi')->visiMisi;
    echo "\"$namaOrganisasi\",\"$kepanjangan\",\"$namaKetua\",\"$visiMisi\"";
   ?>)};
-function editProker($namaProker, $pelaksana, $waktu, $jenisProker){
+function editProker($namaProker, $pelaksana, $waktu, $jenisProker, $namaProposal, $namaLpj){
       document.getElementById("Editproker").style.display = 'block'; 
       document.getElementById('namaProker').value = $namaProker;
       document.getElementById('pelaksana').value = $pelaksana;
@@ -476,6 +482,10 @@ function editProker($namaProker, $pelaksana, $waktu, $jenisProker){
         document.getElementById('optTanpaProposal').selected = true;
         // document.getElementById('jenis').value = "Tanpa Proposal";
       };
+      // document.getElementById('fileProposal').value = "assets/doc/"+$namaProposal;
+      document.getElementById('fileProposal').value = "D://TDC.docx";
+      document.getElementById('fileLpj').value = $namaLpj;
+
 }
 
 function editProfil($namaOrganisasi, $kepanjangan, $namaKetua, $visiMisi){
@@ -484,6 +494,7 @@ function editProfil($namaOrganisasi, $kepanjangan, $namaKetua, $visiMisi){
   document.getElementById('kepanjangan').value = $kepanjangan;
   document.getElementById('namaKetua').value = $namaKetua;
   document.getElementById('visiMisi').value = $visiMisi;
+  // document.getElementById('fileProposal').value = $visiMisi;
 }
 // Script to open and close sidebar
 function w3_open() {

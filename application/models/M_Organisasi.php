@@ -19,5 +19,9 @@
 		$hasil = $query->result();
 		return $hasil[0];
 	}
+	public function updateOrganisasi($data, $idOrganisasi){
+		$query = $this->db->where('idOrganisasi',$idOrganisasi);
+        $query = $this->db->update('organisasi',$data);
+	}
 }
 ?>
