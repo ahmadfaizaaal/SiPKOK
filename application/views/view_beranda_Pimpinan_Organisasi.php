@@ -97,22 +97,22 @@
                 <table class=\"w3-table w3-bordered-white\">
                     <tr><td></td></tr>
                     <tr>
-                        <td style=\"width: 33%;\"><h5>Nama Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"namaProker\" id=\"namaProker\"></h5></td>
+                        <td style=\"width: 33%;\"><h5>Nama Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"namaOrganisasi\" id=\"namaOrganisasi\"></h5></td>
                     </tr>
                     <tr>
-                        <td style=\"width: 33%;\"><h5>Kepanjangan</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"pelaksana\" id=\"pelaksana\"></h5></td>
+                        <td style=\"width: 33%;\"><h5>Kepanjangan</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"kepanjangan\" id=\"kepanjangan\"></h5></td>
                     </tr>
                     <tr>
-                        <td style=\"width: 33%;\"><h5>Nama Ketua</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"waktu\" id=\"waktu\"></h5></td>
+                        <td style=\"width: 33%;\"><h5>Nama Ketua</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"namaKetua\" id=\"namaKetua\"></h5></td>
                     </tr>
                     <tr>
-                        <td style=\"width: 33%;\"><h5>Visi Misi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"waktu\" id=\"waktu\"></h5></td>
+                        <td style=\"width: 33%;\"><h5>Visi Misi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-input\" type=\"text\" name=\"visiMisi\" id=\"visiMisi\"></h5></td>
                     </tr>
                     <tr>
-                        <td style=\"width: 33%;\"><h5>Ubah Logo</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"fileProposal\" id=\"fileProposal\"></h5></td>
+                        <td style=\"width: 33%;\"><h5>Ubah Logo</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"logoUbah\" id=\"logoUbah\"></h5></td>
                     </tr>
                     <tr>
-                        <td style=\"width: 33%;\"><h5>Ubah Struktur</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"fileLpj\" id=\"fileLpj\"></h5></td>
+                        <td style=\"width: 33%;\"><h5>Ubah Struktur</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 65%;\"><h5><input class=\"w3-small\" type=\"file\" name=\"strukturUbah\" id=\"strukturUbah\"></h5></td>
                     </tr>
                     <tr>
                         <td style=\"width: 33%;\"><h5></h5></td><td style=\"width: 2%;\"><h5></h5></td><td style=\"width: 65%;\" class=\"w3-right-align w3-small\"><button class=\"w3-btn w3-green w3-card\">Simpan Perubahan</button></td>
