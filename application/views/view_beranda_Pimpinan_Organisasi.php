@@ -99,13 +99,8 @@ $modalViewUbah = new ModalView("ubahproker");
       <i class="fa fa-remove"></i>
     </a>
     <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:80%;" class="w3-round"><br><br>
-<<<<<<< HEAD
-    <h4><b><?php echo $this->session->userdata('organisasi')->namaOrganisasi ?></b></h4>
-    <p class="w3-text-white"><b><i><?php echo $this->session->userdata('organisasi')->kepanjangan ?></i></b></p>
-=======
     <h4><b><?php echo $this->session->userdata('organisasi')->namaOrganisasi?></b></h4>
     <p class="w3-text-white"><b><i><?php echo $this->session->userdata('organisasi')->kepanjangan?></i></b></p>
->>>>>>> d0cf4976fa2f8d7713ae7563f69890a60d2f6de0
   </div>
   <div class="w3-bar-block">
     <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
@@ -157,12 +152,8 @@ $modalViewUbah = new ModalView("ubahproker");
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
-<<<<<<< HEAD
-      <?php 
-          foreach ($this->session->userdata('proker') as $programKerja) {
-=======
+
       <?php $i = 0; foreach ($this->session->userdata('proker') as $programKerja) {
->>>>>>> d0cf4976fa2f8d7713ae7563f69890a60d2f6de0
           $namaProker_cut = $programKerja->namaProker;
           if (strlen($programKerja->namaProker) > 15) {
               $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
@@ -173,13 +164,8 @@ $modalViewUbah = new ModalView("ubahproker");
           <div class=\"w3-blue\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
-<<<<<<< HEAD
-                  <button onclick=\"document.getElementById('ubahproker').style.display='block'\" class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Ubah program kerja\"><i class=\"fa fa-pencil\"></i></button>
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
-=======
                   <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4 btnEditProker\" title=\"Ubah program kerja\" id=\"btnEditProker\"><i class=\"fa fa-pencil\"></i></button>
                   <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>
->>>>>>> d0cf4976fa2f8d7713ae7563f69890a60d2f6de0
               </div>
           </div>
           <div class=\"w3-container w3-blue\">
@@ -258,20 +244,6 @@ $modalViewUbah = new ModalView("ubahproker");
       } ?>
   </div>
 
-  <?php 
-      function tambahProker() {
-          $modalView = new ModalView("tambahproker");
-          $modalView->showModal();
-          // $dom = "document.getElementById('tambahproker').style.display='block'";
-          // return $dom;
-      }
-      function ubahProker() {
-          $modalView = new ModalView("ubahproker");
-          $dom = "document.getElementById('ubahproker').style.display='block'";
-          $modalView->showModal();
-          return $dom;
-      }
-  ?>
 
   <!-- Pagination -->
   <div class="w3-center w3-padding-32">
