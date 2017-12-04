@@ -2,7 +2,8 @@
     $isLogin = $this->session->userdata( 'akunAktif' );
     if($isLogin==""){
       redirect( base_url().'Auth');
-    }    
+    }
+    $timeLimit = "2017-12-10 00:00:00";
 ?>
 <html>
 <head>
@@ -128,9 +129,10 @@ $modalViewUbah = new ModalView("ubahproker");
         <div class="w3-col m8">
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
-        <div class="w3-col m4  w3-margin-top w3-right-align">
-            <button onclick="document.getElementById('Tambahproker').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah program kerja"><i class="fa fa-plus w3-margin-right"></i>Tambah program kerja</button>
-        </div>
+        <?php if (time() < strtotime($timeLimit)){ echo"
+        <div class=\"w3-col m4  w3-margin-top w3-right-align\">
+            <button onclick=\"document.getElementById('Tambahproker').style.display='block'\" class=\"w3-btn w3-amber w3-hover-orange w3-card-4\" title=\"Tambah program kerja\"><i class=\"fa fa-plus w3-margin-right\"></i>Tambah program kerja</button>
+        </div>"; }?>
         <!-- <?php $modalViewTambah->loadModal(); ?> -->
     </div>
   </header>
@@ -162,9 +164,10 @@ $modalViewUbah = new ModalView("ubahproker");
           <div class=\"w3-blue\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4 btnEditProker\" title=\"Ubah program kerja\" id=\"btnEditProker\"><i class=\"fa fa-pencil\"></i></button>
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>
-              </div>
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4 btnEditProker\" title=\"Ubah program kerja\" id=\"btnEditProker\"><i class=\"fa fa-pencil\"></i></button> ";
+                  if (time() < strtotime($timeLimit)){
+                  echo "<button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>";}
+              echo "</div>
           </div>
           <div class=\"w3-container w3-blue\">
               <div class=\"w3-col m3 w3-margin-top\">
