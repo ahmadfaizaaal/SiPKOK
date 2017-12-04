@@ -2,8 +2,12 @@
     $isLogin = $this->session->userdata( 'akunAktif' );
     if($isLogin==""){
       redirect( base_url().'Auth');
-    }
+    }    
 ?>
+<script type="text/javascript">
+//   var $prokerAktif = $this->session->userdata('proker')[0];
+  
+</script>
 <html>
 <head>
     <title><?php echo $judul; ?></title>
@@ -95,8 +99,13 @@ $modalViewUbah = new ModalView("ubahproker");
       <i class="fa fa-remove"></i>
     </a>
     <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:80%;" class="w3-round"><br><br>
+<<<<<<< HEAD
     <h4><b><?php echo $this->session->userdata('organisasi')->namaOrganisasi ?></b></h4>
     <p class="w3-text-white"><b><i><?php echo $this->session->userdata('organisasi')->kepanjangan ?></i></b></p>
+=======
+    <h4><b><?php echo $this->session->userdata('organisasi')->namaOrganisasi?></b></h4>
+    <p class="w3-text-white"><b><i><?php echo $this->session->userdata('organisasi')->kepanjangan?></i></b></p>
+>>>>>>> d0cf4976fa2f8d7713ae7563f69890a60d2f6de0
   </div>
   <div class="w3-bar-block">
     <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
@@ -148,8 +157,12 @@ $modalViewUbah = new ModalView("ubahproker");
           <div class="w3-container w3-blue">
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
+<<<<<<< HEAD
       <?php 
           foreach ($this->session->userdata('proker') as $programKerja) {
+=======
+      <?php $i = 0; foreach ($this->session->userdata('proker') as $programKerja) {
+>>>>>>> d0cf4976fa2f8d7713ae7563f69890a60d2f6de0
           $namaProker_cut = $programKerja->namaProker;
           if (strlen($programKerja->namaProker) > 15) {
               $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
@@ -160,8 +173,13 @@ $modalViewUbah = new ModalView("ubahproker");
           <div class=\"w3-blue\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
+<<<<<<< HEAD
                   <button onclick=\"document.getElementById('ubahproker').style.display='block'\" class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Ubah program kerja\"><i class=\"fa fa-pencil\"></i></button>
                   <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button> 
+=======
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4 btnEditProker\" title=\"Ubah program kerja\" id=\"btnEditProker\"><i class=\"fa fa-pencil\"></i></button>
+                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>
+>>>>>>> d0cf4976fa2f8d7713ae7563f69890a60d2f6de0
               </div>
           </div>
           <div class=\"w3-container w3-blue\">
@@ -232,9 +250,12 @@ $modalViewUbah = new ModalView("ubahproker");
               echo "</div>";
             }
           echo "</div>
-
+          <script>
+            document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\"".$programKerja->namaProker."\",\"".$programKerja->pelaksana."\",\"".$programKerja->waktu."\",".$programKerja->jenisProker.")};
+          </script>
       </div>";
-      } ?>      
+      $i++;
+      } ?>
   </div>
 
   <?php 
@@ -346,18 +367,32 @@ $modalViewUbah = new ModalView("ubahproker");
       <!-- Proposal -->
       <h4>Proposal Kegiatan Organisasi</h4>
       <div align="right">
-          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
-              <div class="w3-col m10 w3-margin-top">
-                  <div class="w3-col m1 w3-center w3-margin-bottom">
-                      <img src="<?php echo base_url() ?>assets/img/pdf.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
+        <?php 
+          foreach ($this->session->userdata('proker') as $programKerja) {
+            if ($programKerja->statProposal != 0){          
+          echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
+              <div class=\"w3-col m10 w3-margin-top\">
+                  <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                      <img src=\""; echo base_url()."assets/img/pdf.png"; echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\">
                   </div>
-                  <div class="w3-col m11 w3-left-align"><h6>Proposal program binaan mahasiswa baru Informatika 2017</h6></div>
+                  <div class=\"w3-col m11 w3-left-align\"><h6>".$programKerja->namaProposal."</h6></div>
               </div>
-              <div class="w3-col m2 w3-margin-top w3-right-align">
-                  <button class="w3-btn w3-tiny w3-green w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-check w3-margin-right"></i>Disetujui</button>
+              <div class=\"w3-col m2 w3-margin-top w3-right-align\">
+                  <button";
+                  if ($programKerja->statProposal == 1){
+                    echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
+                  } else if ($programKerja->statProposal == 2){
+                    echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
+                  } else {
+                    echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
+                  }
+                  echo "</button>
               </div>
-          </div>
-          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
+          </div>";
+        }
+        }
+        ?>
+          <!-- <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
               <div class="w3-col m10 w3-margin-top">
                   <div class="w3-col m1 w3-center w3-margin-bottom">
                       <img src="<?php echo base_url() ?>assets/img/pdf.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
@@ -378,24 +413,38 @@ $modalViewUbah = new ModalView("ubahproker");
               <div class="w3-col m2 w3-margin-top w3-right-align">
                   <button class="w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-hourglass-half w3-margin-right"></i>Dalam proses</button>
               </div>
-          </div>
+          </div> -->
       </div>
       
       <!-- Laporan pertanggung jawaban -->
       <h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
       <div align="right">
-          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
-              <div class="w3-col m10 w3-margin-top">
-                  <div class="w3-col m1 w3-center w3-margin-bottom">
-                      <img src="<?php echo base_url() ?>assets/img/word.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
+        <?php 
+        foreach ($this->session->userdata('proker') as $programKerja) {
+            if ($programKerja->statLpj != 0){          
+          echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
+              <div class=\"w3-col m10 w3-margin-top\">
+                  <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                      <img src=\""; echo base_url()."assets/img/word.png"; echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\">
                   </div>
-                  <div class="w3-col m11 w3-left-align"><h6>LPJ program binaan mahasiswa baru Informatika 2017</h6></div>
+                  <div class=\"w3-col m11 w3-left-align\"><h6>".$programKerja->namaProposal."</h6></div>
               </div>
-              <div class="w3-col m2 w3-margin-top w3-right-align">
-                  <button class="w3-btn w3-tiny w3-green w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-check w3-margin-right"></i>Disetujui</button>
+              <div class=\"w3-col m2 w3-margin-top w3-right-align\">
+                  <button";
+                  if ($programKerja->statLpj == 1){
+                    echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
+                  } else if ($programKerja->statLpj == 2){
+                    echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
+                  } else {
+                    echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
+                  }
+                  echo "</button>
               </div>
-          </div>
-          <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
+          </div>";
+        }
+      }
+        ?>
+          <!-- <div class="w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card" style="width: 95%;">
               <div class="w3-col m10 w3-margin-top">
                   <div class="w3-col m1 w3-center w3-margin-bottom">
                       <img src="<?php echo base_url() ?>assets/img/word.png" alt="Norway" style="width:60%"class="w3-hover-opacity">
@@ -405,7 +454,7 @@ $modalViewUbah = new ModalView("ubahproker");
               <div class="w3-col m2 w3-margin-top w3-right-align">
                   <button class="w3-btn w3-tiny w3-green w3-hover-light-gray w3-card" style="width: 75%;" title="Status program kerja"><i class="fa fa-check w3-margin-right"></i>Disetujui</button>
               </div>
-          </div>
+          </div> -->
       </div>
       <br>
 
@@ -469,6 +518,23 @@ $modalViewUbah = new ModalView("ubahproker");
 </div>
 
 <script>
+// document.getElementById('btnEdit').onclick = function() {editProker()};
+// for (var i = document.getElementsByClassName('btnEditProker').length - 1; i >= 0; i--) {  
+//   document.getElementsByClassName('btnEditProker')[i].onclick = function() {editProker("O001")};
+// };
+function editProker($namaProker, $pelaksana, $waktu, $jenisProker){
+      document.getElementById("Editproker").style.display = 'block'; 
+      document.getElementById('namaProker').value = $namaProker;
+      document.getElementById('pelaksana').value = $pelaksana;
+      document.getElementById('waktu').value = $waktu;
+      if ($jenisProker == 0) {
+        // document.getElementById('jenis').value = "Berproposal";
+        document.getElementById('optProposal').selected = true;
+      } else {
+        document.getElementById('optTanpaProposal').selected = true;
+        // document.getElementById('jenis').value = "Tanpa Proposal";
+      };
+    }
 // Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
