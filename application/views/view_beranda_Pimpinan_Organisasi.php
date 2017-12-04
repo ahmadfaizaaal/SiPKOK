@@ -151,7 +151,7 @@ $modalViewUbah = new ModalView("ubahproker");
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
 
-      <?php $i = 0; foreach ($this->session->userdata('proker') as $programKerja) {
+      <?php $i = 0; $sumProgres = 0; foreach ($this->session->userdata('proker') as $programKerja) {          
           $namaProker_cut = $programKerja->namaProker;
           if (strlen($programKerja->namaProker) > 15) {
               $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
@@ -208,14 +208,14 @@ $modalViewUbah = new ModalView("ubahproker");
               echo "<div class=\"w3-container w3-padding-small w3-green w3-center\" style=\"width:";
               if ($programKerja->statProposal == 2){
                 if ($programKerja->statLpj == 2){
-                  echo "100%";
+                  echo "100%"; $sumProgres += 100;
                 } else if ($programKerja->statLpj == 1){
-                  echo "75%";
+                  echo "75%"; $sumProgres += 75;
                 } else {
-                  echo "50%";
+                  echo "50%"; $sumProgres += 50;
                 }
               } else if ($programKerja->statProposal == 1){
-                echo "25%";
+                echo "25%"; $sumProgres += 25;
               } else {
                 echo "0%";
               }
@@ -310,7 +310,7 @@ $modalViewUbah = new ModalView("ubahproker");
             <td style=\"width: 20%;\"><h5>Progress Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td>
             <td style=\"width: 78%;\">
                 <div class=\"w3-white w3-margin-top\">
-                    <div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:75%\">75%</div>
+                    <div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:".number_format((float)$sumProgres/$i, 2, '.', '')."%\">".number_format((float)$sumProgres/$i, 2, '.', '')."%</div>
                 </div>
             </td>
         </tr>"
