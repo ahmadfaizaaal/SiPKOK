@@ -21,8 +21,8 @@
 		$data["namaKetua"] = $this->input->post("namaKetua");
 		$data["visiMisi"] = $this->input->post("visiMisi");
 
-		$allowed =  array('jpg','png');
-		// Upload Proposal
+		$allowed =  array('jpeg','jpg','png','PNG');
+		// Upload Struktur
 	  $namaStruktur = $_FILES['fileStruktur']['name'];
 	  $sizeStruktur= $_FILES["fileStruktur"]["size"]/1024;
 	  $tipeStruktur = pathinfo($namaStruktur, PATHINFO_EXTENSION);
@@ -30,7 +30,7 @@
 	  if(!in_array($tipeStruktur,$allowed) ) {
 		  echo "You can only upload a Word doc/docx or a Pdf file.";
 	  } else {
-			if($sizeStruktur<=200){
+			if($sizeStruktur<=1000){
 
 			  //New file name
 			  $random=rand(1111,9999);
@@ -58,7 +58,44 @@
 			else{
 			  echo "Maximum upload file size limit is 200 kb";
 			}
-	  }
+
+			// Upload Logo
+		  $namaLogo = $_FILES['fileLogo']['name'];
+		  $sizeLogo= $_FILES["fileLogo"]["size"]/1024;
+		  $tipeLogo = pathinfo($namaLogo, PATHINFO_EXTENSION);
+		  $tmpNameProposal=$_FILES["fileLogo"]["tmp_name"];  
+		  if(!in_array($tipeLogo,$allowed) ) {
+			  echo "You can only upload a Word doc/docx or a Pdf file.";
+		  } else {
+				if($sizeLogo<=1000){
+
+				  //New file name
+				  $random=rand(1111,9999);
+				  $newFileName=$random."_Logo_".$idOrganisasi."_".$namaLogo;
+
+				  //File upload path
+				  $uploadPath="assets/img/".$newFileName;
+
+				  //function for upload file
+				  if(move_uploaded_file($tmpNameProposal,$uploadPath)){
+						echo "Successful"; 
+						echo "File Name :".$newFileName; 
+						echo "File Size :".$sizeLogo." kb"; 
+						echo "File Type :".$tipeLogo;
+						$data["logo"] = $newFileName;
+						// $dataDokumen["idDokumen"] = "D001";
+						// $dataDokumen["namaDokumen"] = $newFileName;	
+						// $dataDokumen["isiDokumen"] = $newFileName;						
+						// $dataDokumen["waktuUpload"] = date("Y-m-d h:i:sa");
+						// $dataDokumen["jenis"] = 0;
+						// $dataDokumen["status"] = 1;
+						// $this->M_Dokumen->insertDokumen($dataDokumen);
+				  }
+				}
+				else{
+				  echo "Maximum upload file size limit is 200 kb";
+				}
+		  }
 
 
 		$this->M_Organisasi->updateOrganisasi($data,$idOrganisasi);
@@ -68,4 +105,6 @@
 		redirect(base_url());
 	}
 }
+}
+
 ?>
