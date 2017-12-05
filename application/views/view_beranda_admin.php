@@ -59,62 +59,54 @@
         <a href="#dokumen"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button></a>
         </div>
         <div class="w3-col m8">
-            <h2 class="w3-left-align">Program Kerja</h2>
+            <h2 class="w3-left-align">Organisasi</h2>
         </div>
-        <?php if (time() < strtotime($timeLimit)){ echo"
-        <div class=\"w3-col m4  w3-margin-top w3-right-align\">
-            <button onclick=\"document.getElementById('Tambahorganisasi').style.display='block'\" class=\"w3-btn w3-orange w3-hover-amber w3-card-4\" title=\"Tambah organisasi\"><i class=\"fa fa-plus w3-margin-right\"></i>Tambah organisasi</button>
-        </div>"; }?>
+        
         <!-- <?php //$modalViewTambah->loadModal(); ?> -->
     </div>
   </header>
 
-  <?php include('ModalView_programKerja.php'); ?>
+  <?php 
+  // include('ModalView_programKerja.php'); 
+  ?>
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
-      <?php $i = 0; $sumProgres = 0; foreach ($this->session->userdata('proker') as $programKerja) {          
-          $namaProker_cut = $programKerja->namaProker;
-          if (strlen($programKerja->namaProker) > 15) {
-              $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
+      <?php $i = 0; $sumProgres = 0; foreach ($this->session->userdata('organisasi') as $Organisasi) {
+          $namaOrganisasi_cut = $Organisasi->namaOrganisasi;
+          if (strlen($Organisasi->namaOrganisasi) > 15) {
+              $namaOrganisasi_cut = substr($Organisasi->namaOrganisasi, 0, 15)." ...";
           }
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
           <div class=\"w3-deep-orange\" style=\"height: 7%;\">
-              <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
+              <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$Organisasi->namaOrganisasi\">".$namaOrganisasi_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
                   <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4 btnLihatOrganisasi\" title=\"Lihat organisasi\" id=\"btnLihatOrganisasi\"><i class=\"fa fa-eye\"></i></button> ";
                   if (time() < strtotime($timeLimit)){
-                  echo "<button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4\" title=\"Hapus organisasi\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>";}
+                  echo "<button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4\" title=\"Hapus organisasi\"><a href=\"".base_url("C_Proker/hapusOrganisasi/$Organisasi->idOrganisasi")."\"><i class=\" fa fa-trash\"></i></a></button>";}
               echo "</div>
           </div>
           <div class=\"w3-container w3-deep-orange\">
               <div class=\"w3-col m3 w3-margin-top\">
-                  <img src=\"";
-                  if ($programKerja->jenisProker == 0) {
-                    echo base_url()."assets/img/BP.png";                    
-                  } else {
-                    echo base_url()."assets/img/NP.png";
-                  }
-                  echo 
-                  "\" alt=\"Norway\" style=\"width:100%\"class=\"w3-hover-opacity\">
+                  <img src=\"".base_url()."assets/img/".$Organisasi->logo."\" alt=\"Norway\" style=\"width:100%\"class=\"w3-hover-opacity\">
               </div>
               <div class=\"w3-col m9\">
                   <div class=\"w3-container w3-margin-top\">
                       <table class=\"w3-table w3-tiny w3-bordered w3-text-white\">
                           <tr>
-                              <td><p>Ketua</p></td><td><p>: ".$programKerja->pelaksana."</p></td>
+                              <td><p>Kepanjangan</p></td><td><p>: ".$Organisasi->kepanjangan."</p></td>
                           </tr>
                           <tr>
-                              <td><p>Waktu</p></td><td><p>: ".$programKerja->waktu."</p></td>
+                              <td><p>Nama Ketua</p></td><td><p>: ".$Organisasi->namaKetua."</p></td>
                           </tr>
                           <tr>
                               <td><p>Jenis</p></td><td><p>: ";
-                              if ($programKerja->jenisProker == 0) {
+                              // if ($Organisasi->jenisProker == 0) {
                                 echo "Berproposal";
-                              } else {
-                                echo "Tanpa Proposal";
-                              }
+                              // } else {
+                                // echo "Tanpa Proposal";
+                              // }
                               echo
                               "</p></td>
                           </tr>
@@ -124,47 +116,38 @@
               </div>
           </div>
           <div class=\"w3-light-gray w3-small w3-center \">";
-            if ($programKerja->statProposal == 0){
-              echo "<div class=\"w3-container w3-padding-small w3-light-gray w3-center\" style=\"width:0%;\">0%</div>";
-            } else {
-              echo "<div class=\"w3-container w3-padding-small w3-yellow w3-center\" style=\"width:";
-              if ($programKerja->statProposal == 2){
-                if ($programKerja->statLpj == 2){
-                  echo "100%"; $sumProgres += 100;
-                } else if ($programKerja->statLpj == 1){
-                  echo "75%"; $sumProgres += 75;
-                } else {
-                  echo "50%"; $sumProgres += 50;
-                }
-              } else if ($programKerja->statProposal == 1){
-                echo "25%"; $sumProgres += 25;
-              } else {
-                echo "0%";
-              }
-              echo ";\">";
-              if ($programKerja->statProposal == 2){
-                if ($programKerja->statLpj == 2){
-                  echo "100% ";
-                } else if ($programKerja->statLpj == 1){
-                  echo "75%";
-                } else {
-                  echo "50%";
-                }
-              } else if ($programKerja->statProposal == 1){
-                echo "25%";
-              } 
-              echo "</div>";
-            }
-          echo "</div>
-          <script>
-            document.getElementsByClassName('btnLihatOrganisasi')[$i].onclick = function() {editProker(\""
-              .$programKerja->namaProker."\",\""
-              .$programKerja->pelaksana."\",\""
-              .$programKerja->waktu."\",\""
-              .$programKerja->jenisProker."\",\""
-              .$programKerja->namaProposal."\",\""
-              .$programKerja->namaLpj."\")};
-          </script>
+            // if ($Organisasi->statProposal == 0){
+            //   echo "<div class=\"w3-container w3-padding-small w3-light-gray w3-center\" style=\"width:0%;\">0%</div>";
+            // } else {
+            //   echo "<div class=\"w3-container w3-padding-small w3-yellow w3-center\" style=\"width:";
+            //   if ($Organisasi->statProposal == 2){
+            //     if ($Organisasi->statLpj == 2){
+            //       echo "100%"; $sumProgres += 100;
+            //     } else if ($Organisasi->statLpj == 1){
+            //       echo "75%"; $sumProgres += 75;
+            //     } else {
+            //       echo "50%"; $sumProgres += 50;
+            //     }
+            //   } else if ($Organisasi->statProposal == 1){
+            //     echo "25%"; $sumProgres += 25;
+            //   } else {
+            //     echo "0%";
+            //   }
+            //   echo ";\">";
+            //   if ($Organisasi->statProposal == 2){
+            //     if ($Organisasi->statLpj == 2){
+            //       echo "100% ";
+            //     } else if ($Organisasi->statLpj == 1){
+            //       echo "75%";
+            //     } else {
+            //       echo "50%";
+            //     }
+            //   } else if ($Organisasi->statProposal == 1){
+            //     echo "25%";
+            //   } 
+            //   echo "</div>";
+            // }
+          echo "</div>          
       </div>";
       $i++;
       } ?>
@@ -187,7 +170,7 @@
               <h2 class="w3-left-align">Profil BEM</h2>
           </div>
           <div class="w3-col m4  w3-margin-top w3-right-align">
-              <button class="w3-btn w3-orange w3-hover-amber w3-card-4" title="Ubah profil organisasi" id="btnUbahProfil"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button>
+              <!-- <button class="w3-btn w3-orange w3-hover-amber w3-card-4" title="Ubah profil organisasi" id="btnUbahProfil"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button> -->
           </div>
       </div>
   </div>  
@@ -256,27 +239,27 @@
       <h4>Proposal Kegiatan Organisasi</h4>
       <div align="right">
         <?php 
-          foreach ($this->session->userdata('proker') as $programKerja) {
-            if ($programKerja->statProposal != 0){          
+          foreach ($this->session->userdata('dokumen') as $Dokumen) {
+            if ($Dokumen->status != 0){          
           echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
               <div class=\"w3-col m10 w3-margin-top\">
                   <div class=\"w3-col m1 w3-center w3-margin-bottom\">
-                    <a href = \"".base_url()."assets/doc/".$programKerja->namaProposal."\" target=_new>
+                    <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
                       <img src=\""; 
-                      if (substr($programKerja->namaProposal,-3) == "pdf"){
+                      if (substr($Dokumen->namaDokumen,-3) == "pdf"){
                         echo base_url()."assets/img/pdf.png";
                       } else {
                         echo base_url()."assets/img/word.png";
                       }
                       echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\"></a>
                   </div>
-                  <div class=\"w3-col m11 w3-left-align\"><h6>".$programKerja->namaProposal."</h6></div>
+                  <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
               </div>
               <div class=\"w3-col m2 w3-margin-top w3-right-align\">
                   <button";
-                  if ($programKerja->statProposal == 1){
+                  if ($Dokumen->status == 1){
                     echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                  } else if ($programKerja->statProposal == 2){
+                  } else if ($Dokumen->status == 2){
                     echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
                   } else {
                     echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
@@ -290,30 +273,30 @@
       </div>
       
       <!-- Laporan pertanggung jawaban -->
-      <h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
+      <<!--<h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
       <div align="right">
         <?php 
-        foreach ($this->session->userdata('proker') as $programKerja) {
-            if ($programKerja->statLpj != 0){          
+        foreach ($this->session->userdata('proker') as $Organisasi) {
+            if ($Organisasi->statLpj != 0){          
           echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
               <div class=\"w3-col m10 w3-margin-top\">
                   <div class=\"w3-col m1 w3-center w3-margin-bottom\">
-                    <a href = \"".base_url()."assets/doc/".$programKerja->namaLpj."\" target=_new>
+                    <a href = \"".base_url()."assets/doc/".$Organisasi->namaLpj."\" target=_new>
                       <img src=\""; 
-                      if (substr($programKerja->namaLpj,-3) == "pdf"){
+                      if (substr($Organisasi->namaLpj,-3) == "pdf"){
                         echo base_url()."assets/img/pdf.png";
                       } else {
                         echo base_url()."assets/img/word.png";
                       }
                       echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\">
                   </div>
-                  <div class=\"w3-col m11 w3-left-align\"><h6>".$programKerja->namaProposal."</h6></div>
+                  <div class=\"w3-col m11 w3-left-align\"><h6>".$Organisasi->namaProposal."</h6></div>
               </div>
               <div class=\"w3-col m2 w3-margin-top w3-right-align\">
                   <button";
-                  if ($programKerja->statLpj == 1){
+                  if ($Organisasi->statLpj == 1){
                     echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                  } else if ($programKerja->statLpj == 2){
+                  } else if ($Organisasi->statLpj == 2){
                     echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
                   } else {
                     echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
@@ -326,7 +309,7 @@
         ?>         
       </div>
       <br>
-  </div>
+  </div>-->
 
   <!-- Footer -->
   <!-- <footer class="w3-container w3-padding-32 w3-blue">

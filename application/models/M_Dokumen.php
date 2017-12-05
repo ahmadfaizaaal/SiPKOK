@@ -8,6 +8,10 @@
 	// 	$hasil = $query->result();
 	// 	return $hasil[0]->status;
 	// }
+	public function selectDokumenAll(){
+		$query = $this->db->get('dokumen');
+		return $query->result();
+	}
 	public function insertDokumen($data){
 		$this->db->insert("dokumen", $data);
 	}

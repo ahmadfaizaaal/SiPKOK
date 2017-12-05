@@ -37,18 +37,25 @@
 		$password = $this->input->post("password_login");
 		$count = $this->M_Akun->countAkun($email);
 		$akun = $this->M_Akun->selectAkun($email);
-		$data['judul'] = "Beranda";
-		$organisasi = $this->M_Organisasi->selectOrganisasi($akun[0]->organisasi);
-		$this->session->set_userdata(array(
-			'akunAktif'=>$akun[0], 
-			'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
-			'organisasi'=>$organisasi),
-		true);
+		$data['judul'] = "Beranda";		
 		if ($count > 0){
 			if ($akun[0]->password == $password){
 				if ($email == "admin" && $email == $akun[0]->email) {
+					$organisasi = $this->M_Organisasi->selectOrganisasiAll();
+					$this->session->set_userdata(array(
+						'akunAktif'=>$akun[0],
+						'dokumen' =>$this->M_Dokumen->selectDokumenAll(),
+						// 'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
+						'organisasi'=>$organisasi),
+					true);
 					redirect(base_url('C_Akun/admin'));	
 				} else {
+					$organisasi = $this->M_Organisasi->selectOrganisasi($akun[0]->organisasi);
+					$this->session->set_userdata(array(
+						'akunAktif'=>$akun[0], 
+						'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
+						'organisasi'=>$organisasi),
+					true);
 					redirect(base_url());
 				}				
 			} else {
