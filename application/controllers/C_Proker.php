@@ -110,15 +110,9 @@
 		$data["lpj"] = $this->M_Dokumen->getLatestDokumen(1)->idDokumen;		
 		$this->M_Proker->insertProker($data);
 		$this->session->set_userdata(array('proker'=>$this->M_Proker->selectProkerJoinDokumen($this->session->userdata('akunAktif')->organisasi)),true);
-		// echo "<script type='text/javascript'>alert('Tambah Program Kerja Sukses');</script>";
-		// alert("Tambah Program Kerja Sukses");
 		redirect(base_url());
 	}
 	public function ubahProker(){
-		// $data["idProker"] = $this->input->post("btnUbahProker");
-		// $data["idOrganisasi"] = $idOrganisasi;
-		// $data["idOrganisasi"] = $idOrganisasi;
-		// $idProker = $this->input->post("btnUbahProker");
 		$idProker = $this->session->userdata('proker')[(int)$this->input->post("btnUbahProker")]->idProker;
 		$idOrganisasi= $this->session->userdata('proker')[(int)$this->input->post("btnUbahProker")]->idOrganisasi;
 		$data["namaProker"] = $this->input->post("namaProker");
@@ -131,7 +125,6 @@
 		}
 
 		$allowed =  array('doc','docx' ,'pdf');
-		// Upload Proposal
 	  $namaProposal = $_FILES['fileProposal']['name'];
 	  $sizeProposal= $_FILES["fileProposal"]["size"]/1024;
 	  $tipeProposal = pathinfo($namaProposal, PATHINFO_EXTENSION);
@@ -212,17 +205,10 @@
 			  echo "Maximum upload file size limit is 200 kb";
 			}
 	  }	 
-
-
-		
 		$data["proposal"] = $this->M_Dokumen->getLatestDokumen(0)->idDokumen;
 		$data["lpj"] = $this->M_Dokumen->getLatestDokumen(1)->idDokumen;		
-		// $data["proposal"] = ;
-		// $data["lpj"] = "";		
 		$this->M_Proker->updateProker($data,$idProker);
 		$this->session->set_userdata(array('proker'=>$this->M_Proker->selectProkerJoinDokumen($this->session->userdata('akunAktif')->organisasi)),true);
-		// echo "<script type='text/javascript'>alert('Tambah Program Kerja Sukses');</script>";
-		// alert("Tambah Program Kerja Sukses");
 		redirect(base_url());
 	}
 }

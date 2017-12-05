@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Des 2017 pada 10.09
+-- Generation Time: 05 Des 2017 pada 11.47
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -77,8 +77,7 @@ DELIMITER ;
 
 CREATE TABLE `dokumen` (
   `idDokumen` varchar(4) NOT NULL,
-  `namaDokumen` varchar(40) NOT NULL,
-  `isiDokumen` text NOT NULL,
+  `namaDokumen` text NOT NULL,
   `waktuUpload` datetime NOT NULL,
   `jenis` int(11) NOT NULL,
   `status` int(11) NOT NULL
@@ -88,25 +87,27 @@ CREATE TABLE `dokumen` (
 -- Dumping data untuk tabel `dokumen`
 --
 
-INSERT INTO `dokumen` (`idDokumen`, `namaDokumen`, `isiDokumen`, `waktuUpload`, `jenis`, `status`) VALUES
-('D001', 'upgrading', 'dokumen.txt', '2017-09-21 10:35:00', 0, 1),
-('D002', 'proposal probin', 'dokumen.txt', '2017-10-17 09:15:33', 0, 2),
-('D003', 'pelatihan editing video', 'dokumen.txt', '2017-10-31 11:04:38', 1, 1),
-('D004', 'hackfest', 'dokumen.txt', '2017-10-08 08:40:23', 1, 2),
-('D005', 'romatics', 'dokumen.txt', '2017-09-27 10:35:15', 0, 0);
+INSERT INTO `dokumen` (`idDokumen`, `namaDokumen`, `waktuUpload`, `jenis`, `status`) VALUES
+('D001', 'dokumen.txt', '2017-09-21 10:35:00', 0, 1),
+('D002', 'dokumen.txt', '2017-10-17 09:15:33', 0, 2),
+('D003', 'dokumen.txt', '2017-10-31 11:04:38', 1, 1),
+('D004', 'dokumen.txt', '2017-10-08 08:40:23', 1, 2),
+('D005', 'dokumen.txt', '2017-09-27 10:35:15', 0, 0),
+('D006', '7985_Proposal_O001_KHS.pdf', '2017-12-04 07:57:02', 0, 3),
+('D007', '3160_LPJ_O001_KHS.pdf', '2017-12-04 07:57:02', 1, 3),
+('D008', '1872_Proposal_O001_P009_KHS.pdf', '2017-12-05 11:32:39', 0, 1),
+('D009', '3152_LPJ_O001_P009_KHS.pdf', '2017-12-05 11:32:39', 1, 1);
 
 --
 -- Trigger `dokumen`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdDokumen` BEFORE INSERT ON `dokumen` FOR EACH ROW BEGIN
-SET @hitung = CONVERT((RIGHT((SELECT idDokumen FROM `dokumen` ORDER by idDokumen DESC LIMIT 1), 4)), UNSIGNED) + 1;
+SET @hitung = CONVERT((RIGHT((SELECT idDokumen FROM `dokumen` ORDER by idDokumen DESC LIMIT 1), 3)), UNSIGNED) + 1;
 if (@hitung > 1) THEN
 if (@hitung < 10) THEN 
-SET new.idDokumen = concat('D000',@hitung);
-ELSEIF (@hitung < 100) THEN
 SET new.idDokumen = concat('D00',@hitung);
-ELSEIF (@hitung < 1000) THEN
+ELSEIF (@hitung < 100) THEN
 SET new.idDokumen = concat('D0',@hitung);
 ELSE
 SET new.idDokumen = concat('D',@hitung);
@@ -137,7 +138,7 @@ CREATE TABLE `organisasi` (
 --
 
 INSERT INTO `organisasi` (`idOrganisasi`, `namaOrganisasi`, `kepanjangan`, `namaKetua`, `logo`, `visiMisi`, `struktur`) VALUES
-('O001', 'HMIF', 'Himpunan Mahasiswa Informatika', 'Reza Muhammad Rizky', 'logo.PNG', 'menjadi informatika yg lebih baik', 'struktur.PNG'),
+('O001', 'HMIF', 'Himpunan Mahasiswa Informatika', 'Reza Muhammad Rizky', 'logo.PNG', 'Menjadi Informatika yg Lebih Baik', 'struktur.PNG'),
 ('O002', 'BIOS', 'Internal Orga dan Seni', 'Abdul Aziz Syaukad', 'logo.PNG', 'menjadikan bios lebih baik', 'struktur.PNG'),
 ('O003', 'POROS', 'Open Source', 'jaenuri', 'logo.PNG', 'menjadi tukang foto handal dan berkualitas', 'struktur.PNG'),
 ('O004', 'RAION', 'software', 'junaedi', 'logo.PNG', 'menang lomba apapun dan dimanapun', 'struktur.PNG'),
@@ -184,12 +185,14 @@ CREATE TABLE `proker` (
 --
 
 INSERT INTO `proker` (`idProker`, `idOrganisasi`, `namaProker`, `pelaksana`, `waktu`, `jenis`, `proposal`, `lpj`) VALUES
-('P001', 'O001', 'Probin', 'Riza Anizul F', 'juli - desember', 0, 'D002', 'D003'),
+('P001', 'O001', 'Probin', 'Akhmad Muzanni', 'September 2017', 0, 'D002', 'D003'),
 ('P002', 'O001', 'LKO', 'rozakiyah', '24 november 2017', 0, 'D002', 'D004'),
 ('P003', 'O001', 'Sidang Istimewa', 'Emil Fauzan', '30 januari 2018', 1, 'D002', NULL),
 ('P004', 'O001', 'seminar developer', 'levitasi', '11 desember 2017', 0, NULL, NULL),
 ('P005', 'O001', 'fun futsal', 'faturrahman', 'september - november', 0, 'D001', NULL),
-('P006', 'O001', 'Dewa Ngoding', 'Akhmad Muzanni', 'November 2017', 0, NULL, NULL);
+('P006', 'O001', 'Dewa Ngoding', 'Akhmad Muzanni', 'November 2017', 0, NULL, NULL),
+('P008', 'O002', 'Olimpiade Brawijaya', 'Gusna Ikhsan', 'Desember 2017', 0, NULL, NULL),
+('P009', 'O001', 'Cek Dokumen', 'Akhmad Muzanni Safii', 'Desember 2017', 0, 'D008', 'D009');
 
 --
 -- Trigger `proker`

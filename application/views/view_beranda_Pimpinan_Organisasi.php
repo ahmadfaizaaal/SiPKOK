@@ -388,7 +388,7 @@ $modalViewUbah = new ModalView("ubahproker");
       <div align="right">
         <?php 
         foreach ($this->session->userdata('proker') as $programKerja) {
-            if ($programKerja->statLpj != 0){          
+            if ($programKerja->statLpj != 0){
           echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
               <div class=\"w3-col m10 w3-margin-top\">
                   <div class=\"w3-col m1 w3-center w3-margin-bottom\">
@@ -401,7 +401,7 @@ $modalViewUbah = new ModalView("ubahproker");
                       }
                       echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\">
                   </div>
-                  <div class=\"w3-col m11 w3-left-align\"><h6>".$programKerja->namaProposal."</h6></div>
+                  <div class=\"w3-col m11 w3-left-align\"><h6>".$programKerja->namaLpj."</h6></div>
               </div>
               <div class=\"w3-col m2 w3-margin-top w3-right-align\">
                   <button";
