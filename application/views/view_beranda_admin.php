@@ -61,7 +61,9 @@
         <div class="w3-col m8">
             <h2 class="w3-left-align">Organisasi</h2>
         </div>
-        
+        <div class="w3-col m4  w3-margin-top w3-right-align">
+            <button onclick="document.getElementById('Tambahorganisasi').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah Organisasi"><i class="fa fa-plus w3-margin-right"></i>Tambah Organisasi</button>
+        </div>
         <!-- <?php //$modalViewTambah->loadModal(); ?> -->
     </div>
   </header>

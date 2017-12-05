@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2017 at 12:01 PM
--- Server version: 10.1.21-MariaDB
+-- Generation Time: 05 Des 2017 pada 18.20
+-- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun`
+-- Struktur dari tabel `akun`
 --
 
 CREATE TABLE `akun` (
@@ -37,7 +37,7 @@ CREATE TABLE `akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `akun`
+-- Dumping data untuk tabel `akun`
 --
 
 INSERT INTO `akun` (`idAkun`, `nama`, `jabatan`, `email`, `password`, `organisasi`, `status`) VALUES
@@ -45,13 +45,13 @@ INSERT INTO `akun` (`idAkun`, `nama`, `jabatan`, `email`, `password`, `organisas
 ('A002', 'Faiz Takwa', 'wakil ketua', 'takwaistikomah@gmail.com', '12345', 'O002', 1),
 ('A003', 'Juahir sabarlah', 'bendahara', 'sabarsekali@gmail.com', '4321', 'O003', 1),
 ('A004', 'anak lanang pambudi', 'staf', 'anaklanang@gmail.com', '2345', 'O004', 0),
-('A005', 'Akhmad Muzanni Safi\'i', 'Ketua Departemen', 'aan@gmail.com', '1234', 'O005', 1),
+('A005', 'Akhmad Muzanni Safi\'i', 'Ketua Departemen', 'aan@gmail.com', '1234', 'O001', 1),
 ('A006', 'Ahmad Faizal', 'Ketua Organisasi', 'af@gmail.com', 'faisal123', 'O001', 1),
 ('A007', 'Gusna Ikhsan', 'Ketua Organisasi', 'gusna@gmail.com', 'gusna123', 'O002', 1),
 ('A008', 'Aidi Rahman', 'Ketua Organisasi', 'aidi@gmail.com', '1234', 'O001', 0);
 
 --
--- Triggers `akun`
+-- Trigger `akun`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdAkun` BEFORE INSERT ON `akun` FOR EACH ROW BEGIN
@@ -72,7 +72,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dokumen`
+-- Struktur dari tabel `dokumen`
 --
 
 CREATE TABLE `dokumen` (
@@ -84,7 +84,7 @@ CREATE TABLE `dokumen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dokumen`
+-- Dumping data untuk tabel `dokumen`
 --
 
 INSERT INTO `dokumen` (`idDokumen`, `namaDokumen`, `waktuUpload`, `jenis`, `status`) VALUES
@@ -99,7 +99,7 @@ INSERT INTO `dokumen` (`idDokumen`, `namaDokumen`, `waktuUpload`, `jenis`, `stat
 ('D009', '3152_LPJ_O001_P009_KHS.pdf', '2017-12-05 11:32:39', 1, 1);
 
 --
--- Triggers `dokumen`
+-- Trigger `dokumen`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdDokumen` BEFORE INSERT ON `dokumen` FOR EACH ROW BEGIN
@@ -120,32 +120,34 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `organisasi`
+-- Struktur dari tabel `organisasi`
 --
 
 CREATE TABLE `organisasi` (
   `idOrganisasi` varchar(4) NOT NULL,
   `namaOrganisasi` varchar(20) NOT NULL,
   `kepanjangan` varchar(30) NOT NULL,
+  `kategori` int(11) NOT NULL,
   `namaKetua` varchar(30) NOT NULL,
   `logo` text,
   `visiMisi` text NOT NULL,
-  `struktur` text
+  `struktur` text,
+  `progress` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `organisasi`
+-- Dumping data untuk tabel `organisasi`
 --
 
-INSERT INTO `organisasi` (`idOrganisasi`, `namaOrganisasi`, `kepanjangan`, `namaKetua`, `logo`, `visiMisi`, `struktur`) VALUES
-('O001', 'HMIF', 'Himpunan Mahasiswa Informatika', 'Reza Muhammad Rizky', 'logo.PNG', 'Menjadi Informatika yg Lebih Baik', 'struktur.PNG'),
-('O002', 'BIOS', 'Internal Orga dan Seni', 'Abdul Aziz Syaukad', 'logo.PNG', 'menjadikan bios lebih baik', 'struktur.PNG'),
-('O003', 'POROS', 'Open Source', 'jaenuri', 'logo.PNG', 'menjadi tukang foto handal dan berkualitas', 'struktur.PNG'),
-('O004', 'RAION', 'software', 'junaedi', 'logo.PNG', 'menang lomba apapun dan dimanapun', 'struktur.PNG'),
-('O005', 'BPMIF', 'legistalif mahasiswa', 'Chandra Yogi', 'logo.PNG', 'membuat undang-undang ', 'struktur.PNG');
+INSERT INTO `organisasi` (`idOrganisasi`, `namaOrganisasi`, `kepanjangan`, `kategori`, `namaKetua`, `logo`, `visiMisi`, `struktur`, `progress`) VALUES
+('O001', 'HMIF', 'Himpunan Mahasiswa Informatika', 0, 'Reza Muhammad Rizky', '8968_Logo_O001_logo-hmif2.png', 'Menjadi Informatika yg Lebih Baik', 'struktur.PNG', 29.9),
+('O002', 'BIOS', 'Internal Orga dan Seni', 1, 'Abdul Aziz Syaukad', '8968_Logo_O001_logo-hmif2.png', 'menjadikan bios lebih baik', 'struktur.PNG', 0),
+('O003', 'POROS', 'Open Source', 1, 'jaenuri', '8968_Logo_O001_logo-hmif2.png', 'menjadi tukang foto handal dan berkualitas', 'struktur.PNG', 0),
+('O004', 'RAION', 'software', 1, 'junaedi', '8968_Logo_O001_logo-hmif2.png', 'menang lomba apapun dan dimanapun', 'struktur.PNG', 0),
+('O005', 'BPMIF', 'legistalif mahasiswa', 0, 'Chandra Yogi', '8968_Logo_O001_logo-hmif2.png', 'membuat undang-undang ', 'struktur.PNG', 0);
 
 --
--- Triggers `organisasi`
+-- Trigger `organisasi`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdOrganisasi` BEFORE INSERT ON `organisasi` FOR EACH ROW BEGIN
@@ -166,7 +168,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `proker`
+-- Struktur dari tabel `proker`
 --
 
 CREATE TABLE `proker` (
@@ -177,25 +179,26 @@ CREATE TABLE `proker` (
   `waktu` varchar(20) NOT NULL,
   `jenis` int(11) NOT NULL,
   `proposal` varchar(4) DEFAULT NULL,
-  `lpj` varchar(4) DEFAULT NULL
+  `lpj` varchar(4) DEFAULT NULL,
+  `progress` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `proker`
+-- Dumping data untuk tabel `proker`
 --
 
-INSERT INTO `proker` (`idProker`, `idOrganisasi`, `namaProker`, `pelaksana`, `waktu`, `jenis`, `proposal`, `lpj`) VALUES
-('P001', 'O001', 'Probin', 'Akhmad Muzanni', 'September 2017', 0, 'D002', 'D003'),
-('P002', 'O001', 'LKO', 'rozakiyah', '24 november 2017', 0, 'D002', 'D004'),
-('P003', 'O001', 'Sidang Istimewa', 'Emil Fauzan', '30 januari 2018', 1, 'D002', NULL),
-('P004', 'O001', 'seminar developer', 'levitasi', '11 desember 2017', 0, NULL, NULL),
-('P005', 'O001', 'fun futsal', 'faturrahman', 'september - november', 0, 'D001', NULL),
-('P006', 'O001', 'Dewa Ngoding', 'Akhmad Muzanni', 'November 2017', 0, NULL, NULL),
-('P008', 'O002', 'Olimpiade Brawijaya', 'Gusna Ikhsan', 'Desember 2017', 0, NULL, NULL),
-('P009', 'O001', 'Cek Dokumen', 'Akhmad Muzanni Safii', 'Desember 2017', 0, 'D008', 'D009');
+INSERT INTO `proker` (`idProker`, `idOrganisasi`, `namaProker`, `pelaksana`, `waktu`, `jenis`, `proposal`, `lpj`, `progress`) VALUES
+('P001', 'O001', 'Probin', 'Akhmad Muzanni', 'September 2017', 0, 'D002', 'D003', 0),
+('P002', 'O001', 'LKO', 'rozakiyah', '24 november 2017', 0, 'D002', 'D004', 0),
+('P003', 'O001', 'Sidang Istimewa', 'Emil Fauzan', '30 januari 2018', 1, 'D002', NULL, 0),
+('P004', 'O001', 'seminar developer', 'levitasi', '11 desember 2017', 0, NULL, NULL, 0),
+('P005', 'O001', 'fun futsal', 'faturrahman', 'september - november', 0, 'D001', NULL, 0),
+('P006', 'O001', 'Dewa Ngoding', 'Akhmad Muzanni', 'November 2017', 0, NULL, NULL, 0),
+('P008', 'O002', 'Olimpiade Brawijaya', 'Gusna Ikhsan', 'Desember 2017', 0, NULL, NULL, 0),
+('P009', 'O001', 'Cek Dokumen', 'Akhmad Muzanni Safii', 'Desember 2017', 0, 'D008', 'D009', 0);
 
 --
--- Triggers `proker`
+-- Trigger `proker`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdProker` BEFORE INSERT ON `proker` FOR EACH ROW BEGIN
@@ -246,17 +249,17 @@ ALTER TABLE `proker`
   ADD KEY `idOrganisasi` (`idOrganisasi`);
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `akun`
+-- Ketidakleluasaan untuk tabel `akun`
 --
 ALTER TABLE `akun`
   ADD CONSTRAINT `akun_ibfk_1` FOREIGN KEY (`organisasi`) REFERENCES `organisasi` (`idOrganisasi`);
 
 --
--- Constraints for table `proker`
+-- Ketidakleluasaan untuk tabel `proker`
 --
 ALTER TABLE `proker`
   ADD CONSTRAINT `proker_ibfk_1` FOREIGN KEY (`proposal`) REFERENCES `dokumen` (`idDokumen`),
