@@ -211,28 +211,21 @@
       // $organisasi = base_url("C_Organisasi/getOganisasi/".$this->session->userdata('akunAktif')->organisasi."");
       echo
         "<tr>
-            <td style=\"width: 20%;\"><h5>Nama Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>".$this->session->userdata('organisasi')->namaOrganisasi."</h5></td>
+            <td style=\"width: 20%;\"><h5>Nama Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>BEM FILKOM<h5></td>
         </tr>
         <tr>
-            <td style=\"width: 20%;\"><h5>Kepanjangan</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>".$this->session->userdata('organisasi')->kepanjangan."</h5></td>
+            <td style=\"width: 20%;\"><h5>Kepanjangan</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>Badan Eksekutif Mahasiswa Fakultas Ilmu Komputer</h5></td>
         </tr>
         <tr>
-            <td style=\"width: 20%;\"><h5>Nama Ketua</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>".$this->session->userdata('organisasi')->namaKetua."</h5></td>
+            <td style=\"width: 20%;\"><h5>Nama Ketua</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>Iqbal Caraka Altino</h5></td>
         </tr>
         <tr>
-            <td style=\"width: 20%;\"><h5>Visi Misi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>".$this->session->userdata('organisasi')->visiMisi."</h5></td>
+            <td style=\"width: 20%;\"><h5>Visi Misi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>Mensejahterakan Filkom</h5></td>
         </tr>
         <tr>
             <td style=\"width: 20%;\"><h5>Struktur Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5><div class=\"w3-card-4\"><img src=\"".base_url()."assets/img/struktur.png\" alt=\"Struktur\" style=\"width:100%\"></div></h5></td>
         </tr>
-        <tr>
-            <td style=\"width: 20%;\"><h5>Progress Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td>
-            <td style=\"width: 78%;\">
-                <div class=\"w3-white w3-margin-top\">
-                    <div class=\"w3-container w3-yellow w3-padding w3-center\" style=\"width:".number_format((float)$sumProgres/$i, 2, '.', '')."%\">".number_format((float)$sumProgres/$i, 2, '.', '')."%</div>
-                </div>
-            </td>
-        </tr>"
+        "
       ?>
     </table>    
   </div>
