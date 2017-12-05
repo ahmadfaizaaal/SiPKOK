@@ -5,14 +5,18 @@
 		$this->load->model('M_Akun');
 		$this->load->model('M_Proker');
 		$this->load->model('M_Dokumen');
-		// $this->load->controller("C_Organisasi");
 	}
 
 	public function index() {
 		$judul = "SiPKOK";
 		$data['judul'] = $judul;
 		$this->load->view('view_beranda_Pimpinan_Organisasi', $data);		
-		// $this->load->model('M_Organisasi');
+	}
+
+	public function admin() {
+		$judul = "SiPKOK";
+		$data['judul'] = $judul;
+		$this->load->view('view_beranda_admin', $data);	
 	}
 
 	public function register() {
@@ -29,28 +33,24 @@
 	}
 
 	public function login(){
-		// $this->load->library('../controllers/C_Proker');
 		$email = $this->input->post("email_login");
 		$password = $this->input->post("password_login");
 		$count = $this->M_Akun->countAkun($email);
 		$akun = $this->M_Akun->selectAkun($email);
-		// $data['akunAktif'] = $akun[0];
 		$data['judul'] = "Beranda";
-		// $data['proker'] = $this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi);
 		$organisasi = $this->M_Organisasi->selectOrganisasi($akun[0]->organisasi);
 		$this->session->set_userdata(array(
 			'akunAktif'=>$akun[0], 
-			// 'proker'=>$this->M_Proker->selectProkerByOrganisasi($akun[0]->organisasi),
 			'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
 			'organisasi'=>$organisasi),
-			// 'statProposal'=>$this->M_Dokumen->getStatus($organisasi->proposal),
-			// 'statLpj'=>$this->M_Dokumen->getStatus($organisasi->lpj)),
-
 		true);
 		if ($count > 0){
-			if ($akun[0]->password == $password){				
-				// $this->load->view('view_beranda_Pimpinan_Organisasi',$data);
-				redirect(base_url());
+			if ($akun[0]->password == $password){
+				if ($email == "admin" && $email == $akun[0]->email) {
+					redirect(base_url('C_Akun/admin'));	
+				} else {
+					redirect(base_url());
+				}				
 			} else {
 				echo "Password Salah";
 			}
@@ -60,12 +60,6 @@
 	}
 
 	public function doRegister(){
-		// echo $this->input->post("organisasi");
-		// $this->load->model('M_Akun');
-		// $this->load->library('../controllers/whathever');
-		// $this->load->controller("C_Organisasi");		
-		// echo $organisasi[0]->idOrganisasi;
-		// echo $organisasi;
 		$data["idAkun"] = "";
 		$data["nama"] = $this->input->post("username");
 		$data["organisasi"] = $this->M_Organisasi->selectIdOrganisasiByNama($this->input->post("organisasi"));		
