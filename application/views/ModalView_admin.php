@@ -1,10 +1,10 @@
 <!-- Modal tambah program kerja -->
-  <div id="Tambahproker" class="w3-modal">
+  <div id="Tambahorganisasi" class="w3-modal">
       <div class="w3-modal-content w3-animate-zoom w3-card-4">
           <div class="w3-card-4">
             <div class="w3-container w3-green">
                 <h3><b>Tambah program kerja</b></h3>
-                <span onclick="document.getElementById('Tambahproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
+                <span onclick="document.getElementById('Tambahorganisasi').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
             </div>
             <form class="w3-container" action="<?php $idOrganisasi = $this->session->userdata('organisasi')->idOrganisasi; echo base_url("C_Proker/tambahProker/$idOrganisasi") ?>" method="post" enctype="multipart/form-data" name="form1">
                 <table class="w3-table w3-bordered-white">

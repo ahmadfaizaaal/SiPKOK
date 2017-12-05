@@ -247,77 +247,80 @@
       <div align="right">
         <?php 
           foreach ($this->session->userdata('dokumen') as $Dokumen) {
-            if ($Dokumen->status != 0){          
-          echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
-              <div class=\"w3-col m10 w3-margin-top\">
-                  <div class=\"w3-col m1 w3-center w3-margin-bottom\">
-                    <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
-                      <img src=\""; 
-                      if (substr($Dokumen->namaDokumen,-3) == "pdf"){
-                        echo base_url()."assets/img/pdf.png";
-                      } else {
-                        echo base_url()."assets/img/word.png";
-                      }
-                      echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\"></a>
-                  </div>
-                  <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
-              </div>
-              <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                  <button";
-                  if ($Dokumen->status == 1){
-                    echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                  } else if ($Dokumen->status == 2){
-                    echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
-                  } else {
-                    echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
-                  }
-                  echo "</button>
-              </div>
-          </div>";
+            if ($Dokumen->jenis == 0) {              
+              if ($Dokumen->status != 0){          
+            echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
+                <div class=\"w3-col m10 w3-margin-top\">
+                    <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                      <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
+                        <img src=\""; 
+                        if (substr($Dokumen->namaDokumen,-3) == "pdf"){
+                          echo base_url()."assets/img/pdf.png";
+                        } else {
+                          echo base_url()."assets/img/word.png";
+                        }
+                        echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\"></a>
+                    </div>
+                    <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
+                </div>
+                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
+                    <button";
+                    if ($Dokumen->status == 1){
+                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
+                    } else if ($Dokumen->status == 2){
+                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
+                    } else {
+                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
+                    }
+                    echo "</button>
+                </div>
+            </div>";
+        }
+        }
+        }
+        ?>         
+      </div>
+
+      <!-- Proposal -->
+      <h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
+      <div align="right">
+        <?php 
+          foreach ($this->session->userdata('dokumen') as $Dokumen) {
+            if ($Dokumen->jenis == 1) {              
+              if ($Dokumen->status != 0){          
+            echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
+                <div class=\"w3-col m10 w3-margin-top\">
+                    <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                      <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
+                        <img src=\""; 
+                        if (substr($Dokumen->namaDokumen,-3) == "pdf"){
+                          echo base_url()."assets/img/pdf.png";
+                        } else {
+                          echo base_url()."assets/img/word.png";
+                        }
+                        echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\"></a>
+                    </div>
+                    <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
+                </div>
+                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
+                    <button";
+                    if ($Dokumen->status == 1){
+                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
+                    } else if ($Dokumen->status == 2){
+                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
+                    } else {
+                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
+                    }
+                    echo "</button>
+                </div>
+            </div>";
+        }
         }
         }
         ?>         
       </div>
       
-      <!-- Laporan pertanggung jawaban -->
-      <<!--<h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
-      <div align="right">
-        <?php 
-        foreach ($this->session->userdata('proker') as $Organisasi) {
-            if ($Organisasi->statLpj != 0){          
-          echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
-              <div class=\"w3-col m10 w3-margin-top\">
-                  <div class=\"w3-col m1 w3-center w3-margin-bottom\">
-                    <a href = \"".base_url()."assets/doc/".$Organisasi->namaLpj."\" target=_new>
-                      <img src=\""; 
-                      if (substr($Organisasi->namaLpj,-3) == "pdf"){
-                        echo base_url()."assets/img/pdf.png";
-                      } else {
-                        echo base_url()."assets/img/word.png";
-                      }
-                      echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\">
-                  </div>
-                  <div class=\"w3-col m11 w3-left-align\"><h6>".$Organisasi->namaProposal."</h6></div>
-              </div>
-              <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                  <button";
-                  if ($Organisasi->statLpj == 1){
-                    echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                  } else if ($Organisasi->statLpj == 2){
-                    echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
-                  } else {
-                    echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
-                  }
-                  echo "</button>
-              </div>
-          </div>";
-        }
-      }
-        ?>         
-      </div>
-      <br>
-  </div>-->
-
+     
   <!-- Footer -->
   <!-- <footer class="w3-container w3-padding-32 w3-blue">
   <div class="w3-row-padding">
