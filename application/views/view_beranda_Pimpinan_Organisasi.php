@@ -137,7 +137,7 @@ $modalViewUbah = new ModalView("ubahproker");
     </div>
   </header>
 
-  <?php include('ModalView_programKerja.php'); ?>
+  <?php $i = 0; include('ModalView_programKerja.php'); ?>
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
@@ -153,7 +153,7 @@ $modalViewUbah = new ModalView("ubahproker");
               <div class="w3-col m3 w3-margin-top">
                   <img src="<?php echo base_url() ?>assets/img/BP.png" alt="Norway" style="width:100%"class="w3-hover-opacity"> -->
 
-      <?php $i = 0; $sumProgres = 0; foreach ($this->session->userdata('proker') as $programKerja) {          
+      <?php $sumProgres = 0; foreach ($this->session->userdata('proker') as $programKerja) {          
           $namaProker_cut = $programKerja->namaProker;
           if (strlen($programKerja->namaProker) > 15) {
               $namaProker_cut = substr($programKerja->namaProker, 0, 15)." ...";
@@ -239,12 +239,15 @@ $modalViewUbah = new ModalView("ubahproker");
           echo "</div>
           <script>
             document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\""
+              // .$programKerja->idProker."\",\""
+              .$i."\",\""
               .$programKerja->namaProker."\",\""
               .$programKerja->pelaksana."\",\""
               .$programKerja->waktu."\",\""
               .$programKerja->jenisProker."\",\""
               .$programKerja->namaProposal."\",\""
-              .$programKerja->namaLpj."\")};
+              .$programKerja->namaLpj."\",\""
+              .$i."\")};
           </script>
       </div>";
       $i++;
@@ -475,8 +478,9 @@ document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php
   $visiMisi = $this->session->userdata('organisasi')->visiMisi;
    echo "\"$namaOrganisasi\",\"$kepanjangan\",\"$namaKetua\",\"$visiMisi\"";
   ?>)};
-function editProker($namaProker, $pelaksana, $waktu, $jenisProker, $namaProposal, $namaLpj){
+function editProker($idProker, $namaProker, $pelaksana, $waktu, $jenisProker, $namaProposal, $namaLpj){
       document.getElementById("Editproker").style.display = 'block'; 
+      document.getElementById('btnUbahProker').value = $idProker;
       document.getElementById('namaProker').value = $namaProker;
       document.getElementById('pelaksana').value = $pelaksana;
       document.getElementById('waktu').value = $waktu;
@@ -486,10 +490,10 @@ function editProker($namaProker, $pelaksana, $waktu, $jenisProker, $namaProposal
       } else {
         document.getElementById('optTanpaProposal').selected = true;
         // document.getElementById('jenis').value = "Tanpa Proposal";
-      };
-      // document.getElementById('fileProposal').value = "assets/doc/"+$namaProposal;
-      document.getElementById('fileProposal').value = "D://TDC.docx";
-      document.getElementById('fileLpj').value = $namaLpj;
+      };      
+      document.getElementById('judulForm').value = "Tes";
+      // document.getElementById('fileProposal').value = "D://TDC.docx";
+      // document.getElementById('fileLpj').value = $namaLpj;
 
 }
 

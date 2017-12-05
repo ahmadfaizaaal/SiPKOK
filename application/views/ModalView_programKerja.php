@@ -46,10 +46,11 @@
       <div class="w3-modal-content w3-animate-zoom w3-card-4">
           <div class="w3-card-4">
             <div class="w3-container w3-green">
-                <h3><b>Edit program kerja</b></h3>
+                <h3 id="judulForm" value="judul"><b>Edit program kerja</b></h3>
                 <span onclick="document.getElementById('Editproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
             </div>
-            <form class="w3-container" action="<?php $idProker = $this->session->userdata('proker')[0]->idProker; echo base_url("C_Proker/ubahProker/$idProker") ?>" method="post" enctype="multipart/form-data" name="form1">
+            <form class="w3-container" action="<?php echo base_url("C_Proker/ubahProker") ?>" method="post" enctype="multipart/form-data" name="form1" id="formEditProker">
+            <!-- <form class="w3-container" action="#" method="post" enctype="multipart/form-data" name="form1" id="formEditProker"> -->
                 <table class="w3-table w3-bordered-white">
                     <tr><td></td></tr>
                     <tr>
@@ -76,7 +77,7 @@
                         <td style="width: 33%;"><h5>Unggah LPJ</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileLpj" id="fileLpj"></h5></td>
                     </tr>
                     <tr>
-                        <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card">Simpan Perubahan</button></td>
+                        <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card" name="btnUbahProker" id="btnUbahProker" value="simpan">Simpan Perubahan</button></td>
                     </tr>
                     <tr><td></td></tr>
                 </table>
