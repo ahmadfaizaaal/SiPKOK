@@ -15,36 +15,41 @@
 
 		$allowed =  array('jpeg','jpg','png','PNG');
 		// Upload Struktur
-	  $namaStruktur = $_FILES['fileStruktur']['name'];
-	  $sizeStruktur= $_FILES["fileStruktur"]["size"]/1024;
-	  $tipeStruktur = pathinfo($namaStruktur, PATHINFO_EXTENSION);
-	  $tmpNameProposal=$_FILES["fileStruktur"]["tmp_name"];  
-	  if(!in_array($tipeStruktur,$allowed) ) {
-		  echo "You can only upload a Word doc/docx or a Pdf file.";
-	  } else {
-			if($sizeStruktur<=1000){
+		if ($_FILES['fileStruktur']['name'] != "") {
+			$namaStruktur = $_FILES['fileStruktur']['name'];
+		  $sizeStruktur= $_FILES["fileStruktur"]["size"]/1024;
+		  $tipeStruktur = pathinfo($namaStruktur, PATHINFO_EXTENSION);
+		  $tmpNameProposal=$_FILES["fileStruktur"]["tmp_name"];  
+		  if(!in_array($tipeStruktur,$allowed) ) {
+			  echo "You can only upload a Word doc/docx or a Pdf file.";
+		  } else {
+				if($sizeStruktur<=1000){
 
-			  //New file name
-			  $random=rand(1111,9999);
-			  $newFileName=$random."_Struktur_".$idOrganisasi."_".$namaStruktur;
+				  //New file name
+				  $random=rand(1111,9999);
+				  $newFileName=$random."_Struktur_".$idOrganisasi."_".$namaStruktur;
 
-			  //File upload path
-			  $uploadPath="assets/img/".$newFileName;
+				  //File upload path
+				  $uploadPath="assets/img/".$newFileName;
 
-			  //function for upload file
-			  if(move_uploaded_file($tmpNameProposal,$uploadPath)){
-					echo "Successful"; 
-					echo "File Name :".$newFileName; 
-					echo "File Size :".$sizeStruktur." kb"; 
-					echo "File Type :".$tipeStruktur;
-					$data["struktur"] = $newFileName;
-			  }
-			}
-			else{
-			  echo "Maximum upload file size limit is 200 kb";
-			}
+				  //function for upload file
+				  if(move_uploaded_file($tmpNameProposal,$uploadPath)){
+						echo "Successful"; 
+						echo "File Name :".$newFileName; 
+						echo "File Size :".$sizeStruktur." kb"; 
+						echo "File Type :".$tipeStruktur;
+						$data["struktur"] = $newFileName;
+				  } else {
+				  	echo "gagal";
+				  }
+				}
+				else{
+				  echo "Maximum upload file size limit is 200 kb";
+				}
+		}
+	}
 
-			// Upload Logo
+		if ($_FILES['fileLogo']['name'] != "") {
 		  $namaLogo = $_FILES['fileLogo']['name'];
 		  $sizeLogo= $_FILES["fileLogo"]["size"]/1024;
 		  $tipeLogo = pathinfo($namaLogo, PATHINFO_EXTENSION);
@@ -73,13 +78,14 @@
 				else{
 				  echo "Maximum upload file size limit is 200 kb";
 				}
-		  }
+		  }	
+		  }  
 
 
 		$this->M_Organisasi->updateOrganisasi($data,$idOrganisasi);
 		$this->session->set_userdata(array('organisasi'=>$this->M_Organisasi->selectOrganisasi($this->session->userdata('akunAktif')->organisasi)),true);
 		redirect(base_url());
-		}
+		
 	}
 	public function hapusOrganisasi($idOrganisasi){
 		$this->M_Organisasi->deleteOrganisasi($idOrganisasi);

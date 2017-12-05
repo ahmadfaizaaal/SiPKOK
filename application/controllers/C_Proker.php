@@ -24,6 +24,7 @@
 		$data["namaProker"] = $this->input->post("namaProker");
 		$data["pelaksana"] = $this->input->post("pelaksana");
 		$data["waktu"] = $this->input->post("waktu");
+		$data["progress"] = 0;
 		if ($this->input->post("jenis") == "Berproposal"){
 			$data["jenis"] = 0;
 		} else {
@@ -55,8 +56,7 @@
 					echo "File Size :".$sizeProposal." kb"; 
 					echo "File Type :".$tipeProposal;
 					$dataDokumen["idDokumen"] = "D001";
-					$dataDokumen["namaDokumen"] = $newFileName;	
-					$dataDokumen["isiDokumen"] = $newFileName;						
+					$dataDokumen["namaDokumen"] = $newFileName;										
 					$dataDokumen["waktuUpload"] = date("Y-m-d h:i:sa");
 					$dataDokumen["jenis"] = 0;
 					$dataDokumen["status"] = 1;
@@ -92,8 +92,7 @@
 					echo "File Size :".$sizeLpj." kb"; 
 					echo "File Type :".$tipeLpj; 
 					$dataDokumen["idDokumen"] = "D001";
-					$dataDokumen["namaDokumen"] = $newFileName;	
-					$dataDokumen["isiDokumen"] = $newFileName;						
+					$dataDokumen["namaDokumen"] = $newFileName;											
 					$dataDokumen["waktuUpload"] = date("Y-m-d h:i:sa");
 					$dataDokumen["jenis"] = 1;
 					$dataDokumen["status"] = 1;
@@ -147,8 +146,7 @@
 					echo "File Size :".$sizeProposal." kb"; 
 					echo "File Type :".$tipeProposal;
 					$dataDokumen["idDokumen"] = "D001";
-					$dataDokumen["namaDokumen"] = $newFileName;	
-					$dataDokumen["isiDokumen"] = $newFileName;						
+					$dataDokumen["namaDokumen"] = $newFileName;											
 					$dataDokumen["waktuUpload"] = date("Y-m-d h:i:sa");
 					$dataDokumen["jenis"] = 0;
 					$dataDokumen["status"] = 1;
@@ -188,8 +186,7 @@
 					echo "File Size :".$sizeLpj." kb"; 
 					echo "File Type :".$tipeLpj; 
 					$dataDokumen["idDokumen"] = "D001";
-					$dataDokumen["namaDokumen"] = $newFileName;	
-					$dataDokumen["isiDokumen"] = $newFileName;						
+					$dataDokumen["namaDokumen"] = $newFileName;											
 					$dataDokumen["waktuUpload"] = date("Y-m-d h:i:sa");
 					$dataDokumen["jenis"] = 1;
 					$dataDokumen["status"] = 1;	
