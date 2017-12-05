@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Des 2017 pada 11.47
--- Versi Server: 10.1.21-MariaDB
+-- Generation Time: Dec 05, 2017 at 12:01 PM
+-- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `akun`
+-- Table structure for table `akun`
 --
 
 CREATE TABLE `akun` (
@@ -37,21 +37,21 @@ CREATE TABLE `akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `akun`
+-- Dumping data for table `akun`
 --
 
 INSERT INTO `akun` (`idAkun`, `nama`, `jabatan`, `email`, `password`, `organisasi`, `status`) VALUES
-('A001', 'muzanni', 'Ketua departemen', 'aan@gmail.com', '1234', 'O001', 1),
+('A001', 'BEM Filkom UB', 'Administrator', 'admin', 'admin', 'O001', 1),
 ('A002', 'Faiz Takwa', 'wakil ketua', 'takwaistikomah@gmail.com', '12345', 'O002', 1),
 ('A003', 'Juahir sabarlah', 'bendahara', 'sabarsekali@gmail.com', '4321', 'O003', 1),
 ('A004', 'anak lanang pambudi', 'staf', 'anaklanang@gmail.com', '2345', 'O004', 0),
-('A005', 'mintunthilun', 'sekretaris', 'mintunthilun@gmail.com', '1357', 'O005', 0),
+('A005', 'Akhmad Muzanni Safi\'i', 'Ketua Departemen', 'aan@gmail.com', '1234', 'O005', 1),
 ('A006', 'Ahmad Faizal', 'Ketua Organisasi', 'af@gmail.com', 'faisal123', 'O001', 1),
 ('A007', 'Gusna Ikhsan', 'Ketua Organisasi', 'gusna@gmail.com', 'gusna123', 'O002', 1),
 ('A008', 'Aidi Rahman', 'Ketua Organisasi', 'aidi@gmail.com', '1234', 'O001', 0);
 
 --
--- Trigger `akun`
+-- Triggers `akun`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdAkun` BEFORE INSERT ON `akun` FOR EACH ROW BEGIN
@@ -72,7 +72,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dokumen`
+-- Table structure for table `dokumen`
 --
 
 CREATE TABLE `dokumen` (
@@ -84,7 +84,7 @@ CREATE TABLE `dokumen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dokumen`
+-- Dumping data for table `dokumen`
 --
 
 INSERT INTO `dokumen` (`idDokumen`, `namaDokumen`, `waktuUpload`, `jenis`, `status`) VALUES
@@ -99,7 +99,7 @@ INSERT INTO `dokumen` (`idDokumen`, `namaDokumen`, `waktuUpload`, `jenis`, `stat
 ('D009', '3152_LPJ_O001_P009_KHS.pdf', '2017-12-05 11:32:39', 1, 1);
 
 --
--- Trigger `dokumen`
+-- Triggers `dokumen`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdDokumen` BEFORE INSERT ON `dokumen` FOR EACH ROW BEGIN
@@ -120,7 +120,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `organisasi`
+-- Table structure for table `organisasi`
 --
 
 CREATE TABLE `organisasi` (
@@ -134,7 +134,7 @@ CREATE TABLE `organisasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `organisasi`
+-- Dumping data for table `organisasi`
 --
 
 INSERT INTO `organisasi` (`idOrganisasi`, `namaOrganisasi`, `kepanjangan`, `namaKetua`, `logo`, `visiMisi`, `struktur`) VALUES
@@ -145,7 +145,7 @@ INSERT INTO `organisasi` (`idOrganisasi`, `namaOrganisasi`, `kepanjangan`, `nama
 ('O005', 'BPMIF', 'legistalif mahasiswa', 'Chandra Yogi', 'logo.PNG', 'membuat undang-undang ', 'struktur.PNG');
 
 --
--- Trigger `organisasi`
+-- Triggers `organisasi`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdOrganisasi` BEFORE INSERT ON `organisasi` FOR EACH ROW BEGIN
@@ -166,7 +166,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `proker`
+-- Table structure for table `proker`
 --
 
 CREATE TABLE `proker` (
@@ -181,7 +181,7 @@ CREATE TABLE `proker` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `proker`
+-- Dumping data for table `proker`
 --
 
 INSERT INTO `proker` (`idProker`, `idOrganisasi`, `namaProker`, `pelaksana`, `waktu`, `jenis`, `proposal`, `lpj`) VALUES
@@ -195,7 +195,7 @@ INSERT INTO `proker` (`idProker`, `idOrganisasi`, `namaProker`, `pelaksana`, `wa
 ('P009', 'O001', 'Cek Dokumen', 'Akhmad Muzanni Safii', 'Desember 2017', 0, 'D008', 'D009');
 
 --
--- Trigger `proker`
+-- Triggers `proker`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdProker` BEFORE INSERT ON `proker` FOR EACH ROW BEGIN
@@ -246,17 +246,17 @@ ALTER TABLE `proker`
   ADD KEY `idOrganisasi` (`idOrganisasi`);
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `akun`
+-- Constraints for table `akun`
 --
 ALTER TABLE `akun`
   ADD CONSTRAINT `akun_ibfk_1` FOREIGN KEY (`organisasi`) REFERENCES `organisasi` (`idOrganisasi`);
 
 --
--- Ketidakleluasaan untuk tabel `proker`
+-- Constraints for table `proker`
 --
 ALTER TABLE `proker`
   ADD CONSTRAINT `proker_ibfk_1` FOREIGN KEY (`proposal`) REFERENCES `dokumen` (`idDokumen`),
