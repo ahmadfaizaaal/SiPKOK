@@ -67,7 +67,7 @@
   </header>
 
   <?php 
-  // include('ModalView_programKerja.php'); 
+  // include('ModalView_admin.php'); 
   ?>
   
   <!-- First Photo Grid-->
@@ -77,15 +77,20 @@
           if (strlen($Organisasi->namaOrganisasi) > 15) {
               $namaOrganisasi_cut = substr($Organisasi->namaOrganisasi, 0, 15)." ...";
           }
+          if (strlen($Organisasi->namaKetua) > 12) {
+              $namaKetua_cut = substr($Organisasi->namaKetua, 0, 12)." ...";
+          }
+          if (strlen($Organisasi->kepanjangan) > 12) {
+              $kepanjangan_cut = substr($Organisasi->kepanjangan, 0, 12)." ...";
+          }
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
           <div class=\"w3-deep-orange\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$Organisasi->namaOrganisasi\">".$namaOrganisasi_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
-                  <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4 btnLihatOrganisasi\" title=\"Lihat organisasi\" id=\"btnLihatOrganisasi\"><i class=\"fa fa-eye\"></i></button> ";
-                  if (time() < strtotime($timeLimit)){
-                  echo "<button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4\" title=\"Hapus organisasi\"><a href=\"".base_url("C_Proker/hapusOrganisasi/$Organisasi->idOrganisasi")."\"><i class=\" fa fa-trash\"></i></a></button>";}
-              echo "</div>
+                  <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4 btnLihatOrganisasi\" title=\"Lihat organisasi\" id=\"btnLihatOrganisasi\"><i class=\"fa fa-eye\"></i></button> 
+                  <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4\" title=\"Hapus organisasi\"><a href=\"".base_url("C_Organisasi/hapusOrganisasi/$Organisasi->idOrganisasi")."\"><i class=\" fa fa-trash\"></i></a></button>
+              </div>
           </div>
           <div class=\"w3-container w3-deep-orange\">
               <div class=\"w3-col m3 w3-margin-top\">
@@ -95,10 +100,10 @@
                   <div class=\"w3-container w3-margin-top\">
                       <table class=\"w3-table w3-tiny w3-bordered w3-text-white\">
                           <tr>
-                              <td><p>Kepanjangan</p></td><td><p>: ".$Organisasi->kepanjangan."</p></td>
+                              <td><p>Kepanjangan</p></td><td><p title=\"$Organisasi->kepanjangan\">: ".$kepanjangan_cut."</p></td>
                           </tr>
                           <tr>
-                              <td><p>Nama Ketua</p></td><td><p>: ".$Organisasi->namaKetua."</p></td>
+                              <td><p>Nama Ketua</p></td><td><p title=\"$Organisasi->namaKetua\">: ".$namaKetua_cut."</p></td>
                           </tr>
                           <tr>
                               <td><p>Jenis</p></td><td><p>: ";
@@ -115,16 +120,16 @@
                   </div>
               </div>
           </div>
-          <div class=\"w3-light-gray w3-small w3-center \">";
+          <div class=\"w3-light-gray w3-small w3-center \">";          
             // if ($Organisasi->statProposal == 0){
-            //   echo "<div class=\"w3-container w3-padding-small w3-light-gray w3-center\" style=\"width:0%;\">0%</div>";
+              // echo "<div class=\"w3-container w3-padding-small w3-light-gray w3-center\" style=\"width:0%;\">0%</div>";
             // } else {
-            //   echo "<div class=\"w3-container w3-padding-small w3-yellow w3-center\" style=\"width:";
+              echo "<div class=\"w3-container w3-padding-small w3-yellow w3-center\" style=\"width:";
             //   if ($Organisasi->statProposal == 2){
             //     if ($Organisasi->statLpj == 2){
             //       echo "100%"; $sumProgres += 100;
             //     } else if ($Organisasi->statLpj == 1){
-            //       echo "75%"; $sumProgres += 75;
+                  echo "75%"; $sumProgres += 75;
             //     } else {
             //       echo "50%"; $sumProgres += 50;
             //     }
@@ -133,19 +138,19 @@
             //   } else {
             //     echo "0%";
             //   }
-            //   echo ";\">";
+              echo ";\">";
             //   if ($Organisasi->statProposal == 2){
             //     if ($Organisasi->statLpj == 2){
             //       echo "100% ";
             //     } else if ($Organisasi->statLpj == 1){
-            //       echo "75%";
+                  echo "75%";
             //     } else {
             //       echo "50%";
             //     }
             //   } else if ($Organisasi->statProposal == 1){
             //     echo "25%";
             //   } 
-            //   echo "</div>";
+              echo "</div>";
             // }
           echo "</div>          
       </div>";

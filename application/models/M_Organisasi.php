@@ -23,5 +23,9 @@
 		$query = $this->db->where('idOrganisasi',$idOrganisasi);
         $query = $this->db->update('organisasi',$data);
 	}
+	public function deleteOrganisasi($idOrganisasi){
+		$this->db->where('idOrganisasi', $idOrganisasi);
+		$this->db->delete('organisasi');
+	}
 }
 ?>

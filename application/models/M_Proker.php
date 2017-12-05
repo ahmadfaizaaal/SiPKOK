@@ -39,5 +39,9 @@
 		$query = $this->db->where('idProker',$idProker);
         $query = $this->db->update('proker',$data);
 	}
+	public function deleteProker($idProker){
+		$this->db->where('idProker', $idProker);
+		$this->db->delete('proker');
+	}
 }
 ?>
