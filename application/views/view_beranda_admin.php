@@ -54,18 +54,18 @@
         <!-- <h1><b>My Portfolio</b></h1> -->
         <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing5.png" style="width:100%;" class="w3-round"></h1>
         <div class="w3-bar w3-bottombar w3-border-pale-yellow w3-padding-16 w3-margin-bottom" id="proker">
-        <a href="#proker"><button class="w3-bar-item w3-button w3-deep-orange w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-group w3-margin-right"></i>Organisasi</button></a>
-        <a href="#profil"><button class="w3-bar-item w3-button w3-deep-orange w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil</button></a>
-        <a href="#dokumen"><button class="w3-bar-item w3-button w3-deep-orange w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button></a>
+        <a href="#proker"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-group w3-margin-right"></i>Organisasi</button></a>
+        <a href="#profil"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil</button></a>
+        <a href="#dokumen"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button></a>
         </div>
         <div class="w3-col m8">
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
         <?php if (time() < strtotime($timeLimit)){ echo"
         <div class=\"w3-col m4  w3-margin-top w3-right-align\">
-            <button onclick=\"document.getElementById('Tambahproker').style.display='block'\" class=\"w3-btn w3-orange w3-hover-amber w3-card-4\" title=\"Tambah program kerja\"><i class=\"fa fa-plus w3-margin-right\"></i>Tambah program kerja</button>
+            <button onclick=\"document.getElementById('Tambahorganisasi').style.display='block'\" class=\"w3-btn w3-orange w3-hover-amber w3-card-4\" title=\"Tambah organisasi\"><i class=\"fa fa-plus w3-margin-right\"></i>Tambah organisasi</button>
         </div>"; }?>
-        <!-- <?php $modalViewTambah->loadModal(); ?> -->
+        <!-- <?php //$modalViewTambah->loadModal(); ?> -->
     </div>
   </header>
 
@@ -80,15 +80,15 @@
           }
       echo 
       "<div class=\"w3-third w3-container w3-margin-bottom\">
-          <div class=\"w3-blue\" style=\"height: 7%;\">
+          <div class=\"w3-deep-orange\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$programKerja->namaProker\">".$namaProker_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
-                  <button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4 btnEditProker\" title=\"Ubah program kerja\" id=\"btnEditProker\"><i class=\"fa fa-pencil\"></i></button> ";
+                  <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4 btnLihatOrganisasi\" title=\"Lihat organisasi\" id=\"btnLihatOrganisasi\"><i class=\"fa fa-eye\"></i></button> ";
                   if (time() < strtotime($timeLimit)){
-                  echo "<button class=\"w3-btn w3-tiny w3-red w3-hover-white w3-card-4\" title=\"Hapus program kerja\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>";}
+                  echo "<button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4\" title=\"Hapus organisasi\"><a href=\"".base_url("C_Proker/hapusProker/$programKerja->idProker")."\"><i class=\" fa fa-trash\"></i></a></button>";}
               echo "</div>
           </div>
-          <div class=\"w3-container w3-blue\">
+          <div class=\"w3-container w3-deep-orange\">
               <div class=\"w3-col m3 w3-margin-top\">
                   <img src=\"";
                   if ($programKerja->jenisProker == 0) {
@@ -127,7 +127,7 @@
             if ($programKerja->statProposal == 0){
               echo "<div class=\"w3-container w3-padding-small w3-light-gray w3-center\" style=\"width:0%;\">0%</div>";
             } else {
-              echo "<div class=\"w3-container w3-padding-small w3-green w3-center\" style=\"width:";
+              echo "<div class=\"w3-container w3-padding-small w3-yellow w3-center\" style=\"width:";
               if ($programKerja->statProposal == 2){
                 if ($programKerja->statLpj == 2){
                   echo "100%"; $sumProgres += 100;
@@ -157,7 +157,7 @@
             }
           echo "</div>
           <script>
-            document.getElementsByClassName('btnEditProker')[$i].onclick = function() {editProker(\""
+            document.getElementsByClassName('btnLihatOrganisasi')[$i].onclick = function() {editProker(\""
               .$programKerja->namaProker."\",\""
               .$programKerja->pelaksana."\",\""
               .$programKerja->waktu."\",\""
@@ -184,10 +184,10 @@
   <div class="w3-container" id="profil">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
           <div class="w3-col m8">
-              <h2 class="w3-left-align">Profil Organisasi</h2>
+              <h2 class="w3-left-align">Profil BEM</h2>
           </div>
           <div class="w3-col m4  w3-margin-top w3-right-align">
-              <button class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Ubah profil organisasi" id="btnUbahProfil"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button>
+              <button class="w3-btn w3-orange w3-hover-amber w3-card-4" title="Ubah profil organisasi" id="btnUbahProfil"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button>
           </div>
       </div>
   </div>  
@@ -198,13 +198,13 @@
       <img src="<?php //echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
     </div> -->
     <div class="w3-center">
-      <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Me" style="width:20%">
+      <img src="<?php echo base_url() ?>assets/img/logoBEM.png" alt="Me" style="width:15%">
     </div>
   </div>
 
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
     <!-- <h4><b>Nama Organisasi</b></h4> -->
-    <table class="w3-table w3-bordered">
+    <table class="w3-table w3-striped w3-amber">
       <?php 
       // $idOrganisasi = $this->session->userdata('akunAktif')->organisasi;
       // $organisasi = base_url("C_Organisasi/getOrganisasi/$idOrganisasi");
@@ -229,7 +229,7 @@
             <td style=\"width: 20%;\"><h5>Progress Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td>
             <td style=\"width: 78%;\">
                 <div class=\"w3-white w3-margin-top\">
-                    <div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:".number_format((float)$sumProgres/$i, 2, '.', '')."%\">".number_format((float)$sumProgres/$i, 2, '.', '')."%</div>
+                    <div class=\"w3-container w3-yellow w3-padding w3-center\" style=\"width:".number_format((float)$sumProgres/$i, 2, '.', '')."%\">".number_format((float)$sumProgres/$i, 2, '.', '')."%</div>
                 </div>
             </td>
         </tr>"
@@ -381,8 +381,8 @@
 
 <script>
 // document.getElementById('btnEdit').onclick = function() {editProker()};
-// for (var i = document.getElementsByClassName('btnEditProker').length - 1; i >= 0; i--) {  
-//   document.getElementsByClassName('btnEditProker')[i].onclick = function() {editProker("O001")};
+// for (var i = document.getElementsByClassName('btnLihatOrganisasi').length - 1; i >= 0; i--) {  
+//   document.getElementsByClassName('btnLihatOrganisasi')[i].onclick = function() {editProker("O001")};
 // };
 document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php 
   $namaOrganisasi = $this->session->userdata('organisasi')->namaOrganisasi;
