@@ -86,6 +86,27 @@
 		$this->session->set_userdata(array('organisasi'=>$this->M_Organisasi->selectOrganisasiAll(),true));
 		redirect(base_url("C_Akun/admin"));
 	}
+	public function tambahOrganisasi(){
+		$data["idOrganisasi"] = "";
+		$data["namaOrganisasi"] = $this->input->post("namaOrganisasi");
+		$data["kepanjangan"] = $this->input->post("kepanjangan");		
+		$data["namaKetua"] = $this->input->post("namaKetua");
+		$data["visiMisi"] = "Belum Didefinisikan";
+		$data["logo"] = "SIPKOK.png";
+		$data["struktur"] = "struktur.png";
+		if ($this->input->post("kategori") == "HMP"){
+			$data["kategori"] = 0;
+		} else if ($this->input->post("kategori") == "LSO"){
+			$data["kategori"] = 1;
+		} else {
+			$data["kategori"] = 2;
+		}
+		$data["progress"] = 0;
+		$this->M_Organisasi->insertOrganisasi($data);
+		$this->session->set_userdata(array('organisasi'=>$this->M_Organisasi->selectOrganisasiAll(),true));
+		// echo $data;
+		redirect(base_url("C_Akun/admin"));
+	}
 }
 
 ?>

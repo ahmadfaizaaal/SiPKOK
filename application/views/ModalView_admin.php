@@ -1,10 +1,10 @@
 <!-- Modal tambah program kerja -->
-  <div id="Tambahorganisasi" class="w3-modal">
+<!--   <div id="Tambahproker" class="w3-modal">
       <div class="w3-modal-content w3-animate-zoom w3-card-4">
           <div class="w3-card-4">
             <div class="w3-container w3-green">
                 <h3><b>Tambah program kerja</b></h3>
-                <span onclick="document.getElementById('Tambahorganisasi').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
+                <span onclick="document.getElementById('Tambahproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
             </div>
             <form class="w3-container" action="<?php $idOrganisasi = $this->session->userdata('organisasi')->idOrganisasi; echo base_url("C_Proker/tambahProker/$idOrganisasi") ?>" method="post" enctype="multipart/form-data" name="form1">
                 <table class="w3-table w3-bordered-white">
@@ -50,7 +50,7 @@
                 <span onclick="document.getElementById('Editproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
             </div>
             <form class="w3-container" action="<?php echo base_url("C_Proker/ubahProker") ?>" method="post" enctype="multipart/form-data" name="form1" id="formEditProker">
-            <!-- <form class="w3-container" action="#" method="post" enctype="multipart/form-data" name="form1" id="formEditProker"> -->
+            <form class="w3-container" action="#" method="post" enctype="multipart/form-data" name="form1" id="formEditProker"> 
                 <table class="w3-table w3-bordered-white">
                     <tr><td></td></tr>
                     <tr>
@@ -84,16 +84,16 @@
             </form>
           </div>  
       </div>
-  </div>
+  </div> -->
 
-  <div id="ubahProfil" class="w3-modal">
+  <div id="Tambahorganisasi" class="w3-modal">
       <div class="w3-modal-content w3-animate-zoom w3-card-4">
           <div class="w3-card-4">
             <div class="w3-container w3-green">
-                <h3><b>Ubah profil organisasi</b></h3>
-                <span onclick="document.getElementById('ubahProfil').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
+                <h3><b>Tambah Organisasi</b></h3>
+                <span onclick="document.getElementById('Tambahorganisasi').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
             </div>
-            <form class="w3-container" action="<?php $idOrganisasi = $this->session->userdata('organisasi')->idOrganisasi; echo base_url("C_Organisasi/ubahProfil/$idOrganisasi") ?>" method="post" enctype="multipart/form-data" name="form1">
+            <form class="w3-container" action=<?php echo base_url("C_Organisasi/tambahOrganisasi") ?> method="post" enctype="multipart/form-data" name="form1">
                 <table class="w3-table w3-bordered-white">
                     <tr><td></td></tr>
                     <tr>
@@ -106,17 +106,26 @@
                         <td style="width: 33%;"><h5>Nama Ketua</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="namaKetua" id="namaKetua"></h5></td>
                     </tr>
                     <tr>
+                        <td style="width: 33%;"><h5>Kategori</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5>
+                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;" name="kategori" id="kategori">
+                              <option value="HMP" id="optHMP">HMP</option>
+                              <option value="LSO" id="optLSO">LSO</option>
+                              <option value="Komunitas" id="optKomunitas">Komunitas</option>
+                            </select>
+                        </h5></td>
+                    </tr>
+                    <!-- <tr>
                         <td style="width: 33%;"><h5>Visi Misi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><textarea class="w3-card w3-small" id="visiMisi" name="visiMisi" rows="5" cols="100"></textarea></h5>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td style="width: 33%;"><h5>Ubah Logo</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileLogo" id="fileLogo"></h5></td>
                     </tr>
                     <tr>
                         <td style="width: 33%;"><h5>Ubah Struktur</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileStruktur" id="fileStruktur"></h5></td>
-                    </tr>
+                    </tr> -->
                     <tr>
-                        <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card">Simpan Perubahan</button></td>
+                        <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card">Tambah Organisasi</button></td>
                     </tr>
                     <tr><td></td></tr>
                 </table>

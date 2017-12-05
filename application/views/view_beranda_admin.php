@@ -69,13 +69,15 @@
   </header>
 
   <?php 
-  // include('ModalView_admin.php'); 
+  include('ModalView_admin.php'); 
   ?>
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
       <?php $i = 0; $sumProgres = 0; foreach ($this->session->userdata('organisasi') as $Organisasi) {
           $namaOrganisasi_cut = $Organisasi->namaOrganisasi;
+          $namaKetua_cut = $Organisasi->namaKetua;
+          $kepanjangan_cut = $Organisasi->kepanjangan;
           if (strlen($Organisasi->namaOrganisasi) > 15) {
               $namaOrganisasi_cut = substr($Organisasi->namaOrganisasi, 0, 15)." ...";
           }
@@ -108,12 +110,14 @@
                               <td><p>Nama Ketua</p></td><td><p title=\"$Organisasi->namaKetua\">: ".$namaKetua_cut."</p></td>
                           </tr>
                           <tr>
-                              <td><p>Jenis</p></td><td><p>: ";
-                              // if ($Organisasi->jenisProker == 0) {
-                                echo "Berproposal";
-                              // } else {
-                                // echo "Tanpa Proposal";
-                              // }
+                              <td><p>Kategori</p></td><td><p>: ";
+                              if ($Organisasi->kategori == 0) {
+                                echo "HMP";
+                              } else if ($Organisasi->kategori == 1){
+                                echo "LSO";
+                              } else {
+                                echo "Komunitas";
+                              }
                               echo
                               "</p></td>
                           </tr>
@@ -281,7 +285,7 @@
         ?>         
       </div>
 
-      <!-- Proposal -->
+      <!-- Laporan Pertanggungjawaban -->
       <h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
       <div align="right">
         <?php 
