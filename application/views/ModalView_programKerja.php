@@ -106,7 +106,8 @@
                         <td style="width: 33%;"><h5>Nama Ketua</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="namaKetua" id="namaKetua"></h5></td>
                     </tr>
                     <tr>
-                        <td style="width: 33%;"><h5>Visi Misi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-input" type="text" name="visiMisi" id="visiMisi"></h5></td>
+                        <td style="width: 33%;"><h5>Visi Misi</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><textarea class="w3-card w3-small" id="visiMisi" name="visiMisi" rows="5" cols="100"></textarea></h5>
+                        </td>
                     </tr>
                     <tr>
                         <td style="width: 33%;"><h5>Ubah Logo</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileLogo" id="fileLogo"></h5></td>
