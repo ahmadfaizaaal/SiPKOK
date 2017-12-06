@@ -315,9 +315,14 @@ $modalViewUbah = new ModalView("ubahproker");
         <tr>
             <td style=\"width: 20%;\"><h5>Progress Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td>
             <td style=\"width: 78%;\">
-                <div class=\"w3-white w3-margin-top\">
-                    <div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:".number_format((float)$sumProgres/$i, 2, '.', '')."%\">".number_format((float)$sumProgres/$i, 2, '.', '')."%</div>
-                </div>
+                <div class=\"w3-white w3-margin-top\">";
+                    $progressOrganisasi = number_format((float)$sumProgres/$i, 2, '.', '');
+                    if ($progressOrganisasi == 0) {
+                      echo "<div class=\"w3-container w3-white w3-text-black w3-padding w3-center\" style=\"width:0%\">0%</div>";
+                    } else {
+                      echo "<div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:".$progressOrganisasi."%\">".$progressOrganisasi."%</div>";
+                    }; 
+                echo "</div>
             </td>
         </tr>"
       ?>
