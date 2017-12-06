@@ -92,7 +92,7 @@
           <div class=\"w3-deep-orange\" style=\"height: 7%;\">
               <div class=\"w3-col m7\"><h4 class=\"w3-left-align w3-margin-left\" title=\"$Organisasi->namaOrganisasi\">".$namaOrganisasi_cut."</h4></div>
               <div class=\"w3-col m5 w3-right-align w3-padding\">
-                  <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4 btnLihatOrganisasi\" title=\"Lihat organisasi\" id=\"btnLihatOrganisasi\"><i class=\"fa fa-eye\"></i></button> 
+                  <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4\" title=\"Lihat organisasi\"><a href=\"".base_url("C_Organisasi/lihatDetailOrganisasi/$Organisasi->idOrganisasi")."\"><i class=\"fa fa-eye\"></i></a></button>
                   <button class=\"w3-btn w3-tiny w3-amber w3-hover-orange w3-card-4\" title=\"Hapus organisasi\"><a href=\"".base_url("C_Organisasi/hapusOrganisasi/$Organisasi->idOrganisasi")."\"><i class=\" fa fa-trash\"></i></a></button>
               </div>
           </div>
@@ -323,6 +323,8 @@
         }
         ?>         
       </div>
+      <br>
+  </div>
       
      
   <!-- Footer -->

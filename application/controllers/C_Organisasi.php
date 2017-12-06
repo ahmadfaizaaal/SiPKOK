@@ -113,6 +113,14 @@
 		// echo $data;
 		redirect(base_url("C_Akun/admin"));
 	}
+	public function lihatDetailOrganisasi($idOrganisasi) {
+		$judul = "SiPKOK";
+		$data['judul'] = $judul;
+		$this->session->set_userdata(array(
+			'detailOrganisasi'=>$this->M_Organisasi->selectOrganisasi($idOrganisasi),
+			'prokerDetailOrganisasi'=>$this->M_Proker->selectProkerJoinDokumen($idOrganisasi)),true);
+		$this->load->view('view_detail_organisasi', $data);	
+	}
 }
 
 ?>
