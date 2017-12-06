@@ -22,6 +22,10 @@
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-amber w3-animate-left" style="z-index:3;width:300px;" id="sideBar"><br>
+  <div class="w3-container">
+      <!-- <a href="#" class="w3-button w3-round w3-large w3-text-white w3-hover-orange" title="Kembali"><i class="fa fa-chevron-left"></i></a> -->
+      <a href="<?php echo base_url('C_Akun/admin') ?>"><button class="w3-button w3-round w3-text-white w3-hover-orange" title="Kembali"><i class="fa fa-chevron-left w3-margin-right"></i><b>Kembali</b></button></a>
+  </div><br>
   <div class="w3-container w3-center">
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-tiny w3-padding w3-hover-orange" title="close menu">
       <i class="fa fa-remove"></i>
