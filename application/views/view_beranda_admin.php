@@ -248,15 +248,10 @@
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>
                 <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <button";
-                    if ($Dokumen->status == 1){
-                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                    } else if ($Dokumen->status == 2){
-                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
-                    } else {
-                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
-                    }
-                    echo "</button>
+                    <select class=\"w3-green\" style=\"width: 60%; height:5%;\">
+                        <option value=\"Setujui\" id=\"Setuju\">Setujui</option>
+                        <option value=\"Tolak\" id=\"Tolak\">Tolak</option>
+                    </select>
                 </div>
             </div>";
         }
@@ -266,7 +261,7 @@
       </div>
 
       <!-- Laporan Pertanggungjawaban -->
-      <br><h4>Dokumen Laporan Pertanggungjawaban</h4>
+      <br><h5>Dokumen Laporan Pertanggungjawaban</h5>
       <div align="right">
         <?php 
           foreach ($this->session->userdata('dokumen') as $Dokumen) {
@@ -287,15 +282,10 @@
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>
                 <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <button";
-                    if ($Dokumen->status == 1){
-                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                    } else if ($Dokumen->status == 2){
-                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
-                    } else {
-                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
-                    }
-                    echo "</button>
+                    <select class=\"w3-green\" style=\"width: 60%; height:5%;\">
+                        <option value=\"Setujui\" id=\"Setuju\">Setujui</option>
+                        <option value=\"Tolak\" id=\"Tolak\">Tolak</option>
+                    </select>
                 </div>
             </div>";
         }
