@@ -55,8 +55,8 @@
         <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing5.png" style="width:100%;" class="w3-round"></h1>
         <div class="w3-bar w3-bottombar w3-border-pale-yellow w3-padding-16 w3-margin-bottom" id="proker">
         <a href="#proker"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-group w3-margin-right"></i>Organisasi</button></a>
-        <a href="#profil"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil BEM</button></a>
         <a href="#dokumen"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-check-square-o w3-margin-right"></i>Verifikasi</button></a>
+        <a href="#profil"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil BEM</button></a>
         </div>
         <div class="w3-col m8">
             <h2 class="w3-left-align">Organisasi</h2>
@@ -174,6 +174,138 @@
     </div>
   </div>
 
+<!-- DOKUMEN -->
+  <!-- Line bridge -->
+  <div class="w3-container" id="dokumen">
+      <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
+          <div class="w3-col m8">
+              <h2 class="w3-left-align">Verifikasi</h2>
+          </div>
+          <div class="w3-col m4 w3-right-align">
+                <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
+                    <div class="w3-col m10">
+                        <form class="w3-white">
+                            <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
+                        </form>
+                    </div>
+                    <div class="w3-col m2 w3-margin-top">
+                        <button class="w3-btn w3-round w3-small w3-amber w3-hover-orange w3-card-4" title="Cari dokumen"><a href="#"><i class=" fa fa-search"></i></a></button>
+                    </div>
+                </div>
+            </div>
+      </div>
+      
+      <!-- Content dokumen -->
+      <!-- Proposal -->
+      <div class="w3-brown w3-margin-bottom w3-padding w3-round-large"><h4>Verifikasi Akun Yang Terdaftar</h4></div>
+      <div align="right">
+          <table class="w3-table-all w3-card w3-centered" style="width: 95%;">
+            <tr class="w3-amber">
+              <th>Nama</th>
+              <th>Email</th>
+              <th>Organisasi</th>
+              <th>Jabatan</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>Ahmad Faizal</td>
+              <td>af@gmail.com</td>
+              <td>HMIF</td>
+              <td>Ketua Organisasi</td>
+              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
+            </tr>
+            <tr>
+              <td>Akhmad Muzanni Safi'i</td>
+              <td>aan@gmail.com</td>
+              <td>HMIF</td>
+              <td>Ketua Departemen</td>
+              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
+            </tr>
+          </table>
+          <br><br>
+      </div>
+      
+      <div class="w3-brown w3-margin-bottom w3-padding w3-round-large"><h4>Verifikasi Dokumen</h4></div>
+
+      <h5>Dokumen Proposal</h5>
+      <div align="right">
+        <?php 
+          foreach ($this->session->userdata('dokumen') as $Dokumen) {
+            if ($Dokumen->jenis == 0) {              
+              if ($Dokumen->status != 0){          
+            echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
+                <div class=\"w3-col m10 w3-margin-top\">
+                    <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                      <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
+                        <img src=\""; 
+                        if (substr($Dokumen->namaDokumen,-3) == "pdf"){
+                          echo base_url()."assets/img/pdf.png";
+                        } else {
+                          echo base_url()."assets/img/word.png";
+                        }
+                        echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\" title=\"Klik untuk unduh\"></a>
+                    </div>
+                    <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
+                </div>
+                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
+                    <button";
+                    if ($Dokumen->status == 1){
+                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
+                    } else if ($Dokumen->status == 2){
+                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
+                    } else {
+                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
+                    }
+                    echo "</button>
+                </div>
+            </div>";
+        }
+        }
+        }
+        ?>         
+      </div>
+
+      <!-- Laporan Pertanggungjawaban -->
+      <br><h4>Dokumen Laporan Pertanggungjawaban</h4>
+      <div align="right">
+        <?php 
+          foreach ($this->session->userdata('dokumen') as $Dokumen) {
+            if ($Dokumen->jenis == 1) {              
+              if ($Dokumen->status != 0){          
+            echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
+                <div class=\"w3-col m10 w3-margin-top\">
+                    <div class=\"w3-col m1 w3-center w3-margin-bottom\">
+                      <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
+                        <img src=\""; 
+                        if (substr($Dokumen->namaDokumen,-3) == "pdf"){
+                          echo base_url()."assets/img/pdf.png";
+                        } else {
+                          echo base_url()."assets/img/word.png";
+                        }
+                        echo "\" alt=\"Norway\" style=\"width:60%\" class=\"w3-hover-opacity\" title=\"Klik untuk unduh\"></a>
+                    </div>
+                    <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
+                </div>
+                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
+                    <button";
+                    if ($Dokumen->status == 1){
+                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
+                    } else if ($Dokumen->status == 2){
+                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
+                    } else {
+                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
+                    }
+                    echo "</button>
+                </div>
+            </div>";
+        }
+        }
+        }
+        ?>         
+      </div>
+      <br>
+  </div>
+
   <!-- Line bridge -->
   <div class="w3-container" id="profil">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
@@ -224,181 +356,8 @@
     </table>    
   </div>
 
-<!-- DOKUMEN -->
-  <!-- Line bridge -->
-  <div class="w3-container" id="dokumen">
-      <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
-          <div class="w3-col m8">
-              <h2 class="w3-left-align">Verifikasi</h2>
-          </div>
-      </div>
+
       
-      <!-- Content dokumen -->
-      <!-- Proposal -->
-      <h4>Verifikasi Akun Yang Terdaftar</h4><br>
-      <div align="center">
-          <table class="w3-table-all w3-card w3-centered" style="width: 80%;">
-            <tr class="w3-brown">
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Organisasi</th>
-              <th>Jabatan</th>
-              <th>Status</th>
-            </tr>
-            <tr>
-              <td>Ahmad Faizal</td>
-              <td>af@gmail.com</td>
-              <td>HMIF</td>
-              <td>Ketua Organisasi</td>
-              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
-            </tr>
-            <tr>
-              <td>Akhmad Muzanni Safi'i</td>
-              <td>aan@gmail.com</td>
-              <td>HMIF</td>
-              <td>Ketua Departemen</td>
-              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
-            </tr>
-          </table>
-          <br><br>
-      </div>
-      
-      <h4>Verifikasi Dokumen</h4>
-      <div class="w3-container">
-            <div class="w3-col m4" style="height: 10%"></div>
-            <div class="w3-col m4" style="height: 10%">
-                <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
-                    <div class="w3-col m10">
-                        <form class="w3-white">
-                            <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
-                        </form>
-                    </div>
-                    <div class="w3-col m2 w3-margin-top">
-                        <button class="w3-btn w3-round w3-small w3-amber w3-hover-orange w3-card-4" title="Cari dokumen"><a href="#"><i class=" fa fa-search"></i></a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-col m4" style="height: 10%"></div>
-      </div>
-
-      <h5>Proposal Kegiatan Organisasi</h5>
-      <div align="right">
-        <?php 
-          foreach ($this->session->userdata('dokumen') as $Dokumen) {
-            if ($Dokumen->jenis == 0) {              
-              if ($Dokumen->status != 0){          
-            echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
-                <div class=\"w3-col m10 w3-margin-top\">
-                    <div class=\"w3-col m1 w3-center w3-margin-bottom\">
-                      <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
-                        <img src=\""; 
-                        if (substr($Dokumen->namaDokumen,-3) == "pdf"){
-                          echo base_url()."assets/img/pdf.png";
-                        } else {
-                          echo base_url()."assets/img/word.png";
-                        }
-                        echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\" title=\"Klik untuk unduh\"></a>
-                    </div>
-                    <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
-                </div>
-                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <button";
-                    if ($Dokumen->status == 1){
-                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                    } else if ($Dokumen->status == 2){
-                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
-                    } else {
-                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
-                    }
-                    echo "</button>
-                </div>
-            </div>";
-        }
-        }
-        }
-        ?>         
-      </div>
-
-      <!-- Laporan Pertanggungjawaban -->
-      <h4>Laporan Pertanggungjawaban Kegiatan Organisasi</h4>
-      <div align="right">
-        <?php 
-          foreach ($this->session->userdata('dokumen') as $Dokumen) {
-            if ($Dokumen->jenis == 1) {              
-              if ($Dokumen->status != 0){          
-            echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
-                <div class=\"w3-col m10 w3-margin-top\">
-                    <div class=\"w3-col m1 w3-center w3-margin-bottom\">
-                      <a href = \"".base_url()."assets/doc/".$Dokumen->status."\" target=_new>
-                        <img src=\""; 
-                        if (substr($Dokumen->namaDokumen,-3) == "pdf"){
-                          echo base_url()."assets/img/pdf.png";
-                        } else {
-                          echo base_url()."assets/img/word.png";
-                        }
-                        echo "\" alt=\"Norway\" style=\"width:60%\" class=\"w3-hover-opacity\" title=\"Klik untuk unduh\"></a>
-                    </div>
-                    <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
-                </div>
-                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <button";
-                    if ($Dokumen->status == 1){
-                      echo " class=\"w3-btn w3-tiny w3-amber w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-hourglass-half w3-margin-right\"></i>Dalam Proses"; 
-                    } else if ($Dokumen->status == 2){
-                      echo " class=\"w3-btn w3-tiny w3-green w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-check w3-margin-right\"></i>Disetujui"; 
-                    } else {
-                      echo " class=\"w3-btn w3-tiny w3-red w3-hover-light-gray w3-card\" style=\"width: 75%;\" title=\"Status program kerja\"><i class=\"fa fa-close w3-margin-right\"></i>Ditolak"; 
-                    }
-                    echo "</button>
-                </div>
-            </div>";
-        }
-        }
-        }
-        ?>         
-      </div>
-      <br>
-  </div>
-      
-     
-  <!-- Footer -->
-  <!-- <footer class="w3-container w3-padding-32 w3-blue">
-  <div class="w3-row-padding">
-    <div class="w3-third">
-      <h3>FOOTER</h3>
-      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </div>
-  
-    <div class="w3-third">
-      <h3>BLOG POSTS</h3>
-      <ul class="w3-ul w3-hoverable">
-        <li class="w3-padding-16">
-          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Lorem</span><br>
-          <span>Sed mattis nunc</span>
-        </li>
-        <li class="w3-padding-16">
-          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Ipsum</span><br>
-          <span>Praes tinci sed</span>
-        </li> 
-      </ul>
-    </div>
-
-    <div class="w3-third">
-      <h3>POPULAR TAGS</h3>
-      <p>
-        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">London</span>
-        <span class="w3-tag w3-blue w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">DIY</span>
-        <span class="w3-tag w3-blue w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">Family</span>
-        <span class="w3-tag w3-blue w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">Shopping</span>
-        <span class="w3-tag w3-blue w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-blue w3-small w3-margin-bottom">Games</span>
-      </p>
-    </div>
-
-  </div>
-  </footer> -->
   
   <div class="w3-red w3-center w3-padding-16">Dibuat oleh kelompok 1 RPL-I</div>
 
