@@ -55,8 +55,8 @@
         <h1 class="w3-right-align"><img src="<?php echo base_url() ?>assets/img/detail-logo-glowing5.png" style="width:100%;" class="w3-round"></h1>
         <div class="w3-bar w3-bottombar w3-border-pale-yellow w3-padding-16 w3-margin-bottom" id="proker">
         <a href="#proker"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class=" fa fa-group w3-margin-right"></i>Organisasi</button></a>
-        <a href="#profil"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil</button></a>
-        <a href="#dokumen"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-file-text-o w3-margin-right"></i>Dokumen</button></a>
+        <a href="#profil"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-user w3-margin-right"></i>Profil BEM</button></a>
+        <a href="#dokumen"><button class="w3-bar-item w3-button w3-brown w3-hover-orange w3-border" style="width:33.3%"><i class="fa fa-check-square-o w3-margin-right"></i>Verifikasi</button></a>
         </div>
         <div class="w3-col m8">
             <h2 class="w3-left-align">Organisasi</h2>
@@ -229,25 +229,59 @@
   <div class="w3-container" id="dokumen">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
           <div class="w3-col m8">
-              <h2 class="w3-left-align">Dokumen</h2>
-          </div>
-          <div class="w3-col m4 w3-right-align">
-              <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
-                  <div class="w3-col m10">
-                      <form class="w3-white">
-                          <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
-                      </form>
-                  </div>
-                  <div class="w3-col m2 w3-margin-top">
-                      <button class="w3-btn w3-round w3-small w3-amber w3-hover-orange w3-card-4" title="Cari dokumen"><a href="#"><i class=" fa fa-search"></i></a></button>
-                  </div>
-              </div>
+              <h2 class="w3-left-align">Verifikasi</h2>
           </div>
       </div>
       
       <!-- Content dokumen -->
       <!-- Proposal -->
-      <h4>Proposal Kegiatan Organisasi</h4>
+      <h4>Verifikasi Akun Yang Terdaftar</h4><br>
+      <div align="center">
+          <table class="w3-table-all w3-card w3-centered" style="width: 80%;">
+            <tr class="w3-brown">
+              <th>Nama</th>
+              <th>Email</th>
+              <th>Organisasi</th>
+              <th>Jabatan</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>Ahmad Faizal</td>
+              <td>af@gmail.com</td>
+              <td>HMIF</td>
+              <td>Ketua Organisasi</td>
+              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
+            </tr>
+            <tr>
+              <td>Akhmad Muzanni Safi'i</td>
+              <td>aan@gmail.com</td>
+              <td>HMIF</td>
+              <td>Ketua Departemen</td>
+              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
+            </tr>
+          </table>
+          <br><br>
+      </div>
+      
+      <h4>Verifikasi Dokumen</h4>
+      <div class="w3-container">
+            <div class="w3-col m4" style="height: 10%"></div>
+            <div class="w3-col m4" style="height: 10%">
+                <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
+                    <div class="w3-col m10">
+                        <form class="w3-white">
+                            <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
+                        </form>
+                    </div>
+                    <div class="w3-col m2 w3-margin-top">
+                        <button class="w3-btn w3-round w3-small w3-amber w3-hover-orange w3-card-4" title="Cari dokumen"><a href="#"><i class=" fa fa-search"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4" style="height: 10%"></div>
+      </div>
+
+      <h5>Proposal Kegiatan Organisasi</h5>
       <div align="right">
         <?php 
           foreach ($this->session->userdata('dokumen') as $Dokumen) {
@@ -263,7 +297,7 @@
                         } else {
                           echo base_url()."assets/img/word.png";
                         }
-                        echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\"></a>
+                        echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\" title=\"Klik untuk unduh\"></a>
                     </div>
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>
@@ -302,7 +336,7 @@
                         } else {
                           echo base_url()."assets/img/word.png";
                         }
-                        echo "\" alt=\"Norway\" style=\"width:60%\"class=\"w3-hover-opacity\"></a>
+                        echo "\" alt=\"Norway\" style=\"width:60%\" class=\"w3-hover-opacity\" title=\"Klik untuk unduh\"></a>
                     </div>
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>

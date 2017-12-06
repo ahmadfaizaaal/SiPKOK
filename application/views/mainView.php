@@ -12,7 +12,7 @@
 	<body background="<?php echo base_url() ?>assets/img/back-3.png">
 		<div>
 			<div align="center" id="div-logo" style="width: 300px; height: 100px; margin-top: 390px; margin-left: 490px;">
-				<a href="#" id="btn-logo" onclick="document.getElementById('modal-login').style.display='block'" style="width:auto;">
+				<a href="#" id="btn-logo" onclick="document.getElementById('modal-login').style.display='block'" style="width:auto;" title="Sistem Informasi Program Kerja Organisasi Kemahasiswaan">
 					<img src="<?php echo base_url() ?>assets/img/logo-SIPKOK.png" alt="Logo SiPKOK" width="164px" height="82px">
 				</a>
 			</div>

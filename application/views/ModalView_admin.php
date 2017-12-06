@@ -107,7 +107,7 @@
                     </tr>
                     <tr>
                         <td style="width: 33%;"><h5>Kategori</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5>
-                            <select class="w3-small w3-card" id="dropdown-option" style="height: 20%;" name="kategori" id="kategori">
+                            <select class="w3-card" id="dropdown-option" style="height: 20%;" name="kategori" id="kategori">
                               <option value="HMP" id="optHMP">HMP</option>
                               <option value="LSO" id="optLSO">LSO</option>
                               <option value="Komunitas" id="optKomunitas">Komunitas</option>
