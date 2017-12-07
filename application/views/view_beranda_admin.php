@@ -215,7 +215,7 @@
                                 <td>".$akunTerdaftar->jabatan."</td>";
                                 $idAkun = $akunTerdaftar->idAkun;
                       if ($akunTerdaftar->status == 0) {
-                          echo "<td><button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\"><a href=\"".base_url("C_Akun/verifikasiAkun/$idAkun")."\">Verifikasi</a></button></td>
+                          echo "<td><a href=\"".base_url("C_Akun/verifikasiAkun/$idAkun")."\"><button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\">Verifikasi</button></a></td>
                           </tr>";
                       } else {
                           echo "<td><button class=\"w3-button w3-disabled w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\">Verifikasi</button></td>
@@ -245,10 +245,12 @@
 
       <h5>Dokumen Proposal</h5>
       <div align="right">
-        <?php 
+        <?php
+          $j = 0; 
           foreach ($this->session->userdata('dokumen') as $Dokumen) {
+            $idDokumen = $Dokumen->idDokumen;
             if ($Dokumen->jenis == 0) {              
-              if ($Dokumen->status != 0){          
+              // if ($Dokumen->status != 0){          
             echo "<div class=\"w3-panel w3-leftbar w3-border-green w3-light-gray w3-margin-left w3-card\" style=\"width: 95%;\">
                 <div class=\"w3-col m10 w3-margin-top\">
                     <div class=\"w3-col m1 w3-center w3-margin-bottom\">
@@ -265,12 +267,13 @@
                 </div>
                 <div class=\"w3-col m2 w3-margin-top w3-right-align\">
                     <select class=\"w3-green\" style=\"width: 60%; height:5%;\">
-                        <option value=\"Setujui\" id=\"Setuju\">Setujui</option>
-                        <option value=\"Tolak\" id=\"Tolak\">Tolak</option>
+                        <a href=\"".base_url("C_Dokumen/verifikasiDokumen/0/$idDokumen")."\"><option value=\"Setujui\" id=\"Setuju\" class=\"Setuju\">Setujui</option></a>
+                        <a><option value=\"Tolak\" id=\"Tolak\">Tolak</option></a>
                     </select>
                 </div>
             </div>";
-        }
+            $j++;
+        // }
         }
         }
         ?>         
@@ -299,7 +302,7 @@
                 </div>
                 <div class=\"w3-col m2 w3-margin-top w3-right-align\">
                     <select class=\"w3-green\" style=\"width: 60%; height:5%;\">
-                        <option value=\"Setujui\" id=\"Setuju\">Setujui</option>
+                        <option value=\"Setujui\" id=\"Setuju\" onchange=\"\">Setujui</option>
                         <option value=\"Tolak\" id=\"Tolak\">Tolak</option>
                     </select>
                 </div>
@@ -375,39 +378,43 @@
 // for (var i = document.getElementsByClassName('btnLihatOrganisasi').length - 1; i >= 0; i--) {  
 //   document.getElementsByClassName('btnLihatOrganisasi')[i].onclick = function() {editProker("O001")};
 // };
-document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php 
-  $namaOrganisasi = $this->session->userdata('organisasi')->namaOrganisasi;
-  $kepanjangan = $this->session->userdata('organisasi')->kepanjangan;
-  $namaKetua = $this->session->userdata('organisasi')->namaKetua;
-  $visiMisi = $this->session->userdata('organisasi')->visiMisi;
-   echo "\"$namaOrganisasi\",\"$kepanjangan\",\"$namaKetua\",\"$visiMisi\"";
-  ?>)};
-function editProker($namaProker, $pelaksana, $waktu, $jenisProker, $namaProposal, $namaLpj){
-      document.getElementById("Editproker").style.display = 'block'; 
-      document.getElementById('namaProker').value = $namaProker;
-      document.getElementById('pelaksana').value = $pelaksana;
-      document.getElementById('waktu').value = $waktu;
-      if ($jenisProker == 0) {
-        // document.getElementById('jenis').value = "Berproposal";
-        document.getElementById('optProposal').selected = true;
-      } else {
-        document.getElementById('optTanpaProposal').selected = true;
-        // document.getElementById('jenis').value = "Tanpa Proposal";
-      };
-      // document.getElementById('fileProposal').value = "assets/doc/"+$namaProposal;
-      document.getElementById('fileProposal').value = "D://TDC.docx";
-      document.getElementById('fileLpj').value = $namaLpj;
-
+// document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php 
+//   $namaOrganisasi = $this->session->userdata('organisasi')->namaOrganisasi;
+//   $kepanjangan = $this->session->userdata('organisasi')->kepanjangan;
+//   $namaKetua = $this->session->userdata('organisasi')->namaKetua;
+//   $visiMisi = $this->session->userdata('organisasi')->visiMisi;
+//    echo "\"$namaOrganisasi\",\"$kepanjangan\",\"$namaKetua\",\"$visiMisi\"";
+//   ?>)};
+document.getElementById('Setuju')[0].onchange = function() {verifikasiProposal()};
+function verifikasiProposal(){
+  window.location.href = "google.com";
 }
+// function editProker($namaProker, $pelaksana, $waktu, $jenisProker, $namaProposal, $namaLpj){
+//       document.getElementById("Editproker").style.display = 'block'; 
+//       document.getElementById('namaProker').value = $namaProker;
+//       document.getElementById('pelaksana').value = $pelaksana;
+//       document.getElementById('waktu').value = $waktu;
+//       if ($jenisProker == 0) {
+//         // document.getElementById('jenis').value = "Berproposal";
+//         document.getElementById('optProposal').selected = true;
+//       } else {
+//         document.getElementById('optTanpaProposal').selected = true;
+//         // document.getElementById('jenis').value = "Tanpa Proposal";
+//       };
+//       // document.getElementById('fileProposal').value = "assets/doc/"+$namaProposal;
+//       document.getElementById('fileProposal').value = "D://TDC.docx";
+//       document.getElementById('fileLpj').value = $namaLpj;
 
-function editProfil($namaOrganisasi, $kepanjangan, $namaKetua, $visiMisi){
-  document.getElementById("ubahProfil").style.display = 'block'; 
-  document.getElementById('namaOrganisasi').value = $namaOrganisasi;
-  document.getElementById('kepanjangan').value = $kepanjangan;
-  document.getElementById('namaKetua').value = $namaKetua;
-  document.getElementById('visiMisi').value = $visiMisi;
-  // document.getElementById('fileProposal').value = $visiMisi;
-}
+// }
+
+// function editProfil($namaOrganisasi, $kepanjangan, $namaKetua, $visiMisi){
+//   document.getElementById("ubahProfil").style.display = 'block'; 
+//   document.getElementById('namaOrganisasi').value = $namaOrganisasi;
+//   document.getElementById('kepanjangan').value = $kepanjangan;
+//   document.getElementById('namaKetua').value = $namaKetua;
+//   document.getElementById('visiMisi').value = $visiMisi;
+//   // document.getElementById('fileProposal').value = $visiMisi;
+// }
 // Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySide").style.display = "block";
