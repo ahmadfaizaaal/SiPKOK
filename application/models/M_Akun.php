@@ -21,6 +21,10 @@
         $query = $this->db->get();
         return $query->result();
 	}
+	public function setStatus($idAkun) {
+		$query = $this->db->where('idAkun',$idAkun);
+        $query = $this->db->update('akun','1');
+	}
 	public function countAkun($email){
 		$query = $this->db->where("email", $email);
 		$query = $this->db->from("akun");

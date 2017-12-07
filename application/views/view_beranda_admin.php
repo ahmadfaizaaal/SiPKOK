@@ -223,20 +223,6 @@
                       }
                   }
             ?>
-            <!-- <tr>
-              <td>Ahmad Faizal</td>
-              <td>af@gmail.com</td>
-              <td>HMIF</td>
-              <td>Ketua Organisasi</td>
-              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Verifikasi">Verifikasi</button></td>
-            </tr>
-            <tr>
-              <td>Akhmad Muzanni Safi'i</td>
-              <td>aan@gmail.com</td>
-              <td>HMIF</td>
-              <td>Ketua Departemen</td>
-              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Verifikasi">Verifikasi</button></td>
-            </tr> -->
           </table>
           <br><br>
       </div>
