@@ -12,11 +12,7 @@
 		$query = $this->db->where_not_in('email','admin');
         $query = $this->db->join('organisasi', 'akun.organisasi = organisasi.idOrganisasi');
         $query = $this->db->from('akun');
-<<<<<<< HEAD
-        $query = $this->db->select('akun.idAkun, 
-=======
         $query = $this->db->select('akun.idAkun as idAkun,
->>>>>>> 1f40670e0fff7cbceafd50978fc75e8f1d0e9ec0
         							akun.nama as nama, 
         							akun.email as email, 
         							organisasi.namaOrganisasi as namaOrganisasi, 
