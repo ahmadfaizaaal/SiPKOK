@@ -12,13 +12,18 @@
 		$query = $this->db->where_not_in('email','admin');
         $query = $this->db->join('organisasi', 'akun.organisasi = organisasi.idOrganisasi');
         $query = $this->db->from('akun');
-        $query = $this->db->select('akun.nama as nama, 
+        $query = $this->db->select('akun.idAkun, 
+        							akun.nama as nama, 
         							akun.email as email, 
         							organisasi.namaOrganisasi as namaOrganisasi, 
         							akun.jabatan as jabatan, 
         							akun.status as status');
         $query = $this->db->get();
         return $query->result();
+	}
+	public function setStatus($idAkun) {
+		$query = $this->db->where('idAkun',$idAkun);
+        $query = $this->db->update('akun','1');
 	}
 	public function countAkun($email){
 		$query = $this->db->where("email", $email);
