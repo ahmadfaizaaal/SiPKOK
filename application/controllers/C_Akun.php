@@ -87,5 +87,11 @@
 		// $this->load->view('mainView', $data);
 		redirect(base_url());
 	}
+	public function verifikasiAkun($idAkun){
+		$data["status"] = 1;
+		$this->M_Akun->updateAkun($data, $idAkun);
+		$this->session->set_userdata(array('akunTerdaftar'=>$this->M_Akun->selectAkunByStatus(),true));
+		redirect(base_url("C_Akun/admin"));
+	}
 }
 ?>
