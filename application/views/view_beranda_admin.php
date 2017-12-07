@@ -251,9 +251,13 @@
                     </div>
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>
-                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button>
-                </div>
+                <div class=\"w3-col m2 w3-margin-top w3-right-align\">";
+                    if ($Dokumen->status == 1) {
+                      echo "<a href=".base_url("C_Dokumen/verifikasiDokumen/1/$idDokumen")."><button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button></a>";
+                    } else {
+                      echo "<button class=\"w3-button w3-disabled w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button>";
+                    }
+                echo "</div>
             </div>";
             $j++;
         // }
@@ -283,9 +287,14 @@
                     </div>
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>
-                <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button>
-                </div>
+                <div class=\"w3-col m2 w3-margin-top w3-right-align\">";
+                    $idDokumen = $Dokumen->idDokumen;
+                    if ($Dokumen->status == 1) {
+                      echo "<a href=".base_url("C_Dokumen/verifikasiDokumen/1/$idDokumen")."><button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button></a>";
+                    } else {
+                      echo "<button class=\"w3-button w3-disabled w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button>";
+                    }
+                echo "</div>
             </div>";
         }
         }
