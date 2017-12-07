@@ -174,7 +174,7 @@
     </div>
   </div>
 
-<!-- DOKUMEN -->
+<!-- VERIFIKASI -->
   <!-- Line bridge -->
   <div class="w3-container" id="dokumen">
       <div class="w3-bar w3-topbar w3-border-white w3-padding-16">
@@ -252,10 +252,7 @@
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>
                 <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <select class=\"w3-green\" style=\"width: 60%; height:5%;\">
-                        <a href=\"".base_url("C_Dokumen/verifikasiDokumen/0/$idDokumen")."\"><option value=\"Setujui\" id=\"Setuju\" class=\"Setuju\">Setujui</option></a>
-                        <a><option value=\"Tolak\" id=\"Tolak\">Tolak</option></a>
-                    </select>
+                    <button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button>
                 </div>
             </div>";
             $j++;
@@ -287,10 +284,7 @@
                     <div class=\"w3-col m11 w3-left-align\"><h6>".$Dokumen->namaDokumen."</h6></div>
                 </div>
                 <div class=\"w3-col m2 w3-margin-top w3-right-align\">
-                    <select class=\"w3-green\" style=\"width: 60%; height:5%;\">
-                        <option value=\"Setujui\" id=\"Setuju\" onchange=\"\">Setujui</option>
-                        <option value=\"Tolak\" id=\"Tolak\">Tolak</option>
-                    </select>
+                    <button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 50%;\" title=\"Setujui\">Setujui</button>
                 </div>
             </div>";
         }
