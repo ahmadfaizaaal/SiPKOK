@@ -213,8 +213,9 @@
                                 <td>".$akunTerdaftar->email."</td>
                                 <td>".$akunTerdaftar->namaOrganisasi."</td>
                                 <td>".$akunTerdaftar->jabatan."</td>";
+                                $idAkun = $akunTerdaftar->idAkun;
                       if ($akunTerdaftar->status == 0) {
-                          echo "<td><button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\">Verifikasi</button></td>
+                          echo "<td><button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\"><a href=\"".base_url("C_Akun/verifikasiAkun/$idAkun")."\">Verifikasi</a></button></td>
                           </tr>";
                       } else {
                           echo "<td><button class=\"w3-button w3-disabled w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\">Verifikasi</button></td>

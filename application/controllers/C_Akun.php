@@ -67,14 +67,16 @@
 	}
 
 	public function doRegister(){
-		$data["idAkun"] = "";
-		$data["nama"] = $this->input->post("username");
-		$data["organisasi"] = $this->M_Organisasi->selectIdOrganisasiByNama($this->input->post("organisasi"));		
-		$data["email"] = $this->input->post("email");
-		$data["password"] = $this->input->post("password");
-		$data["jabatan"] = $this->input->post("jabatan");
-		$data["status"] = "";
-		$this->M_Akun->insertAkun("akun", $data);
+		if($this->input->post("kirim") == "Kirim"){
+			$data["idAkun"] = "";
+			$data["nama"] = $this->input->post("username");
+			$data["organisasi"] = $this->M_Organisasi->selectIdOrganisasiByNama($this->input->post("organisasi"));		
+			$data["email"] = $this->input->post("email");
+			$data["password"] = $this->input->post("password");
+			$data["jabatan"] = $this->input->post("jabatan");
+			$data["status"] = "";
+			$this->M_Akun->insertAkun("akun", $data);
+		}		
 		redirect(base_url());
 	}
 
@@ -84,6 +86,12 @@
 		$this->session->sess_destroy();
 		// $this->load->view('mainView', $data);
 		redirect(base_url());
+	}
+	public function verifikasiAkun($idAkun){
+		$data["status"] = 1;
+		$this->M_Akun->updateAkun($data, $idAkun);
+		$this->session->set_userdata(array('akunTerdaftar'=>$this->M_Akun->selectAkunByStatus(),true));
+		redirect(base_url("C_Akun/admin"));
 	}
 }
 ?>
