@@ -7,6 +7,19 @@
 		$query = $this->db->get("akun");
 		return $query->result();
 	}
+	public function selectAkunByStatus() {
+		$query = $this->db->order_by("status", "asc");
+		$query = $this->db->where_not_in('email','admin');
+        $query = $this->db->join('organisasi', 'akun.organisasi = organisasi.idOrganisasi');
+        $query = $this->db->from('akun');
+        $query = $this->db->select('akun.nama as nama, 
+        							akun.email as email, 
+        							organisasi.namaOrganisasi as namaOrganisasi, 
+        							akun.jabatan as jabatan, 
+        							akun.status as status');
+        $query = $this->db->get();
+        return $query->result();
+	}
 	public function countAkun($email){
 		$query = $this->db->where("email", $email);
 		$query = $this->db->from("akun");

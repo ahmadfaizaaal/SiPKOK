@@ -44,8 +44,8 @@
 					$organisasi = $this->M_Organisasi->selectOrganisasiAll();
 					$this->session->set_userdata(array(
 						'akunAktif'=>$akun[0],
+						'akunTerdaftar'=>$this->M_Akun->selectAkunByStatus(),
 						'dokumen' =>$this->M_Dokumen->selectDokumenAll(),
-						// 'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
 						'organisasi'=>$organisasi),
 					true);
 					redirect(base_url('C_Akun/admin'));	

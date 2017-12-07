@@ -185,7 +185,7 @@
                 <div class="w3-panel w3-white w3-round-xlarge w3-border w3-small">
                     <div class="w3-col m10">
                         <form class="w3-white">
-                            <p><input class="w3-input" type="text" placeholder="Cari dokumen"></p>
+                            <p><input class="w3-input" type="text" placeholder="Pencarian . . . . ."></p>
                         </form>
                     </div>
                     <div class="w3-col m2 w3-margin-top">
@@ -207,20 +207,35 @@
               <th>Jabatan</th>
               <th>Status</th>
             </tr>
-            <tr>
+            <?php foreach ($this->session->userdata('akunTerdaftar') as $akunTerdaftar) {
+                      echo "<tr>
+                                <td>".$akunTerdaftar->nama."</td>
+                                <td>".$akunTerdaftar->email."</td>
+                                <td>".$akunTerdaftar->namaOrganisasi."</td>
+                                <td>".$akunTerdaftar->jabatan."</td>";
+                      if ($akunTerdaftar->status == 0) {
+                          echo "<td><button class=\"w3-button w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\">Verifikasi</button></td>
+                          </tr>";
+                      } else {
+                          echo "<td><button class=\"w3-button w3-disabled w3-small w3-green w3-hover-green\" style=\"width: 80%;\" title=\"Verifikasi\">Verifikasi</button></td>
+                          </tr>";
+                      }
+                  }
+            ?>
+            <!-- <tr>
               <td>Ahmad Faizal</td>
               <td>af@gmail.com</td>
               <td>HMIF</td>
               <td>Ketua Organisasi</td>
-              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
+              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Verifikasi">Verifikasi</button></td>
             </tr>
             <tr>
               <td>Akhmad Muzanni Safi'i</td>
               <td>aan@gmail.com</td>
               <td>HMIF</td>
               <td>Ketua Departemen</td>
-              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Status program kerja">Verifikasi</button></td>
-            </tr>
+              <td><button class="w3-button w3-small w3-green w3-hover-green" style="width: 80%;" title="Verifikasi">Verifikasi</button></td>
+            </tr> -->
           </table>
           <br><br>
       </div>
