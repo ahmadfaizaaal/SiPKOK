@@ -46,7 +46,7 @@
       <div class="w3-modal-content w3-animate-zoom w3-card-4">
           <div class="w3-card-4">
             <div class="w3-container w3-green">
-                <h3 id="judulForm" value="judul"><b>Edit program kerja</b></h3>
+                <h3 id="judulForm" value="judul"><b>Ubah program kerja</b></h3>
                 <span onclick="document.getElementById('Editproker').style.display='none'" class="w3-button w3-xlarge w3-display-topright w3-hover-green">&times;</span>
             </div>
             <form class="w3-container" action="<?php echo base_url("C_Proker/ubahProker") ?>" method="post" enctype="multipart/form-data" name="form1" id="formEditProker">

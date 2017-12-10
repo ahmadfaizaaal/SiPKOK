@@ -35,7 +35,7 @@
 
 		$allowed =  array('doc','docx' ,'pdf');
 		// Upload Proposal
-		if ($_FILES)
+		// if ($_FILES)
 	  $namaProposal = $_FILES['fileProposal']['name'];
 	  $sizeProposal= $_FILES["fileProposal"]["size"]/1024;
 	  $tipeProposal = pathinfo($namaProposal, PATHINFO_EXTENSION);
@@ -43,7 +43,7 @@
 	  if(!in_array($tipeProposal,$allowed) ) {
 		  echo "You can only upload a Word doc/docx or a Pdf file.";
 	  } else {
-			if($sizeProposal<=200){
+			if($sizeProposal<=1000){
 
 			  //New file name
 			  $random=rand(1111,9999);
@@ -80,7 +80,7 @@
 	  if(!in_array($tipeLpj,$allowed) ) {
 		  echo "You can only upload a Word doc/docx or a Pdf file.";
 	  } else {
-			if($sizeLpj<=200){
+			if($sizeLpj<=1000){
 
 			  //New file name
 			  $random=rand(1111,9999);
@@ -132,7 +132,7 @@
 	  if(!in_array($tipeProposal,$allowed) ) {
 		  echo "You can only upload a Word doc/docx or a Pdf file.";
 	  } else {
-			if($sizeProposal<=200){
+			if($sizeProposal<=1000){
 
 			  //New file name
 			  $random=rand(1111,9999);
@@ -173,7 +173,7 @@
 	  if(!in_array($tipeLpj,$allowed) ) {
 		  echo "You can only upload a Word doc/docx or a Pdf file.";
 	  } else {
-			if($sizeLpj<=200){
+			if($sizeLpj<=1000){
 
 			  //New file name
 			  $random=rand(1111,9999);
