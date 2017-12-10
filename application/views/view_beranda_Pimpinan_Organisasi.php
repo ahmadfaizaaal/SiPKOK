@@ -3,7 +3,7 @@
     if($isLogin==""){
       redirect( base_url().'Auth');
     }
-    $timeLimit = "2017-12-12 00:00:00";
+    $timeLimit = "2017-12-31 00:00:00";
 ?>
 <html>
 <head>
@@ -44,7 +44,7 @@
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
 
-
+<?php $i = 0; include('ModalView_PO.php'); ?>
   <!-- Header -->
   <header id="portfolio">
     <a href="#"><img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
@@ -64,11 +64,11 @@
         <div class=\"w3-col m4  w3-margin-top w3-right-align\">
             <button onclick=\"document.getElementById('Tambahproker').style.display='block'\" class=\"w3-btn w3-amber w3-hover-orange w3-card-4\" title=\"Tambah program kerja\"><i class=\"fa fa-plus w3-margin-right\"></i>Tambah program kerja</button>
         </div>"; }?>
-        <!-- <?php $modalViewTambah->loadModal(); ?> -->
+        
     </div>
   </header>
 
-  <?php $i = 0; include('ModalView_PO.php'); ?>
+  
   
   <!-- First Photo Grid-->
   <div class="w3-row-padding">

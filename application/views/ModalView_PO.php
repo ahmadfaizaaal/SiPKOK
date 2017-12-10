@@ -29,9 +29,9 @@
                     <tr>
                         <td style="width: 33%;"><h5>Unggah proposal</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileProposal" id="fileProposal"></h5></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td style="width: 33%;"><h5>Unggah LPJ</h5></td><td style="width: 2%;"><h5>:</h5></td><td style="width: 65%;"><h5><input class="w3-small" type="file" name="fileLpj" id="fileLpj"></h5></td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td style="width: 33%;"><h5></h5></td><td style="width: 2%;"><h5></h5></td><td style="width: 65%;" class="w3-right-align w3-small"><button class="w3-btn w3-green w3-card">Tambahkan</button></td>
                     </tr>

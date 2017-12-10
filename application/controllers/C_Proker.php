@@ -65,40 +65,40 @@
 		  }
 
 		  // UPLOAD LPJ
-		  $namaLpj = $_FILES['fileLpj']['name'];
-		  $sizeLpj= $_FILES["fileLpj"]["size"]/1024;
-		  $tipeLpj = pathinfo($namaLpj, PATHINFO_EXTENSION);
-		  $tmpNameLpj=$_FILES["fileLpj"]["tmp_name"];  
-		  if(!in_array($tipeLpj,$allowed) ) {
-			  echo "<script>
-						alert(\"Hanya bisa mengunggah file dengan ekstensi .doc/.docx/.pdf!\");
-			  		</script>";
-		  } else {
-				if($sizeLpj > 0){
+		  // $namaLpj = $_FILES['fileLpj']['name'];
+		  // $sizeLpj= $_FILES["fileLpj"]["size"]/1024;
+		  // $tipeLpj = pathinfo($namaLpj, PATHINFO_EXTENSION);
+		  // $tmpNameLpj=$_FILES["fileLpj"]["tmp_name"];  
+		  // if(!in_array($tipeLpj,$allowed) ) {
+			 //  echo "<script>
+				// 		alert(\"Hanya bisa mengunggah file dengan ekstensi .doc/.docx/.pdf!\");
+			 //  		</script>";
+		  // } else {
+				// if($sizeLpj > 0){
 
-				  //--NEW FILE NAME
-				  $random=rand(1111,9999);
-				  $newFileName=$random."_LPJ_".$idOrganisasi."_".$namaLpj;
+				//   //--NEW FILE NAME
+				//   $random=rand(1111,9999);
+				//   $newFileName=$random."_LPJ_".$idOrganisasi."_".$namaLpj;
 
-				  //--FILE UPLOAD PATH
-				  $uploadPath="assets/doc/".$newFileName;
+				//   //--FILE UPLOAD PATH
+				//   $uploadPath="assets/doc/".$newFileName;
 
-				  //--FUNCTION FOR UPLOAD FILE
-				  if(move_uploaded_file($tmpNameLpj,$uploadPath)){
-						$dataDokumen["idDokumen"] = "D001";
-						$dataDokumen["namaDokumen"] = $newFileName;											
-						$dataDokumen["waktuUpload"] = date("Y-m-d h:i:sa");
-						$dataDokumen["jenis"] = 1;
-						$dataDokumen["status"] = 1;
-						$this->M_Dokumen->insertDokumen($dataDokumen);
-						$data["lpj"] = $this->M_Dokumen->getLatestDokumen(1)->idDokumen;		
-				  }
-				} else if ($sizeLpj == 0){
-				  	echo "<script>
-						  alert(\"Ukuran file maksimal sebesar 2 MB!\");
-					</script>";
-				}
-		  }	
+				//   //--FUNCTION FOR UPLOAD FILE
+				//   if(move_uploaded_file($tmpNameLpj,$uploadPath)){
+				// 		$dataDokumen["idDokumen"] = "D001";
+				// 		$dataDokumen["namaDokumen"] = $newFileName;											
+				// 		$dataDokumen["waktuUpload"] = date("Y-m-d h:i:sa");
+				// 		$dataDokumen["jenis"] = 1;
+				// 		$dataDokumen["status"] = 1;
+				// 		$this->M_Dokumen->insertDokumen($dataDokumen);
+				// 		$data["lpj"] = $this->M_Dokumen->getLatestDokumen(1)->idDokumen;		
+				//   }
+				// } else if ($sizeLpj == 0){
+				//   	echo "<script>
+				// 		  alert(\"Ukuran file maksimal sebesar 2 MB!\");
+				// 	</script>";
+				// }
+		  // }	
 			$this->M_Proker->insertProker($data);
 			$this->session->set_userdata(array('proker'=>$this->M_Proker->selectProkerJoinDokumen($this->session->userdata('akunAktif')->organisasi)),true);
 			redirect(base_url(), 'refresh');
