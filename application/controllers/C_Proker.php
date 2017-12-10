@@ -157,6 +157,7 @@
 					$idProposal = $this->session->userdata('proker')[(int)$this->input->post("btnUbahProker")]->idProposal;
 					$this->M_Dokumen->insertDokumen($dataDokumen);
 					$this->M_Dokumen->updateDokumen($dataProposal, $idProposal);
+					$data["proposal"] = $this->M_Dokumen->getLatestDokumen(0)->idDokumen;
 			  }
 			}
 			else{
@@ -197,14 +198,13 @@
 					$idLpj = $this->session->userdata('proker')[(int)$this->input->post("btnUbahProker")]->idLpj;
 					$this->M_Dokumen->insertDokumen($dataDokumen);
 					$this->M_Dokumen->updateDokumen($dataLpj, $idLpj);
+					$data["lpj"] = $this->M_Dokumen->getLatestDokumen(1)->idDokumen;		
 			  }
 			}
 			else{
 			  echo "Maximum upload file size limit is 200 kb";
 			}
-	  }	 
-		$data["proposal"] = $this->M_Dokumen->getLatestDokumen(0)->idDokumen;
-		$data["lpj"] = $this->M_Dokumen->getLatestDokumen(1)->idDokumen;		
+	  }	
 		$this->M_Proker->updateProker($data,$idProker);
 		$this->session->set_userdata(array('proker'=>$this->M_Proker->selectProkerJoinDokumen($this->session->userdata('akunAktif')->organisasi)),true);
 		redirect(base_url());
