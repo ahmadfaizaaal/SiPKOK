@@ -3,9 +3,7 @@
 		parent::__construct();
 		$this->load->model("M_Dokumen");
 	}
-	// public function index(){
-	// 	echo "C_Dokumen";
-	// }
+	
 	public function verifikasiDokumen($jenis, $idDokumen){
 		$data["status"] = 2;
 		$this->M_Dokumen->updateDokumen($data, $idDokumen);

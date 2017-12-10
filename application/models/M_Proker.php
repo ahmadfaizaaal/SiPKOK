@@ -1,7 +1,5 @@
 <?php class M_Proker extends CI_Model {
-	// public function index(){
-	// 	echo "M_Proker";
-	// }
+	
 	public function selectProkerAll(){
 		$query = $this->db->get('proker');
 		return $query->result();
@@ -28,7 +26,6 @@
         	proposal.status as statProposal, 
         	lpj.namaDokumen as namaLpj, 
         	lpj.status as statLpj');
-        // $query = $this->db->select('*');
         $query = $this->db->get();
         return $query->result();
 	}

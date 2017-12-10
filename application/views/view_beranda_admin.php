@@ -32,7 +32,6 @@
     <p class="w3-text-white"><b><i>Badan Eksekutif Mahasiswa</i></b></p>
   </div>
   <div class="w3-bar-block">
-    <!-- <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button  w3-hover-light-blue w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> --> 
     <a href="" class="w3-bar-item w3-button w3-hover-amber w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i><?php echo $this->session->userdata('akunAktif')->nama?></a> 
     <a href="" class="w3-bar-item w3-button w3-hover-amber w3-padding"><i class="fa fa-INFO-CIRCLE fa-fw w3-margin-right"></i><?php echo $this->session->userdata('akunAktif')->jabatan?></a>
     <a href="<?php echo base_url("C_Akun/logout") ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-amber w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>LOGOUT</a>
@@ -127,9 +126,6 @@
               </div>
           </div>
           <div class=\"w3-light-gray w3-small w3-center \">";          
-            // if ($Organisasi->statProposal == 0){
-              // echo "<div class=\"w3-container w3-padding-small w3-light-gray w3-center\" style=\"width:0%;\">0%</div>";
-            // } else {
               echo "<div class=\"w3-container w3-padding-small w3-yellow w3-center\" style=\"width:";
             //   if ($Organisasi->statProposal == 2){
             //     if ($Organisasi->statLpj == 2){
@@ -311,28 +307,20 @@
               <h2 class="w3-left-align">Profil BEM</h2>
           </div>
           <div class="w3-col m4  w3-margin-top w3-right-align">
-              <!-- <button class="w3-btn w3-orange w3-hover-amber w3-card-4" title="Ubah profil organisasi" id="btnUbahProfil"><i class="fa fa-pencil w3-margin-right"></i>Ubah profil</button> -->
           </div>
       </div>
   </div>  
 
   <!-- Images of Me -->
   <div class="w3-row-padding w3-padding-16">
-    <!-- <div class="w3-col m6">
-      <img src="<?php //echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
-    </div> -->
     <div class="w3-center">
       <img src="<?php echo base_url() ?>assets/img/logoBEM.png" alt="Me" style="width:15%">
     </div>
   </div>
 
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <!-- <h4><b>Nama Organisasi</b></h4> -->
     <table class="w3-table w3-striped w3-amber">
       <?php 
-      // $idOrganisasi = $this->session->userdata('akunAktif')->organisasi;
-      // $organisasi = base_url("C_Organisasi/getOrganisasi/$idOrganisasi");
-      // $organisasi = base_url("C_Organisasi/getOganisasi/".$this->session->userdata('akunAktif')->organisasi."");
       echo
         "<tr>
             <td style=\"width: 20%;\"><h5>Nama Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>BEM FILKOM<h5></td>
@@ -363,47 +351,11 @@
 </div>
 
 <script>
-// document.getElementById('btnEdit').onclick = function() {editProker()};
-// for (var i = document.getElementsByClassName('btnLihatOrganisasi').length - 1; i >= 0; i--) {  
-//   document.getElementsByClassName('btnLihatOrganisasi')[i].onclick = function() {editProker("O001")};
-// };
-// document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php 
-//   $namaOrganisasi = $this->session->userdata('organisasi')->namaOrganisasi;
-//   $kepanjangan = $this->session->userdata('organisasi')->kepanjangan;
-//   $namaKetua = $this->session->userdata('organisasi')->namaKetua;
-//   $visiMisi = $this->session->userdata('organisasi')->visiMisi;
-//    echo "\"$namaOrganisasi\",\"$kepanjangan\",\"$namaKetua\",\"$visiMisi\"";
-//   ?>)};
 document.getElementById('Setuju')[0].onchange = function() {verifikasiProposal()};
 function verifikasiProposal(){
   window.location.href = "google.com";
 }
-// function editProker($namaProker, $pelaksana, $waktu, $jenisProker, $namaProposal, $namaLpj){
-//       document.getElementById("Editproker").style.display = 'block'; 
-//       document.getElementById('namaProker').value = $namaProker;
-//       document.getElementById('pelaksana').value = $pelaksana;
-//       document.getElementById('waktu').value = $waktu;
-//       if ($jenisProker == 0) {
-//         // document.getElementById('jenis').value = "Berproposal";
-//         document.getElementById('optProposal').selected = true;
-//       } else {
-//         document.getElementById('optTanpaProposal').selected = true;
-//         // document.getElementById('jenis').value = "Tanpa Proposal";
-//       };
-//       // document.getElementById('fileProposal').value = "assets/doc/"+$namaProposal;
-//       document.getElementById('fileProposal').value = "D://TDC.docx";
-//       document.getElementById('fileLpj').value = $namaLpj;
 
-// }
-
-// function editProfil($namaOrganisasi, $kepanjangan, $namaKetua, $visiMisi){
-//   document.getElementById("ubahProfil").style.display = 'block'; 
-//   document.getElementById('namaOrganisasi').value = $namaOrganisasi;
-//   document.getElementById('kepanjangan').value = $kepanjangan;
-//   document.getElementById('namaKetua').value = $namaKetua;
-//   document.getElementById('visiMisi').value = $visiMisi;
-//   // document.getElementById('fileProposal').value = $visiMisi;
-// }
 // Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySide").style.display = "block";

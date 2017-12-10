@@ -34,7 +34,7 @@
 
 	public function login(){
 		$email = $this->input->post("email_login");
-		$password = $this->input->post("password_login");
+		$password = md5($this->input->post("password_login"));
 		$count = $this->M_Akun->countAkun($email);
 		$akun = $this->M_Akun->selectAkun($email);
 		$data['judul'] = "Beranda";		
@@ -63,22 +63,19 @@
 					echo "<script>
 								alert(\"Akun belum diverifikasi oleh admin!\");
 						  </script>";
-					$data['judul'] = "SiPKOK";
-					$this->load->view('mainView', $data);
+					redirect(base_url(), 'refresh');
 				}				
 			} else {
 				echo "<script>
 					   	  alert(\"Password Salah!\");
 				      </script>";
-				$data['judul'] = "SiPKOK";
-				$this->load->view('mainView', $data);
+				redirect(base_url(), 'refresh');
 			}
 		} else {
 			echo "<script>
 					  alert(\"Email Belum Terdaftar!\");
 				  </script>";
-			$data['judul'] = "SiPKOK";
-			$this->load->view('mainView', $data);
+			redirect(base_url(), 'refresh');
 		}
 	}
 
@@ -88,7 +85,7 @@
 			$data["nama"] = $this->input->post("username");
 			$data["organisasi"] = $this->M_Organisasi->selectIdOrganisasiByNama($this->input->post("organisasi"));		
 			$data["email"] = $this->input->post("email");
-			$data["password"] = $this->input->post("password");
+			$data["password"] = md5($this->input->post("password"));
 			$data["jabatan"] = $this->input->post("jabatan");
 			$data["status"] = "";
 			$this->M_Akun->insertAkun("akun", $data);
@@ -102,7 +99,6 @@
 		$judul = "SiPKOK";
 		$data['judul'] = $judul;
 		$this->session->sess_destroy();
-		// $this->load->view('mainView', $data);
 		redirect(base_url());
 	}
 	public function verifikasiAkun($idAkun){

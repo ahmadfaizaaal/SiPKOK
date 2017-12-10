@@ -63,15 +63,11 @@
         <div class="w3-col m8">
             <h2 class="w3-left-align">Program Kerja</h2>
         </div>
-        <!-- <div class="w3-col m4  w3-margin-top w3-right-align">
-            <button onclick="document.getElementById('Tambahorganisasi').style.display='block'" class="w3-btn w3-amber w3-hover-orange w3-card-4" title="Tambah Organisasi"><i class="fa fa-plus w3-margin-right"></i>Tambah Organisasi</button>
-        </div> -->
-        <!-- <?php //$modalViewTambah->loadModal(); ?> -->
     </div>
   </header>
 
   <?php $i = 0;
-  //include('ModalView_admin.php'); 
+  
   ?>
   
   <!-- First Photo Grid-->
@@ -183,9 +179,6 @@
 
   <!-- Images of Me -->
   <div class="w3-row-padding w3-padding-16">
-    <!-- <div class="w3-col m6">
-      <img src="<?php //echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
-    </div> -->
     <div class="w3-center">
       <img src="<?php echo base_url() ?>assets/img/<?php echo $this->session->userdata('detailOrganisasi')->logo ?>" alt="Me" style="width:20%">
     </div>
@@ -195,9 +188,6 @@
     <!-- <h4><b>Nama Organisasi</b></h4> -->
     <table class="w3-table w3-striped w3-amber">
       <?php 
-      // $idOrganisasi = $this->session->userdata('akunAktif')->organisasi;
-      // $organisasi = base_url("C_Organisasi/getOrganisasi/$idOrganisasi");
-      // $organisasi = base_url("C_Organisasi/getOganisasi/".$this->session->userdata('akunAktif')->organisasi."");
       echo
         "<tr>
             <td style=\"width: 20%;\"><h5>Nama Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td><td style=\"width: 78%;\"><h5>".$this->session->userdata('detailOrganisasi')->namaOrganisasi."</h5></td>
@@ -332,10 +322,7 @@
 </div>
 
 <script>
-// document.getElementById('btnEdit').onclick = function() {editProker()};
-// for (var i = document.getElementsByClassName('btnLihatOrganisasi').length - 1; i >= 0; i--) {  
-//   document.getElementsByClassName('btnLihatOrganisasi')[i].onclick = function() {editProker("O001")};
-// };
+
 document.getElementById('btnUbahProfil').onclick = function() {editProfil(<?php 
   $namaOrganisasi = $this->session->userdata('organisasi')->namaOrganisasi;
   $kepanjangan = $this->session->userdata('organisasi')->kepanjangan;

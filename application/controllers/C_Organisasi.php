@@ -24,19 +24,15 @@
 		  } else {
 				if($sizeStruktur>0){
 
-				  //New file name
+				  //--NEW FILE NAME
 				  $random=rand(1111,9999);
 				  $newFileName=$random."_Struktur_".$idOrganisasi."_".$namaStruktur;
 
-				  //File upload path
+				  //--FILE UPLOAD PATH
 				  $uploadPath="assets/img/".$newFileName;
 
-				  //function for upload file
+				  //--FUNCTION FOR UPLOAD FILE
 				  if(move_uploaded_file($tmpNameStruktur,$uploadPath)){
-						// echo "Successful"; 
-						// echo "File Name :".$newFileName; 
-						// echo "File Size :".$sizeStruktur." kb"; 
-						// echo "File Type :".$tipeStruktur;
 						$data["struktur"] = $newFileName;
 						echo "<script>
 							alert(\"Perubahan berhasil disimpan!\");
@@ -44,7 +40,7 @@
 				  }
 				} else if ($sizeStruktur == 0){
 				  echo "<script>
-						alert(\"Ukuran file maksimal sebesar 1 MB!\");
+						alert(\"Ukuran file maksimal sebesar 2 MB!\");
 					</script>";
 				}
 		}
@@ -61,19 +57,15 @@
 					</script>";
 		  } else {
 				if($sizeLogo>0){
-				  //New file name
+				  //--NEW FILE NAME
 				  $random=rand(1111,9999);
 				  $newFileName=$random."_Logo_".$idOrganisasi."_".$namaLogo;
 
-				  //File upload path
+				  //--FILE UPLOAD PATH
 				  $uploadPath="assets/img/".$newFileName;
 
-				  //function for upload file
+				  //--FUNCTION FOR UPLOAD FILE
 				  if(move_uploaded_file($tmpNameLogo,$uploadPath)){
-						// echo "Successful"; 
-						// echo "File Name :".$newFileName; 
-						// echo "File Size :".$sizeLogo." kb"; 
-						// echo "File Type :".$tipeLogo;
 						$data["logo"] = $newFileName;
 						echo "<script>
 							alert(\"Perubahan berhasil disimpan!\");
@@ -81,7 +73,7 @@
 				  }
 				} else if ($sizeLogo == 0){
 				  echo "<script>
-						alert(\"Ukuran file maksimal sebesar 1 MB!\");
+						alert(\"Ukuran file maksimal sebesar 2 MB!\");
 					</script>";
 				}
 		  }	
@@ -90,9 +82,7 @@
 
 		$this->M_Organisasi->updateOrganisasi($data,$idOrganisasi);
 		$this->session->set_userdata(array('organisasi'=>$this->M_Organisasi->selectOrganisasi($this->session->userdata('akunAktif')->organisasi)),true);
-		// if ($validasiLogo && $validasiStruktur) {
-			redirect(base_url(), 'refresh');
-		// }
+		redirect(base_url(), 'refresh');
 		
 	}
 	public function hapusOrganisasi($idOrganisasi){
@@ -118,7 +108,6 @@
 		$data["progress"] = 0;
 		$this->M_Organisasi->insertOrganisasi($data);
 		$this->session->set_userdata(array('organisasi'=>$this->M_Organisasi->selectOrganisasiAll(),true));
-		// echo $data;
 		redirect(base_url("C_Akun/admin"));
 	}
 	public function lihatDetailOrganisasi($idOrganisasi) {
