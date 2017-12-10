@@ -95,7 +95,7 @@ $modalViewUbah = new ModalView("ubahproker");
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-tiny w3-padding w3-hover-orange" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" style="width:80%;" class="w3-round"><br><br>
+    <img src="<?php echo base_url() ?>assets/img/<?php echo $this->session->userdata('organisasi')->logo; ?>" style="width:80%;" class="w3-round"><br><br>
     <h4><b><?php echo $this->session->userdata('organisasi')->namaOrganisasi?></b></h4>
     <p class="w3-text-white"><b><i><?php echo $this->session->userdata('organisasi')->kepanjangan?></i></b></p>
   </div>
@@ -285,7 +285,7 @@ $modalViewUbah = new ModalView("ubahproker");
       <img src="<?php //echo base_url() ?>assets/img/detail-logo.png" alt="Me" style="width:100%">
     </div> -->
     <div class="w3-center">
-      <img src="<?php echo base_url() ?>assets/img/logo-hmif2.png" alt="Me" style="width:20%">
+      <img src="<?php echo base_url() ?>assets/img/<?php echo $this->session->userdata('organisasi')->logo; ?>" alt="Me" style="width:20%">
     </div>
   </div>
 

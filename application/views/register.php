@@ -46,7 +46,7 @@
                         <br>
                         <input type="password" class="form" placeholder="Re-type Password" name="repassword" autocomplete="off" required>
                         <br>
-                        <input type="submit" value="Batal" style="background-color: #F44336; color: white; padding: 14px 10px; margin: 8px 0;border: none;cursor: pointer;width: 48%;" name="kirim">
+                        <input type="submit" value="Batal" style="background-color: #F44336; color: white; padding: 14px 10px; margin: 8px 0;border: none;cursor: pointer;width: 48%;" name="batal">
                         <input type="submit" value="Kirim" style="background-color: #4CAF50; color: white; padding: 14px 10px; margin: 8px 0;border: none;cursor: pointer;width: 48%;" name="kirim">
                     </form>
                 </div>

@@ -40,29 +40,45 @@
 		$data['judul'] = "Beranda";		
 		if ($count > 0){
 			if ($akun[0]->password == $password){
-				if ($email == "admin" && $email == $akun[0]->email) {
-					$organisasi = $this->M_Organisasi->selectOrganisasiAll();
-					$this->session->set_userdata(array(
-						'akunAktif'=>$akun[0],
-						'akunTerdaftar'=>$this->M_Akun->selectAkunByStatus(),
-						'dokumen' =>$this->M_Dokumen->selectDokumenAll(),
-						'organisasi'=>$organisasi),
-					true);
-					redirect(base_url('C_Akun/admin'));	
+				if ($akun[0]->status == 1) {
+					if ($email == "admin" && $email == $akun[0]->email) {
+						$organisasi = $this->M_Organisasi->selectOrganisasiAll();
+						$this->session->set_userdata(array(
+							'akunAktif'=>$akun[0],
+							'akunTerdaftar'=>$this->M_Akun->selectAkunByStatus(),
+							'dokumen' =>$this->M_Dokumen->selectDokumenAll(),
+							'organisasi'=>$organisasi),
+						true);
+						redirect(base_url('C_Akun/admin'));	
+					} else {
+						$organisasi = $this->M_Organisasi->selectOrganisasi($akun[0]->organisasi);
+						$this->session->set_userdata(array(
+							'akunAktif'=>$akun[0], 
+							'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
+							'organisasi'=>$organisasi),
+						true);
+						redirect(base_url());
+					}
 				} else {
-					$organisasi = $this->M_Organisasi->selectOrganisasi($akun[0]->organisasi);
-					$this->session->set_userdata(array(
-						'akunAktif'=>$akun[0], 
-						'proker'=>$this->M_Proker->selectProkerJoinDokumen($akun[0]->organisasi),
-						'organisasi'=>$organisasi),
-					true);
-					redirect(base_url());
+					echo "<script>
+								alert(\"Akun belum diverifikasi oleh admin!\");
+						  </script>";
+					$data['judul'] = "SiPKOK";
+					$this->load->view('mainView', $data);
 				}				
 			} else {
-				echo "Password Salah";
+				echo "<script>
+					   	  alert(\"Password Salah!\");
+				      </script>";
+				$data['judul'] = "SiPKOK";
+				$this->load->view('mainView', $data);
 			}
 		} else {
-			echo "Email tidak terdaftar";
+			echo "<script>
+					  alert(\"Email Belum Terdaftar!\");
+				  </script>";
+			$data['judul'] = "SiPKOK";
+			$this->load->view('mainView', $data);
 		}
 	}
 
@@ -76,8 +92,10 @@
 			$data["jabatan"] = $this->input->post("jabatan");
 			$data["status"] = "";
 			$this->M_Akun->insertAkun("akun", $data);
+			redirect(base_url('C_Akun/logout'));
+		} else if ($this->input->post("batal") == "Batal") {
+			redirect(base_url());
 		}		
-		redirect(base_url());
 	}
 
 	public function logout(){
