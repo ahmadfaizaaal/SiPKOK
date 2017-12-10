@@ -3,7 +3,7 @@
     if($isLogin==""){
       redirect( base_url().'Auth');
     }
-    $timeLimit = "2017-12-10 00:00:00";
+    $timeLimit = "2017-12-12 00:00:00";
 ?>
 <html>
 <head>
@@ -316,10 +316,10 @@ $modalViewUbah = new ModalView("ubahproker");
             <td style=\"width: 20%;\"><h5>Progress Organisasi</h5></td><td style=\"width: 2%;\"><h5>:</h5></td>
             <td style=\"width: 78%;\">
                 <div class=\"w3-white w3-margin-top\">";
-                    $progressOrganisasi = number_format((float)$sumProgres/$i, 2, '.', '');
-                    if ($progressOrganisasi == 0) {
+                    if ($sumProgres == 0) {
                       echo "<div class=\"w3-container w3-white w3-text-black w3-padding w3-center\" style=\"width:0%\">0%</div>";
                     } else {
+                      $progressOrganisasi = number_format((float)$sumProgres/$i, 2, '.', '');
                       echo "<div class=\"w3-container w3-green w3-padding w3-center\" style=\"width:".$progressOrganisasi."%\">".$progressOrganisasi."%</div>";
                     }; 
                 echo "</div>
